@@ -1,45 +1,77 @@
-import React from "react"
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-const Col = ({ 
-  children, 
-  backgroundColor,
-  backgroundImage,
-  backgroundGradient, 
-  float,
-  horizontalAlign,
-  textAlign,
-  verticalAlign,
-  width
-  }) => {
-
-  // const colStyle = {
-  //   "background": `${backgroundColor ? backgroundColor : backgroundGradient ? backgroundGradient : backgroundImage ? backgroundImage : null}`,
-  //   "textAlign": `${textAlign = "center" ? "center" : textAlign = "left" ? "left" : textAlign = "right" ? "right" : null}`,
-  // };
-
-  const StyledCol = styled.div`
-  background: ${backgroundColor ? backgroundColor : backgroundGradient ? backgroundGradient : backgroundImage ? backgroundImage : ""};
-  text-align: ${textAlign == "center" ? "center" : textAlign == "left" ? "left" : textAlign == "right" ? "right" : ""};
-  flex-flow: column wrap;
-  `
-
-  const StyledInnerCol = styled.div`
-  align-items: ${verticalAlign == "center" ? "center" : verticalAlign == "top" ? "flex-start" : verticalAlign == "bottom" ? "flex-end" : ""};
-  justify-content: ${horizontalAlign == "center" ? "center" : horizontalAlign == "left" ? "flex-start" : horizontalAlign == "right" ? "flex-end" : ""};
+const StyledCol = styled.div`
+	background: ${props =>
+		props.backgroundColor
+			? props.backgroundColor
+			: props.backgroundGradient
+			? props.backgroundGradient
+			: props.backgroundImage
+			? props.backgroundImage
+			: ""};
+	text-align: ${props =>
+		props.textAlign == "center"
+			? "center"
+			: props.textAlign == "left"
+			? "left"
+			: props.textAlign == "right"
+			? "right"
+			: ""};
+	flex-flow: column wrap;
 `;
 
-  const colClasses = 
-  `col ` +
-  `${float ? `float-${float} ` : ``}` +
-  `${width ? `col-${width} ` : ""} `;
+const StyledInnerCol = styled.div`
+	align-items: ${props =>
+		props.verticalAlign == "center"
+			? "center"
+			: props.verticalAlign == "top"
+			? "flex-start"
+			: props.verticalAlign == "bottom"
+			? "flex-end"
+			: ""};
+	justify-content: ${props =>
+		props.horizontalAlign == "center"
+			? "center"
+			: props.horizontalAlign == "left"
+			? "flex-start"
+			: props.horizontalAlign == "right"
+			? "flex-end"
+			: ""};
+`;
 
-  return (
-    <StyledCol className={colClasses}>
-      <StyledInnerCol className="inner-col">
-        {children}
-      </StyledInnerCol>
-    </StyledCol>
-  )}
+const Col = ({
+	children,
+	backgroundColor,
+	backgroundImage,
+	backgroundGradient,
+	float,
+	horizontalAlign,
+	textAlign,
+	verticalAlign,
+	width
+}) => {
+  
+	const colClasses =
+		`col ` +
+		`${float ? `float-${float} ` : ``}` +
+		`${width ? `col-${width} ` : ""} `;
 
-export default Col
+	return (
+		<StyledCol
+			backgroundColor={backgroundColor}
+			backgroundImage={backgroundImage}
+			backgroundGradient={backgroundGradient}
+			textAlign={textAlign}
+			className={colClasses}>
+			<StyledInnerCol
+				verticalAlign={verticalAlign}
+				horizontalAlign={horizontalAlign}
+				className="inner-col">
+				{children}
+			</StyledInnerCol>
+		</StyledCol>
+	);
+};
+
+export default Col;

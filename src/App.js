@@ -255,31 +255,31 @@ const App = () => (
 					<Col width={12}>
 						<Slider slideCount={1} showCount={3}>
 							<div>
-								<img src="https://images.unsplash.com/photo-1470341223622-1019832be824?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2288&q=80" />
+								<img src="https://source.unsplash.com/user/erondu" />
 							</div>
 							<div>
-								<img src="https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2094&q=80" />
+								<img src="https://source.unsplash.com/user/hayleykimdesign" />
 							</div>
 							<div>
-								<img src="https://images.unsplash.com/photo-1534161308652-fdfcf10f62c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2174&q=80" />
+								<img src="https://source.unsplash.com/collection/8469893" />
 							</div>
 							<div>
-								<img src="https://images.unsplash.com/photo-1470341223622-1019832be824?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2288&q=80" />
+								<img src="https://source.unsplash.com/random" />
 							</div>
 							<div>
-								<img src="https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2094&q=80" />
+								<img src="https://source.unsplash.com/user/jeannerosegomez" />
 							</div>
 							<div>
-								<img src="https://images.unsplash.com/photo-1534161308652-fdfcf10f62c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2174&q=80" />
+								<img src="https://source.unsplash.com/user/osillbury" />
 							</div>
 							<div>
-								<img src="https://images.unsplash.com/photo-1470341223622-1019832be824?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2288&q=80" />
+								<img src="https://source.unsplash.com/collection/1758353" />
 							</div>
 							<div>
-								<img src="https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2094&q=80" />
+								<img src="https://source.unsplash.com/collection/1118894" />
 							</div>
 							<div>
-								<img src="https://images.unsplash.com/photo-1534161308652-fdfcf10f62c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2174&q=80" />
+								<img src="https://source.unsplash.com/collection/1360971" />
 							</div>
 						</Slider>
 					</Col>

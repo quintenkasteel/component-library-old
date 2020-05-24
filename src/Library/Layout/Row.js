@@ -1,35 +1,56 @@
-import React from "react"
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-const Row = ({ 
-  stretched, 
-  backgroundImage, 
-  backgroundGradient, 
-  backgroundColor, 
-  inverted, 
-  textAlign, 
-  verticalAlign, 
-  children}) => {
+const StyledRow = styled.div`
+	background: ${props =>
+		props.backgroundColor
+			? props.backgroundColor
+			: props.backgroundGradient
+			? props.backgroundGradient
+			: props.backgroundImage
+			? props.backgroundImage
+			: ""};
+	text-align: ${props =>
+		props.textAlign == "center"
+			? "center"
+			: props.textAlign == "left"
+			? "left"
+			: props.textAlign == "right"
+			? "right"
+			: ""};
+	align-items: ${props =>
+		props.verticalAlign == "center"
+			? "center"
+			: props.verticalAlign == "top"
+			? "flex-start"
+			: props.verticalAlign == "bottom"
+			? "flex-end"
+			: ""};
+`;
 
-    const StyledRow = styled.div`
-    background: ${backgroundColor ? backgroundColor : backgroundGradient ? backgroundGradient : backgroundImage ? backgroundImage : ""};
-    text-align: ${textAlign == "center" ? "center" : textAlign == "left" ? "left" : textAlign == "right" ? "right" : ""};
-    align-items: ${verticalAlign == "center" ? "center" : verticalAlign == "top" ? "flex-start" : verticalAlign == "bottom" ? "flex-end" : ""};
-    `
-  // const rowStyle = {
-  //   "background": `${backgroundColor ? backgroundColor : backgroundGradient ? backgroundGradient : backgroundImage ? backgroundImage : null}`,
-  //   "textAlign": `${textAlign = "center" ? "center" : textAlign = "left" ? "left" : textAlign = "right" ? "right" : null}`,
-  //   "alignItems": `${verticalAlign = "center" ? "center" : verticalAlign = "top" ? "flex-start" : verticalAlign = "bottom" ? "flex-end" : null}`,
-  // };
+const Row = ({
+	stretched,
+	backgroundImage,
+	backgroundGradient,
+	backgroundColor,
+	inverted,
+	textAlign,
+	verticalAlign,
+	children
+}) => {
+	const rowClasses = `row ` + `${stretched ? `stretched ` : ``}`;
 
-  const rowClasses = 
-  `row ` +
-  `${stretched ? `stretched ` : ``}`;
+	return (
+		<StyledRow
+			verticalAlign={verticalAlign}
+			textAlign={textAlign}
+			backgroundColor={backgroundColor}
+			backgroundGradient={backgroundGradient}
+			backgroundImage={backgroundImage}
+			className={rowClasses}>
+			{children}
+		</StyledRow>
+	);
+};
 
-  return (
-    <StyledRow className={rowClasses}>
-      {children}
-    </StyledRow>
-  )}
-
-export default Row
+export default Row;
