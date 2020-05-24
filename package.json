@@ -1,0 +1,63 @@
+{
+  "name": "components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "scripts": {
+    "start": "webpack-dev-server --open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@iconify/iconify": "^1.0.5",
+    "@iconify/react": "^1.1.3",
+    "@stripe/react-stripe-js": "^1.1.2",
+    "@stripe/stripe-js": "^1.3.1",
+    "axios": "^0.19.2",
+    "babel-plugin-styled-components": "^1.10.6",
+    "babel-plugin-syntax-class-properties": "^6.13.0",
+    "js-cookie": "^2.2.1",
+    "prop-types": "^15.7.2",
+    "query-string": "^6.11.1",
+    "react": "^16.13.1",
+    "react-color": "^2.18.0",
+    "react-datepicker": "^2.14.1",
+    "react-dom": "^16.13.1",
+    "react-helmet": "^5.2.1",
+    "react-icons": "^3.8.0",
+    "react-phone-input-2": "^2.12.1",
+    "recompose": "^0.30.0",
+    "sharp": "^0.25.2",
+    "styled-components": "^5.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "@svgr/cli": "^5.2.0",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "css-loader": "^3.5.3",
+    "html-webpack-plugin": "^4.2.0",
+    "node-sass": "^4.13.1",
+    "prettier": "^1.19.1",
+    "sass": "^1.26.5",
+    "sass-extract": "^2.1.0",
+    "sass-extract-js": "^0.4.0",
+    "sass-extract-loader": "^1.1.0",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.0",
+    "svg-inline-loader": "^0.8.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3"
+  }
+}

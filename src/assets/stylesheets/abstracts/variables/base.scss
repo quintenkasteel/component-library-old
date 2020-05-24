@@ -1,0 +1,15 @@
+//Grid defaults
+$default-grid-columns: 12;
+$default-grid-gutter: 20px;
+$base-width: 1180px;
+
+//Breakpoints
+$bp-xs: 'only screen and (min-width 400px)';
+$bp-xs-sm: 'only screen and (min-width: 568px)';
+$bp-sm: 'only screen and (min-width: 768px)';
+$bp-sm-md: 'only screen and (min-width: 834px)';
+$bp-md: 'only screen and (min-width: 992px)';
+$bp-md-lg: 'only screen and (min-width: 1030px)';
+$bp-lg: 'only screen and (min-width: 1200px)';
+$bp-lg-xl: 'only screen and (min-width: 1401px)';
+$bp-xl: 'only screen and (min-width: 1824px)';

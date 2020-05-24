@@ -1,0 +1,22 @@
+.grid {
+  @include grid($gutter: $default-grid-gutter);
+}
+
+.grid,
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  @for $i from 1 through $default-grid-columns {
+    > .col-#{$i} {
+      @include grid-col(
+        $col: $i,
+        $grid-columns: $default-grid-columns,
+        $gutter: $default-grid-gutter
+      );
+    }
+  }
+}
+
+.btn {
+  margin-bottom: 10px;
+}

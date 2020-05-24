@@ -1,0 +1,35 @@
+// .input {
+//   &.email,
+//   &.password,
+//   &.text {
+//     display: flex;
+//     align-items: center;
+//     justify-content: flex-end;
+//     flex-wrap: wrap;
+
+//     &.error {
+//       input {
+//         border: 1px solid red;
+//       }
+//     }
+//   }
+
+//   label {
+//     display: flex;
+//     width: 30%;
+//     white-space: wrap;
+//     flex-wrap: wrap;
+//   }
+  
+//   input {
+//     display: flex;
+//     flex: 1 0 auto;
+//     z-index: 1;
+//   }
+
+//   .error-message {
+//     display: block;
+//     color: red;
+//     width: 70%;
+//   }
+// }

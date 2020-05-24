@@ -1,0 +1,23 @@
+$breakpoints: (
+  "bp-xs": 400px,
+  "bp-xs-sm": 568px,
+  "bp-sm": 768px,
+  "bp-sm-md": 834px,
+  "bp-md": 992px,
+  "bp-md-lg": 1030px,
+  "bp-lg": 1200px,
+  "bp-lg-xl": 1401px,
+  "bp-xl": 1824px,
+);
+
+@mixin breakpoint($bp, $type: min) {
+  @if map_has_key($breakpoints, $bp) {
+    $width: map_get($breakpoints, $bp);
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  } 
+}
