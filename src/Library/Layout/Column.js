@@ -18,15 +18,15 @@ const StyledCol = styled.div`
 
 const StyledInnerCol = styled.div`
   align-items: ${(props) =>
-    (props.verticalAlign === 'top' && 'top') ||
+    (props.verticalAlign === 'top' && 'flex-start') ||
     (props.verticalAlign === 'center' && 'center') ||
-    (props.verticalAlign === 'bottom' && 'bottom') ||
+    (props.verticalAlign === 'bottom' && 'flex-end') ||
     ''};
 
   justify-content: ${(props) =>
-    (props.horizontalAlign === 'left' && 'left') ||
+    (props.horizontalAlign === 'left' && 'flex-start') ||
     (props.horizontalAlign === 'center' && 'center') ||
-    (props.horizontalAlign === 'right' && 'right') ||
+    (props.horizontalAlign === 'right' && 'flex-end') ||
     ''};
 `;
 
