@@ -1,5 +1,5 @@
-import React from "react"
-import styled from "styled-components"
+import React from 'react';
+import styled from 'styled-components';
 
 const Button = ({
   to,
@@ -18,62 +18,61 @@ const Button = ({
   horizontalAlign,
   ...props
 }) => {
-
   const Btn = styled.div`
     padding: 10px;
-    width: ${width ? width : "auto"};
+    width: ${width ? width : 'auto'};
     display: inline-flex;
     background: ${primary & !disabled
-      ? "blue"
+      ? 'blue'
       : secundairy & !disabled
-      ? "red"
+      ? 'red'
       : disabled
-      ? "grey"
-      : ""};
+      ? 'grey'
+      : ''};
 
     a {
       height: 100%;
       width: 100%;
       display: flex;
       text-decoration: none;
-      user-select: ${disabled ? "none" : ""};
-      cursor: ${disabled ? "no-drop" : "pointer"};
+      user-select: ${disabled ? 'none' : ''};
+      cursor: ${disabled ? 'no-drop' : 'pointer'};
       color: ${primary & !disabled
-        ? "white"
+        ? 'white'
         : secundairy & !disabled
-        ? "white"
+        ? 'white'
         : disabled
-        ? "#959393"
-        : ""};
-      text-align: ${textAlign == "center"
-        ? "center"
-        : textAlign == "left"
-        ? "left"
-        : textAlign == "right"
-        ? "right"
-        : "center"};
-      align-items: ${verticalAlign == "center"
-        ? "center"
-        : verticalAlign == "top"
-        ? "flex-start"
-        : verticalAlign == "bottom"
-        ? "flex-end"
-        : "center"};
-      justify-content: ${horizontalAlign == "center"
-        ? "center"
-        : horizontalAlign == "left"
-        ? "flex-start"
-        : horizontalAlign == "right"
-        ? "flex-end"
-        : "center"};
+        ? '#959393'
+        : ''};
+      text-align: ${textAlign == 'center'
+        ? 'center'
+        : textAlign == 'left'
+        ? 'left'
+        : textAlign == 'right'
+        ? 'right'
+        : 'center'};
+      align-items: ${verticalAlign == 'center'
+        ? 'center'
+        : verticalAlign == 'top'
+        ? 'flex-start'
+        : verticalAlign == 'bottom'
+        ? 'flex-end'
+        : 'center'};
+      justify-content: ${horizontalAlign == 'center'
+        ? 'center'
+        : horizontalAlign == 'left'
+        ? 'flex-start'
+        : horizontalAlign == 'right'
+        ? 'flex-end'
+        : 'center'};
     }
-  `
+  `;
 
   return (
     <Btn className={`btn`} href={to} {...props}>
       <a href={to}>{children}</a>
     </Btn>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;
