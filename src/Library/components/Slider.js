@@ -2,8 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
-import leftArrow from "../../assets/images/arrow-left.svg"
-import rightArrow from "../../assets/images/arrow-right.svg"
+import leftArrow from "../../../images/arrow-left.svg"
+import rightArrow from "../../../images/arrow-right.svg"
 
 class Slider extends React.Component {
   constructor(props) {

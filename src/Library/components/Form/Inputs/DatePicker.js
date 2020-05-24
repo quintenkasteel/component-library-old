@@ -8,7 +8,6 @@ import React, { Component } from "react"
 import DatePicker from "react-datepicker"
 import styled from "styled-components"
 
-// import "react-datepicker/dist/react-datepicker.css"
 
 const DatePickerContainer = styled.div`
   position: relative;
