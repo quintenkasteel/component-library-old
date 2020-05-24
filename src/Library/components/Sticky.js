@@ -53,27 +53,31 @@ class Sticky extends React.Component {
     const fixedFrom = scrollPostion >= from ? 'fixed' : null;
 
     const StickyContainer = styled.div`
-      position: ${sticky ? 'sticky' : fixed && from ? fixedFrom : fixed ? 'fixed' : 'sticky'};
+      position: ${sticky && !fixed ? 'sticky' : ''};
+      position: ${fixed && from ? fixedFrom : ''};
+      position: ${fixed && !from ? 'fixed' : 'sticky'};
       display: flex;
       flex-flow: column wrap;
       padding: 0.625rem;
-      margin: ${margin ? margin : `0.625rem`};
+      margin: ${margin || `0.625rem`};
       z-index: 1000;
-      border-radius: ${borderRadius ? borderRadius : ''};
-      background: ${background ? background : 'white'};
+      border-radius: ${borderRadius || ''};
+      background: ${background || 'white'};
       top: ${top && offset ? offset : ''};
       top: ${top && !offset ? top : '0'};
       top: ${!top && !offset ? 'auto' : ''};
-      left: ${left && offset ? offset : left ? '0' : 'auto'};
-      right: ${right && offset ? offset : right ? '0' : 'auto'};
-      bottom: ${bottom && offset ? offset : bottom ? '0' : 'auto'};
-      flex: ${fillVertical && fillHorizontal
-        ? '1 1 auto'
-        : fillVertical
-        ? '1 0 auto'
-        : fillHorizontal
-        ? '0 1 auto'
-        : '0 0 auto'};
+      left: ${left && offset ? offset : ''};
+      left: ${left && !offset ? left : '0'};
+      left: ${!left && !offset ? 'auto' : ''};
+      right: ${right && offset ? offset : ''};
+      right: ${right && !offset ? right : '0'};
+      right: ${!right && !offset ? 'auto' : ''};
+      bottom: ${bottom && offset ? offset : ''};
+      bottom: ${bottom && !offset ? bottom : '0'};
+      bottom: ${!bottom && !offset ? 'auto' : ''};
+      flex: ${fillVertical && fillHorizontal ? '1 1 auto' : ''};
+      flex: ${fillVertical && !fillHorizontal ? '1 0 auto' : ''};
+      flex: ${!fillVertical && fillHorizontal ? '0 1 auto' : '0 0 auto'};
     `;
     return <StickyContainer className="sticky-scontainer">{children}</StickyContainer>;
   }
