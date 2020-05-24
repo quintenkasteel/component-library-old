@@ -1,10 +1,11 @@
-import React from "react"
+import React from 'react';
+import propTypes from 'prop-types';
 
-const Text = ({ children}) => {
+const Text = ({ children }) => {
+  return <div className="text-block">{children}</div>;
+};
 
-    return (
-    <div className="text-block">{children}</div>
-    )
-  }
-
-export default Text
+Text.propTypes = {
+  children: propTypes.node,
+};
+export default Text;
