@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "babel": {
     "presets": [
       "@babel/preset-env",
@@ -10,11 +13,24 @@
     ]
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development --hot --open"
+    "start": "webpack-dev-server --mode development --hot --open",
+    "lint": "eslint ./src/ & stylelint ./src/**/*.scss",
+    "lint:diff": "lint-staged",
+    "commit": "git cz",
+    "commitmsg": "commit-message-validator",
+    "precommit": "yarn lint:diff"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
+    },
+    "commit-message-validator": {
+      "pattern": [
+        "^[a-zA-Z0-9 _-]+(\\([0-9]+\\)){0,1}: .+$"
+      ],
+      "errorMessage": "Commit message must be in format: `feat(123): aaa`; use `git cz` command to create commit with proper message"
+    }
+  },
   "dependencies": {
     "@hot-loader/react-dom": "^16.13.0",
     "@iconify/iconify": "^1.0.5",
@@ -24,6 +40,7 @@
     "axios": "^0.19.2",
     "babel-plugin-styled-components": "^1.10.6",
     "babel-plugin-syntax-class-properties": "^6.13.0",
+    "commit-message-validator": "^0.1.11",
     "js-cookie": "^2.2.1",
     "prop-types": "^15.7.2",
     "query-string": "^6.11.1",
@@ -46,6 +63,7 @@
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
     "@svgr/cli": "^5.2.0",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "css-loader": "^3.5.3",
@@ -60,6 +78,8 @@
     "eslint-plugin-react-hooks": "2.5.0",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.2.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.6",
     "node-sass": "^4.13.1",
     "prettier": "^2.0.5",
     "sass": "^1.26.5",
@@ -68,6 +88,9 @@
     "sass-extract-loader": "^1.1.0",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.0",
+    "stylelint": "^13.5.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.10.0",
     "svg-inline-loader": "^0.8.2",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
@@ -79,7 +102,16 @@
     }
   },
   "lint-staged": {
+    "src/**/*.js": [
+      "eslint"
+    ],
+    "src/**/*.jsx": [
+      "eslint"
+    ],
+    "src/**/*.scss": [
+      "stylelint --syntax scss"
+    ],
     "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
+    "*.css": "stylelint --fix"
   }
 }
