@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import propTypes from 'prop-types';
 import styled from 'styled-components';
 
 const AccordionContainer = styled.div`
@@ -15,6 +16,7 @@ const AccordionContainer = styled.div`
   width: 100%;
   outline: none;
   margin-bottom: 0.625rem;
+  cursor: ${(props) => (props.disabled ? 'disabled' : 'pointer')};
 `;
 const AccordionBody = styled.div`
   display: ${(props) => (props.open ? 'block' : 'none')};
@@ -23,7 +25,7 @@ const AccordionBody = styled.div`
 
 const AccordionTitle = styled.h3``;
 
-class Accordion extends React.Component {
+class Accordion extends Component {
   constructor(props) {
     super(props);
 
@@ -38,12 +40,12 @@ class Accordion extends React.Component {
   }
 
   render() {
-    const { label, labeltype, icon, disabled, children } = this.props;
+    const { label, disabled, children } = this.props;
     const open = this.state.open ? 'open' : '';
 
     return (
       <React.Fragment>
-        <AccordionContainer className={`accordion-container ${open}`}>
+        <AccordionContainer disabled={disabled} className={`accordion-container ${open}`}>
           <AccordionTitle className="accordion-title" onClick={() => this.handleChange()}>
             {label}
           </AccordionTitle>
@@ -55,5 +57,11 @@ class Accordion extends React.Component {
     );
   }
 }
+
+Accordion.propTypes = {
+  children: propTypes.node,
+  label: propTypes.string,
+  disabled: propTypes.bool,
+};
 
 export default Accordion;
