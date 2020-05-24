@@ -1,6 +1,6 @@
-import React from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
+import React from 'react';
+import propTypes from 'prop-types';
+import styled from 'styled-components';
 
 const Modal = ({ children, open }) => {
   const ModalContainer = styled.div`
@@ -22,12 +22,15 @@ const Modal = ({ children, open }) => {
       visibility: visible;
       z-index: 2000;
     }
-  `
+  `;
   return (
-    <ModalContainer className={`modal-container ${open ? "open" : ""}`}>
-      {children}
-    </ModalContainer>
-  )
-}
+    <ModalContainer className={`modal-container ${open ? 'open' : ''}`}>{children}</ModalContainer>
+  );
+};
 
-export default Modal
+Modal.propTypes = {
+  children: propTypes.node,
+  open: propTypes.bool,
+};
+
+export default Modal;
