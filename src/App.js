@@ -1,3 +1,4 @@
+import { hot } from 'react-hot-loader/root';
 import React from "react";
 import styled from "styled-components";
 import "./Library/styles.scss";
@@ -244,11 +245,51 @@ const App = () => (
 							<Heading heading="h4">Heading 4</Heading>
 						</Modal>
 						<Sticky fixed top right from={100}>
-							<Heading heading="h3">this is sticky</Heading>
+							<Heading heading="h3">this is stick</Heading>
 						</Sticky>
 						<PageProgress />
 					</Col>
 					<Col width={6}></Col>
+				</Row>
+				<Row>
+					<Col width={12}>
+						<Slider slideCount={1} showCount={3}>
+							<div>
+								<img src="https://images.unsplash.com/photo-1470341223622-1019832be824?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2288&q=80" />
+							</div>
+							<div>
+								<img src="https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2094&q=80" />
+							</div>
+							<div>
+								<img src="https://images.unsplash.com/photo-1534161308652-fdfcf10f62c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2174&q=80" />
+							</div>
+							<div>
+								<img src="https://images.unsplash.com/photo-1470341223622-1019832be824?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2288&q=80" />
+							</div>
+							<div>
+								<img src="https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2094&q=80" />
+							</div>
+							<div>
+								<img src="https://images.unsplash.com/photo-1534161308652-fdfcf10f62c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2174&q=80" />
+							</div>
+							<div>
+								<img src="https://images.unsplash.com/photo-1470341223622-1019832be824?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2288&q=80" />
+							</div>
+							<div>
+								<img src="https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2094&q=80" />
+							</div>
+							<div>
+								<img src="https://images.unsplash.com/photo-1534161308652-fdfcf10f62c4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2174&q=80" />
+							</div>
+						</Slider>
+					</Col>
+					<Col>
+						<StoreProvider>
+							<Products />
+							<Cart />
+							<Checkout />
+						</StoreProvider>
+					</Col>
 				</Row>
 			</Grid>
 
@@ -269,4 +310,4 @@ const App = () => (
 	</Layout>
 );
 
-export default App;
+export default hot(App);

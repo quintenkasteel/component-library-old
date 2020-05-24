@@ -7,6 +7,11 @@ module.exports = {
 		path: path.resolve(__dirname, "dist"),
 		filename: "index_bundle.js"
 	},
+  resolve: {
+    alias: {
+      'react-dom': path.resolve(path.join(__dirname, './node_modules/@hot-loader/react-dom')),
+    }
+  },
 	module: {
 		rules: [
 			{
@@ -15,6 +20,7 @@ module.exports = {
 					loader: "babel-loader",
 					options: {
 						plugins: [
+							"react-hot-loader/babel",
 							"syntax-class-properties",
 							"@babel/proposal-class-properties"
 						]
@@ -36,7 +42,7 @@ module.exports = {
 				test: /\.svg$/,
 				loader: "svg-inline-loader"
 			}
-		]
+    ]
 	},
 	mode: "development",
 	plugins: [

@@ -22,7 +22,7 @@ import Checkbox from "./Library/components/Form/Inputs/Checkbox"
 import Radio from "./Library/components/Form/Inputs/Radio"
 
 import ColorPicker from "./Library/components/Form/Inputs/ColorPicker"
-import DateSelect from "./Library/components/Form/Inputs/DatePicker"
+// import DateSelect from "./Library/components/Form/Inputs/DatePicker"
 import Tel from "./Library/components/Form/Inputs/Tel"
 import Select from "./Library/components/Form/Inputs/Select"
 import Accordion from "./Library/components/Accordion"
@@ -100,7 +100,7 @@ export default ({ data }) => (
         <Radio name="contact" label="Radio Field" />
         <Radio name="contact" disabled label="Radio Field" />
         <ColorPicker />
-        <DateSelect />
+        {/* <DateSelect /> */}
         <Tel />
         <Select searchable multiselect title="Title" />
 
