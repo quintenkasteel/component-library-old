@@ -1,43 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
+import propTypes from 'prop-types';
 
 const StyledCol = styled.div`
   background: ${(props) =>
-    props.backgroundColor
-      ? props.backgroundColor
-      : props.backgroundGradient
-      ? props.backgroundGradient
-      : props.backgroundImage
-      ? props.backgroundImage
-      : ''};
+    (props.backgroundColor && `${props.backgroundColor}`) ||
+    (props.backgroundGradient && `${props.backgroundGradient}`) ||
+    (props.backgroundImage && `${props.backgroundImage}`) ||
+    ''};
   text-align: ${(props) =>
-    props.textAlign == 'center'
-      ? 'center'
-      : props.textAlign == 'left'
-      ? 'left'
-      : props.textAlign == 'right'
-      ? 'right'
-      : ''};
+    (props.textAlign === 'center' && 'center') ||
+    (props.textAlign === 'left' && 'left') ||
+    (props.textAlign === 'right' && 'right') ||
+    ''};
   flex-flow: column wrap;
 `;
 
 const StyledInnerCol = styled.div`
   align-items: ${(props) =>
-    props.verticalAlign == 'center'
-      ? 'center'
-      : props.verticalAlign == 'top'
-      ? 'flex-start'
-      : props.verticalAlign == 'bottom'
-      ? 'flex-end'
-      : ''};
+    (props.verticalAlign === 'top' && 'top') ||
+    (props.verticalAlign === 'center' && 'center') ||
+    (props.verticalAlign === 'bottom' && 'bottom') ||
+    ''};
+
   justify-content: ${(props) =>
-    props.horizontalAlign == 'center'
-      ? 'center'
-      : props.horizontalAlign == 'left'
-      ? 'flex-start'
-      : props.horizontalAlign == 'right'
-      ? 'flex-end'
-      : ''};
+    (props.horizontalAlign === 'left' && 'left') ||
+    (props.horizontalAlign === 'center' && 'center') ||
+    (props.horizontalAlign === 'right' && 'right') ||
+    ''};
 `;
 
 const Col = ({
@@ -51,8 +41,7 @@ const Col = ({
   verticalAlign,
   width,
 }) => {
-  const colClasses =
-    `col ` + `${float ? `float-${float} ` : ``}` + `${width ? `col-${width} ` : ''} `;
+  const colClasses = `col ${float ? `float-${float} ` : ``} ${width ? `col-${width} ` : ''}`;
 
   return (
     <StyledCol
@@ -69,6 +58,18 @@ const Col = ({
       </StyledInnerCol>
     </StyledCol>
   );
+};
+
+Col.propTypes = {
+  children: propTypes.node,
+  backgroundColor: propTypes.string,
+  backgroundImage: propTypes.string,
+  backgroundGradient: propTypes.string,
+  float: propTypes.string,
+  horizontalAlign: propTypes.string,
+  textAlign: propTypes.string,
+  verticalAlign: propTypes.string,
+  width: propTypes.number,
 };
 
 export default Col;
