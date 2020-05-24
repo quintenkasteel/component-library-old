@@ -79,6 +79,7 @@ class Sticky extends React.Component {
       flex: ${fillVertical && !fillHorizontal ? '1 0 auto' : ''};
       flex: ${!fillVertical && fillHorizontal ? '0 1 auto' : '0 0 auto'};
     `;
+
     return <StickyContainer className="sticky-scontainer">{children}</StickyContainer>;
   }
 }
