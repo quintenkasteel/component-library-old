@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react"
-import axios from "axios"
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-import styled from "styled-components"
+import styled from 'styled-components';
 
 class Video extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      vimeoPlaceholder: "",
-    }
+      vimeoPlaceholder: '',
+    };
 
     this.props = {
       alt,
@@ -20,82 +20,78 @@ class Video extends React.Component {
       to,
       aspectRatio,
       width,
-    }
+    };
   }
 
   getVideoInfo = () => {
     axios
       .get(`http://vimeo.com/api/v2/video/${videoID}.json`)
-      .then(response => {
+      .then((response) => {
         this.setState({
           vimeoPlaceholder: data[0].thumbnail_large,
-        })
+        });
       })
-      .catch(error => {
-        console.log(error)
-      })
-  }
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   componentDidMount() {
-    this.getVideoInfo()
+    this.getVideoInfo();
   }
 
-  youtube_parser = url => {
-    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/
-    var match = url.match(regExp)
-    return match && match[7].length == 11 ? match[7] : false
-  }
+  youtube_parser = (url) => {
+    var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+    var match = url.match(regExp);
+    return match && match[7].length == 11 ? match[7] : false;
+  };
 
-  dailymotion_parser = url => {
-    var regExp = /^(?:(?:http|https):\/\/)?(?:www.)?(dailymotion\.com|dai\.ly)\/((video\/([^_]+))|(hub\/([^_]+)|([^\/_]+)))$/
-    var match = url.match(regExp)
-    return match !== null && match[4] !== undefined
-      ? match[4]
-      : match !== null
-      ? match[2]
-      : null
-  }
+  dailymotion_parser = (url) => {
+    var regExp = /^(?:(?:http|https):\/\/)?(?:www.)?(dailymotion\.com|dai\.ly)\/((video\/([^_]+))|(hub\/([^_]+)|([^\/_]+)))$/;
+    var match = url.match(regExp);
+    return match !== null && match[4] !== undefined ? match[4] : match !== null ? match[2] : null;
+  };
 
-  vimeo_parser = url => {
-    var regExp = /https?:\/\/(?:www\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|)(\d+)(?:$|\/|\?)/
-    var match = url.match(regExp)
-    return match ? match[3] : null
-  }
+  vimeo_parser = (url) => {
+    var regExp = /https?:\/\/(?:www\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|)(\d+)(?:$|\/|\?)/;
+    var match = url.match(regExp);
+    return match ? match[3] : null;
+  };
 
-   videoID = video.includes("youtube")
-      ? youtube_parser(video)
-      : video.includes("daily")
-      ? dailymotion_parser(video)
-      : video.includes("vimeo")
-      ? vimeo_parser(video)
-      : null
+  videoID = video.includes('youtube')
+    ? youtube_parser(video)
+    : video.includes('daily')
+    ? dailymotion_parser(video)
+    : video.includes('vimeo')
+    ? vimeo_parser(video)
+    : null;
 
-   videoPlaceholder =
-      video.includes("youtube") && videoID
-        ? `https://img.youtube.com/vi/${videoID}/maxresdefault.jpg`
-        : video.includes("daily") && videoID
-        ? `https://www.dailymotion.com/thumbnail/video/${videoID}`
-        : video.includes("vimeo") && videoID
-        ? vimeoPlaceholder
-        : null
+  videoPlaceholder =
+    video.includes('youtube') && videoID
+      ? `https://img.youtube.com/vi/${videoID}/maxresdefault.jpg`
+      : video.includes('daily') && videoID
+      ? `https://www.dailymotion.com/thumbnail/video/${videoID}`
+      : video.includes('vimeo') && videoID
+      ? vimeoPlaceholder
+      : null;
 
-   videoUrl =
-      video.includes("youtube") && videoID
-        ? `https://www.youtube.com/embed/${videoID}`
-        : video.includes("daily") && videoID
-        ? `https://www.dailymotion.com/embed/video/${videoID}`
-        : video.includes("vimeo") && videoID
-        ? `https://player.vimeo.com/video/${videoID}`
-        : null
+  videoUrl =
+    video.includes('youtube') && videoID
+      ? `https://www.youtube.com/embed/${videoID}`
+      : video.includes('daily') && videoID
+      ? `https://www.dailymotion.com/embed/video/${videoID}`
+      : video.includes('vimeo') && videoID
+      ? `https://player.vimeo.com/video/${videoID}`
+      : null;
 
-    videoLink =
-      video.includes("youtube") && videoUrl
-        ? `https://www.youtube.com/embed/${videoID}?autoplay=1`
-        : video.includes("daily") && videoUrl
-        ? `https://www.dailymotion.com/embed/video/${videoID}?autoplay=1`
-        : video.includes("vimeo") && videoUrl
-        ? `https://player.vimeo.com/video/${videoID}?autoplay=1`
-        : null
+  videoLink =
+    video.includes('youtube') && videoUrl
+      ? `https://www.youtube.com/embed/${videoID}?autoplay=1`
+      : video.includes('daily') && videoUrl
+      ? `https://www.dailymotion.com/embed/video/${videoID}?autoplay=1`
+      : video.includes('vimeo') && videoUrl
+      ? `https://player.vimeo.com/video/${videoID}?autoplay=1`
+      : null;
 
   render() {
     // const {
@@ -109,40 +105,38 @@ class Video extends React.Component {
     //   width,
     // } = this.props
 
-    
-
     const StyledVideo = styled.div`
-      align-items: ${(this.props.verticalAlign = "center"
-        ? "center"
-        : (this.props.verticalAlign = "top"
-            ? "flex-start"
-            : (this.props.verticalAlign = "bottom" ? "flex-end" : "")))};
-      justify-content: ${(this.props.horizontalAlign = "center"
-        ? "center"
-        : (this.props.horizontalAlign = "left"
-            ? "flex-start"
-            : (this.props.horizontalAlign = "right" ? "flex-end" : "")))};
-    `
+      align-items: ${(this.props.verticalAlign = 'center'
+        ? 'center'
+        : (this.props.verticalAlign = 'top'
+            ? 'flex-start'
+            : (this.props.verticalAlign = 'bottom' ? 'flex-end' : '')))};
+      justify-content: ${(this.props.horizontalAlign = 'center'
+        ? 'center'
+        : (this.props.horizontalAlign = 'left'
+            ? 'flex-start'
+            : (this.props.horizontalAlign = 'right' ? 'flex-end' : '')))};
+    `;
 
     const StyledInnerVideo = styled.div`
-      align-items: ${(this.props.verticalAlign = "center"
-        ? "center"
-        : (this.props.verticalAlign = "top"
-            ? "flex-start"
-            : (this.props.verticalAlign = "bottom" ? "flex-end" : "")))};
-      justify-content: ${(this.props.horizontalAlign = "center"
-        ? "center"
-        : (this.props.horizontalAlign = "left"
-            ? "flex-start"
-            : (this.props.horizontalAlign = "right" ? "flex-end" : "")))};
-      width: ${this.props.width ? this.props.width : "100%"};
+      align-items: ${(this.props.verticalAlign = 'center'
+        ? 'center'
+        : (this.props.verticalAlign = 'top'
+            ? 'flex-start'
+            : (this.props.verticalAlign = 'bottom' ? 'flex-end' : '')))};
+      justify-content: ${(this.props.horizontalAlign = 'center'
+        ? 'center'
+        : (this.props.horizontalAlign = 'left'
+            ? 'flex-start'
+            : (this.props.horizontalAlign = 'right' ? 'flex-end' : '')))};
+      width: ${this.props.width ? this.props.width : '100%'};
       position: relative;
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
-    `
+    `;
 
-    const StyledIframe = styled(props => <iframe {...props} />)`
+    const StyledIframe = styled((props) => <iframe {...props} />)`
       top: 0;
       left: 0;
       position: absolute;
@@ -173,7 +167,7 @@ class Video extends React.Component {
         color: white;
         text-shadow: 0 0 0.5em black;
       }
-    `
+    `;
     return (
       <StyledVideo className="media-video">
         <StyledInnerVideo className="media-video-wrapper">
@@ -188,7 +182,7 @@ class Video extends React.Component {
             </style>
             <a href=${this.videoLink}>
               <img src=${this.videoPlaceholder} 
-                alt=${this.props.alt || "alt"}>
+                alt=${this.props.alt || 'alt'}>
               <span>▶</span>
             </a>
           `}
@@ -203,11 +197,11 @@ class Video extends React.Component {
           />
         </StyledInnerVideo>
       </StyledVideo>
-    )
+    );
   }
 }
 
-export default Video
+export default Video;
 
 // const Video = ({ alt, verticalAlign, horizontalAlign, video, target, to, aspectRatio, width}) => {
 //   const { vimeoPlaceholder } = useState("");

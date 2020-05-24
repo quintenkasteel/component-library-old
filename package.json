@@ -31,6 +31,24 @@
       "errorMessage": "Commit message must be in format: `feat(123): aaa`; use `git cz` command to create commit with proper message"
     }
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint"
+    ],
+    "src/**/*.jsx": [
+      "eslint"
+    ],
+    "src/**/*.scss": [
+      "stylelint --syntax scss"
+    ],
+    "*.js": "eslint --cache --fix",
+    "*.css": "stylelint --fix"
+  },
   "dependencies": {
     "@hot-loader/react-dom": "^16.13.0",
     "@iconify/iconify": "^1.0.5",
@@ -82,6 +100,7 @@
     "lint-staged": "^10.2.6",
     "node-sass": "^4.13.1",
     "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
     "sass": "^1.26.5",
     "sass-extract": "^2.1.0",
     "sass-extract-js": "^0.4.0",
@@ -95,23 +114,5 @@
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "src/**/*.js": [
-      "eslint"
-    ],
-    "src/**/*.jsx": [
-      "eslint"
-    ],
-    "src/**/*.scss": [
-      "stylelint --syntax scss"
-    ],
-    "*.js": "eslint --cache --fix",
-    "*.css": "stylelint --fix"
   }
 }

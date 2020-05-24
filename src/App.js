@@ -27,7 +27,7 @@ import Modal from './Library/components/Modal';
 import Sticky from './Library/components/Sticky';
 import PageProgress from './Library/components/PageProgress';
 import MasonryGrid from './Library/Layout/MasonryGrid';
-import Slider from './LIbrary/components/Slider';
+import Slider from './Library/components/Slider';
 import Cart from './Library/Layout/Store/Cart/Cart';
 import Products from './Library/Layout/Store/Products';
 import StoreProvider from './Library/Layout/Store/Context/StoreProvider';
