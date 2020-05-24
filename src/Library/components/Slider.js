@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 import leftArrow from '../../../images/arrow-left.svg';
 import rightArrow from '../../../images/arrow-right.svg';
@@ -101,8 +101,8 @@ class Slider extends React.Component {
     const { transition, activeIndex, translate, windowWidth } = this.state;
     const { showCount, slideCount, children } = this.props;
 
-    const getShowCount = showCount ? showCount : 3;
-    const getSlideCount = slideCount ? slideCount : 1;
+    const getShowCount = showCount || 3;
+    const getSlideCount = slideCount || 1;
     const isMobile = window.innerWidth < 768;
     const slidesToShow = windowWidth >= isMobile ? getShowCount : 1;
     const slideWidth = () => (isMobile ? 100 : 100 / slidesToShow);
@@ -159,10 +159,10 @@ class Slider extends React.Component {
   }
 }
 
-Slider.PropTypes = {
-  showCount: PropTypes.number,
-  slideCount: PropTypes.number,
-  children: PropTypes.node.isRequired,
+Slider.propTypes = {
+  showCount: propTypes.number,
+  slideCount: propTypes.number,
+  children: propTypes.node.isRequired,
 };
 
 export default Slider;
