@@ -55,7 +55,7 @@ class Sticky extends React.Component {
     const StickyContainer = styled.div`
       position: ${sticky && !fixed ? 'sticky' : ''};
       position: ${fixed && from ? fixedFrom : ''};
-      position: ${fixed && !from ? 'fixed' : 'sticky'};
+      position: ${fixed && !from ? 'fixed' : ''};
       display: flex;
       flex-flow: column wrap;
       padding: 0.625rem;
@@ -64,16 +64,16 @@ class Sticky extends React.Component {
       border-radius: ${borderRadius || ''};
       background: ${background || 'white'};
       top: ${top && offset ? offset : ''};
-      top: ${top && !offset ? top : '0'};
+      top: ${top && !offset ? '0' : ''};
       top: ${!top && !offset ? 'auto' : ''};
       left: ${left && offset ? offset : ''};
-      left: ${left && !offset ? left : '0'};
+      left: ${left && !offset ? '0' : ''};
       left: ${!left && !offset ? 'auto' : ''};
       right: ${right && offset ? offset : ''};
-      right: ${right && !offset ? right : '0'};
+      right: ${right && !offset ? '0' : ''};
       right: ${!right && !offset ? 'auto' : ''};
       bottom: ${bottom && offset ? offset : ''};
-      bottom: ${bottom && !offset ? bottom : '0'};
+      bottom: ${bottom && !offset ? '0' : ''};
       bottom: ${!bottom && !offset ? 'auto' : ''};
       flex: ${fillVertical && fillHorizontal ? '1 1 auto' : ''};
       flex: ${fillVertical && !fillHorizontal ? '1 0 auto' : ''};
@@ -88,10 +88,10 @@ Sticky.propTypes = {
   children: propTypes.node,
   offset: propTypes.number,
   from: propTypes.number,
-  top: propTypes.string,
-  left: propTypes.string,
-  bottom: propTypes.string,
-  right: propTypes.string,
+  top: propTypes.bool,
+  left: propTypes.bool,
+  bottom: propTypes.bool,
+  right: propTypes.bool,
   fillHorizontal: propTypes.bool,
   fillVertical: propTypes.bool,
   background: propTypes.string,

@@ -1,5 +1,5 @@
-import React from "react";
-import Cookies from "js-cookie";
+import React from 'react';
+import Cookies from 'js-cookie';
 /* First we will make a new context */
 const AppContext = React.createContext();
 
@@ -9,83 +9,78 @@ class StoreProvider extends React.Component {
     super(props);
     this.state = {
       items: [],
-      total: null
+      total: null,
     };
   }
+
   componentDidMount() {
-    const cart = Cookies.getJSON("cart");
-    //if items in cart, set items and total from cookie
+    const cart = Cookies.getJSON('cart');
+    // if items in cart, set items and total from cookie
     let total;
     if (cart) {
-      cart.forEach(item => {
+      cart.forEach((item) => {
         total = item.price * item.quantity;
-        this.setState({ items: cart, total: total });
+        this.setState({ items: cart, total });
       });
     }
   }
 
-  addItem = item => {
-    let { items } = this.state;
-    //check for item already in cart
-    //if not in cart, add item if item is found increase quanity ++
-    const newItem = items.find(i => i._id === item._id);
+  addItem = (item) => {
+    const { items } = this.state;
+    // check for item already in cart
+    // if not in cart, add item if item is found increase quanity ++
+    const newItem = items.find((i) => i._id === item._id);
 
     if (!newItem) {
-      //set quantity property to 1
+      // set quantity property to 1
       item.quantity = 1;
       this.setState(
         {
           items: this.state.items.concat(item),
-          total: this.state.total + item.price
+          total: this.state.total + item.price,
         },
-        () => Cookies.set("cart", this.state.items)
+        () => Cookies.set('cart', this.state.items)
       );
     } else {
       this.setState(
         {
-          items: this.state.items.map(
-            item =>
-              item._id === newItem._id
-                ? Object.assign({}, item, { quantity: item.quantity + 1 })
-                : item
+          items: this.state.items.map((item) =>
+            item._id === newItem._id ? { ...item, quantity: item.quantity + 1 } : item
           ),
-          total: this.state.total + item.price
+          total: this.state.total + item.price,
         },
-        () => Cookies.set("cart", this.state.items)
-       
+        () => Cookies.set('cart', this.state.items)
       );
-      console.log(this.state.items)
+      console.log(this.state.items);
     }
   };
-  removeItem = item => {
-    let { items } = this.state;
-    //check for item already in cart
-    //if not in cart, add item if item is found increase quanity ++
-    const newItem = items.find(i => i._id === item._id);
+
+  removeItem = (item) => {
+    const { items } = this.state;
+    // check for item already in cart
+    // if not in cart, add item if item is found increase quanity ++
+    const newItem = items.find((i) => i._id === item._id);
     if (newItem.quantity > 1) {
       this.setState(
         {
-          items: this.state.items.map(
-            item =>
-              item._id === newItem._id
-                ? Object.assign({}, item, { quantity: item.quantity - 1 })
-                : item
+          items: this.state.items.map((item) =>
+            item._id === newItem._id ? { ...item, quantity: item.quantity - 1 } : item
           ),
-          total: this.state.total - item.price
+          total: this.state.total - item.price,
         },
-        () => Cookies.set("cart", this.state.items)
+        () => Cookies.set('cart', this.state.items)
       );
     } else {
       const items = [...this.state.items];
-      const index = items.findIndex(i => i._id === newItem._id);
+      const index = items.findIndex((i) => i._id === newItem._id);
 
       items.splice(index, 1);
-      this.setState(
-        { items: items, total: this.state.total - item.price },
-        () => Cookies.set("cart", this.state.items)
+      this.setState({ items, total: this.state.total - item.price }, () =>
+        Cookies.set('cart', this.state.items)
       );
     }
   };
+
   render() {
     return (
       <AppContext.Provider
@@ -93,9 +88,8 @@ class StoreProvider extends React.Component {
           items: this.state.items,
           addItem: this.addItem,
           removeItem: this.removeItem,
-          total: this.state.total
-        }}
-      >
+          total: this.state.total,
+        }}>
         {this.props.children}
       </AppContext.Provider>
     );
@@ -111,7 +105,7 @@ export function withContext(Component) {
     // Notice that we pass through any additional props as well
     return (
       <AppContext.Consumer>
-        {context => <Component {...props} context={context} />}
+        {(context) => <Component {...props} context={context} />}
       </AppContext.Consumer>
     );
   };

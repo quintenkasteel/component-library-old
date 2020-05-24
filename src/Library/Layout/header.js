@@ -1,7 +1,5 @@
 // import React from "react"
 
-
-
 // const Header = ({ data }) => (
 //   <header>
 //     <div className="header">
@@ -11,16 +9,16 @@
 //         alt="A corgi smiling happily"
 //       />
 //     </div>
-    
+
 //       <nav>
 //       <ul>
 //         {data.strapiMenus.Menu.map(document => (
-//           <li> <Link key={document.page.id} to={document.page.url}>{document.page.title}</Link></li>     
+//           <li> <Link key={document.page.id} to={document.page.url}>{document.page.title}</Link></li>
 //         ))}
 //         </ul>
 //       </nav>
 //     </div>
-    
+
 //   </header>
 // )
 // export default data => (

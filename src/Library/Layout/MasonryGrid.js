@@ -1,7 +1,7 @@
-import React from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
-import breakpoint from "./Breakpoints"
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import breakpoint from './Breakpoints';
 
 const MasonryGrid = ({
   children,
@@ -21,32 +21,27 @@ const MasonryGrid = ({
   colDesktop,
   props,
 }) => {
-  const tabletColumns = colTablet
-    ? colTablet
-    : colDesktop
-    ? Math.round({ colDesktop } * 0.75)
-    : 2
-  const desktopColumns = colDesktop ? colDesktop : 4
+  const tabletColumns = colTablet || (colDesktop ? Math.round({ colDesktop } * 0.75) : 2);
+  const desktopColumns = colDesktop || 4;
 
   const MasonryGridContainer = styled.div`
     position: relative;
     width: 100%;
-    max-width: ${props => props.theme.baseWidth};
+    max-width: ${(props) => props.theme.baseWidth};
     margin: 0 auto;
-  `
+  `;
   const InnerMasonryGrid = styled.div`
     display: grid;
     -moz-grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     -webkit-grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    -webkit-row-gap: ${props => props.theme.defaultGridGutter};
-    -moz-row-gap: ${props => props.theme.defaultGridGutter};
-    grid-gap: ${props => props.theme.defaultGridGutter};
+    -webkit-row-gap: ${(props) => props.theme.defaultGridGutter};
+    -moz-row-gap: ${(props) => props.theme.defaultGridGutter};
+    grid-gap: ${(props) => props.theme.defaultGridGutter};
     grid-auto-rows: 1fr;
-    
 
     &:before {
-      content: "";
+      content: '';
       height: 0;
       width: 200%;
       padding-bottom: 56.25%;
@@ -63,9 +58,9 @@ const MasonryGrid = ({
     -moz-grid-template-columns: repeat(${tabletColumns}, 1fr);
       -webkit-grid-template-columns: repeat(${tabletColumns}, 1fr);
       grid-template-columns: repeat(${tabletColumns}, 1fr);
-      -webkit-column-gap: ${props => props.theme.defaultGridGutter};
-    -moz-column-gap: ${props => props.theme.defaultGridGutter};
-    column-gap: ${props => props.theme.defaultGridGutter};
+      -webkit-column-gap: ${(props) => props.theme.defaultGridGutter};
+    -moz-column-gap: ${(props) => props.theme.defaultGridGutter};
+    column-gap: ${(props) => props.theme.defaultGridGutter};
     grid-auto-flow: dense;
    `}
 
@@ -74,19 +69,15 @@ const MasonryGrid = ({
       -webkit-grid-template-columns: repeat(${desktopColumns}, 1fr);
       grid-template-columns: repeat(${desktopColumns}, 1fr);
    `}
-  `
+  `;
   const MasonryGridItem = styled.div`
     display: flex;
-    align-items: ${(verticalAlign = "center"
-      ? "center"
-      : (verticalAlign = "top"
-          ? "flex-start"
-          : (verticalAlign = "bottom" ? "flex-end" : "")))};
-    justify-content: ${(horizontalAlign = "center"
-      ? "center"
-      : (horizontalAlign = "left"
-          ? "flex-start"
-          : (horizontalAlign = "right" ? "flex-end" : "")))};
+    align-items: ${(verticalAlign = 'center'
+      ? 'center'
+      : (verticalAlign = 'top' ? 'flex-start' : (verticalAlign = 'bottom' ? 'flex-end' : '')))};
+    justify-content: ${(horizontalAlign = 'center'
+      ? 'center'
+      : (horizontalAlign = 'left' ? 'flex-start' : (horizontalAlign = 'right' ? 'flex-end' : '')))};
     background: red;
     padding: 1em;
     width: 100%;
@@ -134,25 +125,25 @@ const MasonryGrid = ({
         grid-column: span 2;
       `}
     }
-  `
+  `;
 
   return (
     <React.Fragment>
       {children ? (
         <MasonryGridContainer className="masonry-grid-container">
           <InnerMasonryGrid className="masonry-grid-wrapper">
-            {React.Children.map(children, child => (
+            {React.Children.map(children, (child) => (
               <MasonryGridItem>{child}</MasonryGridItem>
             ))}
           </InnerMasonryGrid>
         </MasonryGridContainer>
       ) : null}
     </React.Fragment>
-  )
-}
+  );
+};
 
 MasonryGrid.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default MasonryGrid
+export default MasonryGrid;

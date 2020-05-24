@@ -1,30 +1,30 @@
-import React from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
 class Checkbox extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       checked: false,
-    }
+    };
 
-    this.icon = this.icon.bind(this)
-    this.handleChange = this.handleChange.bind(this)
+    this.icon = this.icon.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange() {
-    this.setState({ checked: !this.state.checked })
+    this.setState({ checked: !this.state.checked });
   }
 
   icon() {
-    return this.state.checked ? <div className="checkmark"></div> : null
+    return this.state.checked ? <div className="checkmark"></div> : null;
   }
 
   render() {
-    const { label, size, disabled, toggle } = this.props
-    const { checked } = this.state
+    const { label, size, disabled, toggle } = this.props;
+    const { checked } = this.state;
 
     const CheckboxContainer = styled.label`
       display: flex;
@@ -41,20 +41,19 @@ class Checkbox extends React.Component {
       input {
         display: none;
       }
-      
-    `
+    `;
 
     const Checkbox = styled.div`
-    margin-right: 0.625rem;
+      margin-right: 0.625rem;
 
-      .checked &{
+      .checked & {
         &:before {
           background: blue;
         }
       }
 
       ${!toggle &&
-        `
+      `
         &:before {
             display: block;
             position: relative;
@@ -103,7 +102,7 @@ class Checkbox extends React.Component {
           `}
 
       ${toggle &&
-        `
+      `
         &:before {
             display: block;
             position: relative;
@@ -148,25 +147,23 @@ class Checkbox extends React.Component {
             }
           }
           `}
-    `
+    `;
 
     return (
       <CheckboxContainer
-        className={`checkbox-container ${disabled ? "disabled" : ""}
-        ${checked ? "checked" : ""}`}>
-        <Checkbox className={`checkbox`}>
-          {this.icon()}
-        </Checkbox>
+        className={`checkbox-container ${disabled ? 'disabled' : ''}
+        ${checked ? 'checked' : ''}`}>
+        <Checkbox className={`checkbox`}>{this.icon()}</Checkbox>
         <input
           type="checkbox"
           onChange={this.handleChange.bind(this)}
           onFocus={() => !disabled && this.setState({ active: true })}
           onBlur={() => !disabled && this.setState({ active: false })}
         />
-        {label ? label : ""}
+        {label || ''}
       </CheckboxContainer>
-    )
+    );
   }
 }
 
-export default Checkbox
+export default Checkbox;

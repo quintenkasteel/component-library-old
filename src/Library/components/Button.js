@@ -20,7 +20,7 @@ const Button = ({
 }) => {
   const Btn = styled.div`
     padding: 10px;
-    width: ${width ? width : 'auto'};
+    width: ${width || 'auto'};
     display: inline-flex;
     background: ${primary & !disabled
       ? 'blue'

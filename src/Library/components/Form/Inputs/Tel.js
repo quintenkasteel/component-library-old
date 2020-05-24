@@ -1,14 +1,14 @@
-import React from "react"
-import axios from "axios"
+import React from 'react';
+import axios from 'axios';
 
-import PhoneInput from "react-phone-input-2"
-import styled from "styled-components"
+import PhoneInput from 'react-phone-input-2';
+import styled from 'styled-components';
 
 const TelContainer = styled.div`
   position: relative;
   margin-bottom: 10px;
 
-  input[type="tel"] {
+  input[type='tel'] {
     position: relative;
     border: 1px solid #cacaca;
     border-radius: 5px;
@@ -27,34 +27,34 @@ const TelContainer = styled.div`
       }
     }
   }
-`
+`;
 
 class Tel extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      phone: "",
-      countryCode: "",
-    }
+      phone: '',
+      countryCode: '',
+    };
   }
 
   getGeoInfo = () => {
     axios
-      .get("https://ipapi.co/json/")
-      .then(response => {
-        let data = response.data
+      .get('https://ipapi.co/json/')
+      .then((response) => {
+        const { data } = response;
         this.setState({
           countryCode: data.country_code,
-        })
+        });
       })
-      .catch(error => {
-        console.log(error)
-      })
-  }
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   componentDidMount() {
-    this.getGeoInfo()
+    this.getGeoInfo();
   }
 
   render() {
@@ -85,54 +85,48 @@ class Tel extends React.Component {
       onlyCountries,
       preferredCountries,
       excludeCountries,
-    } = this.props
+    } = this.props;
 
     return (
       <TelContainer>
         <PhoneInput
-          //Basics
+          // Basics
           value={this.state.phone}
-          onChange={phone => this.setState({ phone })}
-          placeholder={placeholder ? placeholder : "PhoneNumber"}
-          searchPlaceholder={searchPlaceholder ? searchPlaceholder : "Search"}
-          inputProps={inputProps ? inputProps : ""}
-          //Styles
-          containerStyle={containerStyle ? containerStyle : {}}
-          inputStyle={inputStyle ? inputStyle : {}}
-          buttonStyle={buttonStyle ? buttonStyle : {}}
-          dropdownStyle={dropdownStyle ? dropdownStyle : {}}
-          searchStyle={searchStyle ? searchStyle : {}}
+          onChange={(phone) => this.setState({ phone })}
+          placeholder={placeholder || 'PhoneNumber'}
+          searchPlaceholder={searchPlaceholder || 'Search'}
+          inputProps={inputProps || ''}
+          // Styles
+          containerStyle={containerStyle || {}}
+          inputStyle={inputStyle || {}}
+          buttonStyle={buttonStyle || {}}
+          dropdownStyle={dropdownStyle || {}}
+          searchStyle={searchStyle || {}}
           // //Classes
-          containerClass={
-            containerClass
-              ? `react-tel-input ${containerClass}`
-              : "react-tel-input"
-          }
-          inputClass={inputClass ? inputClass : ""}
-          dropdownClass={dropdownClass ? dropdownClass : ""}
-          searchClass={searchClass ? searchClass : ""}
+          containerClass={containerClass ? `react-tel-input ${containerClass}` : 'react-tel-input'}
+          inputClass={inputClass || ''}
+          dropdownClass={dropdownClass || ''}
+          searchClass={searchClass || ''}
           // //Booleans
-          autoFormat={autoFormat ? autoFormat : true}
-          disabled={disabled ? disabled : false}
-          disableDropdown={disableDropdown ? disableDropdown : false}
-          disableCountryCode={disableCountryCode ? disableCountryCode : false}
-          enableAreaCodes={enableAreaCodes ? enableAreaCodes : false}
-          enableTerritories={enableTerritories ? enableTerritories : false}
-          enableLongNumbers={enableLongNumbers ? enableLongNumbers : false}
-          countryCodeEditable={
-            countryCodeEditable ? countryCodeEditable : false
-          }
-          enableSearch={enableSearch ? enableSearch : true}
-          disableSearchIcon={disableSearchIcon ? disableSearchIcon : false}
+          autoFormat={autoFormat || true}
+          disabled={disabled || false}
+          disableDropdown={disableDropdown || false}
+          disableCountryCode={disableCountryCode || false}
+          enableAreaCodes={enableAreaCodes || false}
+          enableTerritories={enableTerritories || false}
+          enableLongNumbers={enableLongNumbers || false}
+          countryCodeEditable={countryCodeEditable || false}
+          enableSearch={enableSearch || true}
+          disableSearchIcon={disableSearchIcon || false}
           // //Strings
-          country={country ? country : this.state.countryCode.toLowerCase()}
-          onlyCountries={onlyCountries ? onlyCountries : ""}
-          preferredCountries={preferredCountries ? preferredCountries : ""}
-          excludeCountries={excludeCountries ? excludeCountries : ""}
+          country={country || this.state.countryCode.toLowerCase()}
+          onlyCountries={onlyCountries || ''}
+          preferredCountries={preferredCountries || ''}
+          excludeCountries={excludeCountries || ''}
         />
       </TelContainer>
-    )
+    );
   }
 }
 
-export default Tel
+export default Tel;

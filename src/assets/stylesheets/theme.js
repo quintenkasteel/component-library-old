@@ -1,5 +1,5 @@
-let theme = {
+const theme = {
   primary: '#007bff',
-}
+};
 
-export default theme
+export default theme;

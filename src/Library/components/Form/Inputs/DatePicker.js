@@ -4,10 +4,9 @@
 // Start date
 //
 
-import React, { Component } from "react"
-import DatePicker from "react-datepicker"
-import styled from "styled-components"
-
+import React, { Component } from 'react';
+import DatePicker from 'react-datepicker';
+import styled from 'styled-components';
 
 const DatePickerContainer = styled.div`
   position: relative;
@@ -17,9 +16,9 @@ const DatePickerContainer = styled.div`
     width: 100%;
   }
 
-  input[type="text"] {
+  input[type='text'] {
     position: relative;
-    border: 1px solid #CACACA;
+    border: 1px solid #cacaca;
     border-radius: 5px;
     line-height: 25px;
     padding: 0.5rem;
@@ -29,21 +28,21 @@ const DatePickerContainer = styled.div`
   .react-datepicker-popper {
     transform: none !important;
   }
-`
+`;
 
 class DateSelect extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       startDate: new Date(),
-    }
-    this.handleChange = this.handleChange.bind(this)
+    };
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(date) {
     this.setState({
       startDate: date,
-    })
+    });
   }
 
   render() {
@@ -56,8 +55,8 @@ class DateSelect extends Component {
           dateFormat="MM/dd/yyyy"
         />
       </DatePickerContainer>
-    )
+    );
   }
 }
 
-export default DateSelect
+export default DateSelect;

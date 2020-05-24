@@ -1,26 +1,24 @@
-import React from "react";
-import CardSection from "./CardSection";
-import { ElementsConsumer, useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
-
+import React from 'react';
+import { ElementsConsumer, useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
+import CardSection from './CardSection';
 
 // import Strapi from "strapi-sdk-javascript/build/main";
-import Input from "../../../../components/Form/Inputs/Input"
+import Input from '../../../../components/Form/Inputs/Input';
 
-const apiUrl = process.env.API_URL || "http://localhost:1337";
+const apiUrl = process.env.API_URL || 'http://localhost:1337';
 // const strapi = new Strapi(apiUrl);
-
 
 class CheckoutForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       data: {
-        address: "",
-        city: "",
-        state: "",
-        stripe_id: ""
+        address: '',
+        city: '',
+        state: '',
+        stripe_id: '',
       },
-      error: ""
+      error: '',
     };
     this.submitOrder = this.submitOrder.bind(this);
   }
@@ -30,48 +28,45 @@ class CheckoutForm extends React.Component {
     data[propertyName] = e.target.value;
     this.setState({ data });
   }
-  
 
   submitOrder() {
     const { context } = this.props;
     const { data } = this.state;
-   
 
     console.log(context);
-    console.log(this.props.stripe.createToken())
-    this.props.stripe.createToken()
-    .then(res => {
-      // strapi
-      //   .createEntry("orders", {
-      //     amount: context.total,
-      //     products: context.items,
-      //     address: data.address,
-      //     city: data.city,
-      //     state: data.state,
-      //     token: res.token.id
-      //   })
-    })
-    .catch(err => this.setState({ error: err}))
+    console.log(this.props.stripe.createToken());
+    this.props.stripe
+      .createToken()
+      .then((res) => {
+        // strapi
+        //   .createEntry("orders", {
+        //     amount: context.total,
+        //     products: context.items,
+        //     address: data.address,
+        //     city: data.city,
+        //     state: data.state,
+        //     token: res.token.id
+        //   })
+      })
+      .catch((err) => this.setState({ error: err }));
   }
 
   render() {
-    
-
     return (
       <div className="paper">
         <h5>Your information:</h5>
         <hr />
-        <div style={{ display: "flex" }}>
-          <div style={{ flex: "0.90", marginRight: 10 }}>
-            <Input label="Address" onChange={this.onChange.bind(this, "address")} />
+        <div style={{ display: 'flex' }}>
+          <div style={{ flex: '0.90', marginRight: 10 }}>
+            <Input label="Address" onChange={this.onChange.bind(this, 'address')} />
           </div>
         </div>
-        <div style={{ display: "flex" }}>
-          <div style={{ flex: "0.65", marginRight: "6%" }}>
-            <Input label="City" onChange={this.onChange.bind(this, "city")} />
+        <div style={{ display: 'flex' }}>
+          <div style={{ flex: '0.65', marginRight: '6%' }}>
+            <Input label="City" onChange={this.onChange.bind(this, 'city')} />
           </div>
-          <div style={{ flex: "0.25", marginRight: 0 }}>
-            <Input label="City" onChange={this.onChange.bind(this, "state")} />
+          <div style={{ flex: '0.25', marginRight: 0 }}>
+            <Input label="City" onChange={this.onChange.bind(this, 'state')} />
           </div>
         </div>
 
@@ -86,13 +81,9 @@ class CheckoutForm extends React.Component {
 }
 
 const InjectedCheckoutForm = () => {
-  
   return (
-
     <ElementsConsumer>
-      {({elements, stripe}) => (
-        <CheckoutForm elements={elements} stripe={stripe} />
-      )}
+      {({ elements, stripe }) => <CheckoutForm elements={elements} stripe={stripe} />}
     </ElementsConsumer>
   );
 };
