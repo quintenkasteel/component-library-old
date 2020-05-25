@@ -14,8 +14,10 @@
   },
   "scripts": {
     "start": "webpack-dev-server --mode development --hot --open",
-    "lint": "eslint ./src/ & stylelint ./src/**/*.scss",
+    "lint": "eslint src",
     "lint:diff": "lint-staged",
+    "lint:all": "eslint src && stylelint ./src/**/*.scss && stylelint src/**/*.js",
+    "lint:css": "stylelint src/**/*.js",
     "commit": "git cz",
     "commitmsg": "commit-message-validator",
     "precommit": "yarn lint:diff"
@@ -108,6 +110,7 @@
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.0",
     "stylelint": "^13.5.0",
+    "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
     "svg-inline-loader": "^0.8.2",
