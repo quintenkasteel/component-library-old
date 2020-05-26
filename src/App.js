@@ -26,7 +26,7 @@ import Progress from './Library/components/Progress';
 import Modal from './Library/components/Modal';
 import Sticky from './Library/components/Sticky';
 import PageProgress from './Library/components/PageProgress';
-import MasonryGrid from './Library/Layout/MasonryGrid';
+import MasonryGrid from './Library/Layout/masonry-grid/MasonryGrid';
 import Slider from './Library/components/Slider';
 import Cart from './Library/Layout/Store/Cart/Cart';
 import Products from './Library/Layout/Store/Products';
