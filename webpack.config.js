@@ -7,10 +7,13 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'index_bundle.js',
   },
-  resolve: {
-    alias: {
-      'react-dom': path.resolve(path.join(__dirname, './node_modules/@hot-loader/react-dom')),
-    },
+  // resolve: {
+  //   alias: {
+  //     'react-dom': path.resolve(path.join(__dirname, './node_modules/@hot-loader/react-dom')),
+  //   },
+  // },
+  devServer: {
+    hot: true,
   },
   module: {
     rules: [

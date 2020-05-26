@@ -1,4 +1,4 @@
-import { hot } from 'react-hot-loader/root';
+// import { hot } from 'react-hot-loader/root';
 import React from 'react';
 import './Library/styles.scss';
 import Row from './Library/Layout/Row';
@@ -8,7 +8,7 @@ import Grid from './Library/Layout/Grid';
 import Container from './Library/Layout/Container';
 // import Link from "./Library/components/Link";
 // import Divider from "./Library/components/Divider";
-import Button from './Library/components/Button';
+import Button from './Library/components/button/Button';
 // import Image from './Library/components/Image';
 import Heading from './Library/components/Heading';
 import Text from './Library/components/Text';
@@ -285,4 +285,4 @@ const App = () => (
   </Layout>
 );
 
-export default hot(App);
+export default App;
