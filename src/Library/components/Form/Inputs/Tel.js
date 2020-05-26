@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-
+import propTypes from 'prop-types';
 import PhoneInput from 'react-phone-input-2';
 import styled from 'styled-components';
 
@@ -128,5 +128,34 @@ class Tel extends React.Component {
     );
   }
 }
+
+Tel.propTypes = {
+  placeholder: propTypes.string,
+  searchPlaceholder: propTypes.string,
+  inputProps: propTypes.string,
+  containerStyle: propTypes.string,
+  inputStyle: propTypes.object,
+  buttonStyle: propTypes.object,
+  dropdownStyle: propTypes.object,
+  searchStyle: propTypes.object,
+  containerClass: propTypes.string,
+  inputClass: propTypes.string,
+  dropdownClass: propTypes.string,
+  searchClass: propTypes.string,
+  autoFormat: propTypes.bool,
+  disabled: propTypes.bool,
+  disableDropdown: propTypes.bool,
+  disableCountryCode: propTypes.bool,
+  enableAreaCodes: propTypes.bool,
+  enableTerritories: propTypes.bool,
+  enableLongNumbers: propTypes.bool,
+  countryCodeEditable: propTypes.bool,
+  enableSearch: propTypes.bool,
+  disableSearchIcon: propTypes.bool,
+  country: propTypes.string,
+  onlyCountries: propTypes.string,
+  preferredCountries: propTypes.string,
+  excludeCountries: propTypes.string,
+};
 
 export default Tel;
