@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Background = styled.div`
@@ -9,8 +10,12 @@ const Background = styled.div`
   text-align: center;
 `;
 
-export default ({ title }) => (
+const pageTitle = ({ title }) => (
   <Background>
     <h1>{title}</h1>
   </Background>
 );
+
+pageTitle.propTypes = { title: propTypes.string };
+
+export default pageTitle;
