@@ -18,23 +18,23 @@ const MasonryGrid = ({
   colMd,
   colLg,
 }) => {
-  const getColumnsLarge = colLg || 4;
-  const getColumnsMedium = colMd || (colLg ? Math.round({ colLg } * 0.75) : 2);
+  const getColumnsLg = colLg || 4;
+  const getColumnsMd = colMd || (getColumnsLg ? Math.round({ getColumnsLg } * 0.75) : 2);
 
   return (
     <React.Fragment>
       {children ? (
         <MasonryGridContainer className="masonry-grid-container">
           <InnerMasonryGrid
-            tabletColumns={getColumnsMedium}
-            colLg={getColumnsLarge}
+            tabletColumns={getColumnsMd}
+            colLg={getColumnsLg}
             className="masonry-grid-wrapper">
             {React.Children.map(children, (child) => (
               <MasonryGridItem
                 horizontalAlign={horizontalAlign}
                 verticalAlign={verticalAlign}
-                colTablet={getColumnsMedium}
-                colLg={getColumnsLarge}
+                colTablet={getColumnsMd}
+                colLg={getColumnsLg}
                 textAlign={textAlign}>
                 {child}
               </MasonryGridItem>

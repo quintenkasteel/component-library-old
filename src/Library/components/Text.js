@@ -6,6 +6,7 @@ const Text = ({ children }) => {
 };
 
 Text.propTypes = {
-  children: propTypes.node,
+  children: propTypes.node.isRequired,
 };
+
 export default Text;

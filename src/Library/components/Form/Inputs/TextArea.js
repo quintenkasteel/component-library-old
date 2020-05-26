@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 
 class TextArea extends React.Component {
   constructor(props) {
@@ -17,17 +18,10 @@ class TextArea extends React.Component {
     this.setState({ value, error: '' });
   }
 
-  handleKeyPress(event) {
-    if (event.which === 13) {
-      this.setState({ value: this.props.predicted });
-    }
-  }
-
   render() {
     const { active, value, error } = this.state;
-    const { disabled, locked, label, type, placeholder } = this.props;
-    const fieldClassName =
-      `field` + `${active ? ' active' : ''}` + `${disabled ? ' disabled' : ''}`;
+    const { disabled, locked, label, placeholder } = this.props;
+    const fieldClassName = `field ${active ? ' active' : ''} ${disabled ? ' disabled' : ''}`;
 
     return (
       <React.Fragment>
@@ -38,11 +32,10 @@ class TextArea extends React.Component {
         ) : null}
 
         <textarea
-          value={this.props.value && !value ? this.props.value : value}
+          value={value}
           className={fieldClassName}
           placeholder={placeholder || label || 'placeholder'}
           onChange={this.changeValue.bind(this)}
-          onKeyPress={this.handleKeyPress.bind(this)}
           onFocus={() => !locked && this.setState({ active: true })}
           onBlur={() => !locked && this.setState({ active: false })}
         />
@@ -50,5 +43,15 @@ class TextArea extends React.Component {
     );
   }
 }
+
+TextArea.propTypes = {
+  disabled: propTypes.bool,
+  locked: propTypes.bool,
+  label: propTypes.string,
+  placeholder: propTypes.string,
+  value: propTypes.string,
+  active: propTypes.bool,
+  error: propTypes.string,
+};
 
 export default TextArea;
