@@ -1,6 +1,6 @@
-import React, { Component, useState } from "react";
-import PropTypes from "prop-types";
-import styled from "styled-components";
+import React, { useState } from 'react';
+import propTypes from 'prop-types';
+import styled from 'styled-components';
 
 const AccordionContainer = styled.div`
   width: 100%;
@@ -16,21 +16,22 @@ const AccordionContainer = styled.div`
   width: 100%;
   outline: none;
   margin-bottom: 0.625rem;
+  cursor: ${(props) => (props.disabled ? 'disabled' : 'pointer')};
 `;
 const AccordionBody = styled.div`
-  display: ${(props) => (props.show ? "block" : "none")};
+  display: ${props => (props.show ? 'block' : 'none')};
   padding: 0.625rem 0;
 `;
 
 const AccordionTitle = styled.h3``;
 
-const Accordion = ({label, labeltype, icon, disabled, children}) => {
+const Accordion = ({ label, labeltype, icon, disabled, children }) => {
   const [open, setOpen] = useState(false);
-  const isOpen = open ? "open" : "";
+  const isOpen = open ? 'open' : '';
 
   return (
-    <React.Fragment>
-      <AccordionContainer className={`accordion-container ${isOpen}`}>
+    <>
+      <AccordionContainer disabled={disabled} className={`accordion-container ${isOpen}`}>
         <AccordionTitle
           className="accordion-title"
           onClick={() => setOpen(!open)}
@@ -41,8 +42,14 @@ const Accordion = ({label, labeltype, icon, disabled, children}) => {
           {children}
         </AccordionBody>
       </AccordionContainer>
-    </React.Fragment>
+    </>
   );
+};
+
+Accordion.propTypes = {
+  children: propTypes.node,
+  label: propTypes.string,
+  disabled: propTypes.bool,
 };
 
 export default Accordion;

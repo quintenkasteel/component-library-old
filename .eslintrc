@@ -1,3 +1,26 @@
-{ 
-  "extends": "airbnb-base" 
+{
+  "parser": "babel-eslint",
+  "plugins": ["prettier", "react", "jest"],
+  "env": {
+    "browser": true,
+    "node": true,
+    "jasmine": true,
+    "jest/globals": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 2017,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.js"
+      }
+    }
+  },
+  "rules": {},
+  "extends": ["airbnb", "plugin:prettier/recommended"]
 }

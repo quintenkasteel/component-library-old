@@ -10,7 +10,7 @@
     ]
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development --hot --open"
+    "start": "webpack-dev-server --mode development --config webpack.config.js --hot"
   },
   "keywords": [],
   "author": "",
@@ -36,6 +36,7 @@
     "react-hot-loader": "^4.12.21",
     "react-icons": "^3.8.0",
     "react-phone-input-2": "^2.12.1",
+    "react-router-dom": "^5.2.0",
     "recompose": "^0.30.0",
     "sharp": "^0.25.2",
     "styled-components": "^5.0.0"
@@ -46,13 +47,15 @@
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
     "@svgr/cli": "^5.2.0",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "css-loader": "^3.5.3",
     "eslint": "^7.1.0",
     "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-better-styled-components": "^1.1.2",
     "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react": "^7.20.6",
     "file-loader": "^6.0.0",
     "html-webpack-plugin": "^4.2.0",
     "node-sass": "^4.13.1",

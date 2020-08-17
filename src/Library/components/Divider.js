@@ -1,4 +1,5 @@
 import React from "react"
+import propTypes from 'prop-types';
 
 const Divider = ({ children, direction, weight}) => {
     return (
@@ -9,5 +10,11 @@ const Divider = ({ children, direction, weight}) => {
     </div>
     )
   }
+
+  Divider.propTypes = {
+    children: propTypes.node,
+    direction: propTypes.string,
+    weight: propTypes.number,
+  };
 
 export default Divider

@@ -12,7 +12,7 @@ import Container from "./Library/Layout/Container";
 
 import Link from "./Library/components/Link";
 import Divider from "./Library/components/Divider";
-import Button from "./Library/components/Button";
+import Button from "./Library/components/Button/Button.js";
 import Image from "./Library/components/Image";
 import Heading from "./Library/components/Heading";
 import Text from "./Library/components/Text";
