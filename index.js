@@ -1,5 +1,7 @@
 import ReactDOM from '@hot-loader/react-dom';
 import React from 'react';
+require("babel-core/register");
+require("babel-polyfill");
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Dashboard from './src/App.js';
 import AccordionPage from './src/docs/Accordion.js';

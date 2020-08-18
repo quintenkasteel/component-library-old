@@ -69,7 +69,12 @@ const App = () => (
 						</Text>
 					</Col>
 				</Row>
-
+        <Row>
+					<Col width={12}>
+          <Video id={371234010} onEnded={()=> console.log("ended")} video="https://vimeo.com/88991219" />
+					</Col>
+				</Row>
+        
 				<Row>
 					<Col width={12}>
 						<Heading underlined heading="h1">
@@ -307,7 +312,7 @@ const App = () => (
 				<div>Masonry item 10</div>
 				<div>Masonry item 11</div>
 			</MasonryGrid>
-      <Video video="https://www.youtube.com/watch?v=F9UkevKDb5s" />
+      
 		</Container>
 	</Layout>
 );
