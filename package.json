@@ -10,7 +10,8 @@
     ]
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development --config webpack.config.js --hot"
+    "start": "webpack-dev-server",
+    "dev": "webpack-dev-server --content-base src --hot --inline"
   },
   "keywords": [],
   "author": "",

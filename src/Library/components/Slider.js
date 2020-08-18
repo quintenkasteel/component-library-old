@@ -69,7 +69,7 @@ const ArrowRight = styled(ArrowLeft)`
 
 const Slider = ({ showCount, slideCount, children }) => {
   const [state, setState] = useState({
-    activeIndex: 3,
+    activeIndex: 0,
     translate: 0,
     transition: 0.45,
     windowWidth: 0,

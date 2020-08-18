@@ -48,6 +48,7 @@ const MenuContainer = styled.div`
   background: white;
   display: flex;
   flex-flow: column nowrap;
+  z-index: 100;
 `
 const menu = () => {
   return (

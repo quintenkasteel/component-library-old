@@ -16,7 +16,7 @@ import Button from "./Library/components/Button/Button.js";
 import Image from "./Library/components/Image";
 import Heading from "./Library/components/Heading";
 import Text from "./Library/components/Text";
-// import Video from "./Library/components/Video"
+import Video from "./Library/components/Video"
 
 import Input from "./Library/components/Form/Inputs/Input";
 import Checkbox from "./Library/components/Form/Inputs/Checkbox";
@@ -48,6 +48,7 @@ const App = () => (
 		<Container>
 			<Grid>
 				<Row>
+        
 					<Col width={6}>
 						<Heading heading="h1">Heading 1</Heading>
 						<Heading heading="h2">Heading 2</Heading>
@@ -306,6 +307,7 @@ const App = () => (
 				<div>Masonry item 10</div>
 				<div>Masonry item 11</div>
 			</MasonryGrid>
+      <Video video="https://www.youtube.com/watch?v=F9UkevKDb5s" />
 		</Container>
 	</Layout>
 );

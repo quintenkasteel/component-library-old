@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
@@ -36,42 +36,38 @@ const Tab = styled.div`
 	}
 `;
 
-class Tabs extends React.Component {
-	constructor(props) {
-		super(props);
+const Tabs = ({selected, children}) => {
 
-		this.state = {
-			selected: this.props.selected || 0
-		};
-		this.handleChange = this.handleChange.bind(this);
+		const [state, setState] = useState ({
+			selected: selected || 0
+		});
+	
+
+	const handleChange = (index) => {
+		setState({ selected: index });
 	}
 
-	handleChange(index) {
-		this.setState({ selected: index });
-	}
-
-	render() {
-		return this.props.children ? (
+		return children ? (
 			<TabsContainer className="tabs">
 				<TabsHeader className="tabs-header">
-					{this.props.children.map((content, index) => {
-						let selected = index == this.state.selected ? "selected" : "";
+					{children.map((content, index) => {
+						let selected = index == state.selected ? "selected" : "";
 						return (
 							<Tab
 								className={`tab ${selected}`}
 								key={index}
-								onClick={this.handleChange.bind(this, index)}>
+								onClick={() => handleChange(index)}>
 								{content.props.title}
 							</Tab>
 						);
 					})}
 				</TabsHeader>
 				<div className="tab-content">
-					{this.props.children[this.state.selected]}
+					{children[state.selected]}
 				</div>
 			</TabsContainer>
 		) : null;
 	}
-}
+
 
 export default Tabs;
