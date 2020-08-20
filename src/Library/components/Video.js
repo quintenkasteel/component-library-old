@@ -98,16 +98,16 @@ const StyledInnerVideo = styled.div`
 //     if (ref.current) {
 //       // Make sure to cleanup any events/references added to the last instance
 //     }
-    
+
 //     if (node) {
 //       // Check if a node is actually passed. Otherwise node would be null.
 //       // You can now do what you need to, addEventListeners, measure, etc.
 //     }
-    
+
 //     // Save a reference to the node
 //     ref.current = node
 //   }, [])
-  
+
 //   return [setRef]
 // }
 
@@ -127,15 +127,18 @@ const Video = ({
   controls = false,
   autoplay = false,
   muted = false,
-  getTime = false,
+  getTime = true,
   setTime = null,
 }) => {
-  const [state, setState] = useState({ placeholder: '', provider: '' });
-
+  const [state, setState] = useState({
+    placeholder: '',
+    play: false,
+    provider: '',
+    component: null,
+    elapsed: null,
+  });
   const [ready, setReady] = useState(false);
   const [noVideo, setNoVideo] = useState(false);
-  const [rerender, setRerender] = useState(); // or any state
-  const [afterRender, setAfterRender] = useState(); // internal state
 
   // const videoRef = useCallback(node => {
   //   if (node !== null) {
@@ -147,7 +150,7 @@ const Video = ({
     axios
       .get(`https://noembed.com/embed?url=${video}`)
       .then(res => {
-        return setState({
+        setState({
           ...state,
           placeholder: res.data.thumbnail_url,
           provider: res.data.provider_name.toLowerCase(),
@@ -158,34 +161,26 @@ const Video = ({
       });
   }, []);
 
-
   const ref = useCallback(node => {
-    if (node !== null) {
-      console.log("true")
-      new Vimeo(node)
-      console.log(new Vimeo(node))
+    if (node !== null && state.component === null) {
+      const player = new Vimeo(node);
+      return  (
+        setState({ ...state, component: player })
+      )
     }
-  }, []);
-  
-  
+  });
 
-  // useEffect(() => {
-  //   if (player.current !== undefined) {
-  //     if (play) {
-  //       player.current.play();
-  //     } else {
-  //       player.current.pause();
-  //     }
-  //   }
-  // }, [play]);
-
-  // useEffect(() => {
-  //   if (getTime) {
-  //     player.current.getCurrentTime().then(secs => {
-  //       setTime(secs);
-  //     });
-  //   }
-  // }, [getTime, setTime]);
+  useEffect(() => {
+    if (getTime && state.component !== null) {
+      const interval = setInterval(() => {
+        state.component.getCurrentTime().then(secs => {
+          console.log(secs);
+          setState({ ...state, elapsed: secs })
+        });
+      }, 1000);
+      return () => clearInterval(interval);
+    }
+  });
 
   const youtube_parser = url => {
     const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
@@ -227,7 +222,7 @@ const Video = ({
     null;
 
   const lazyLoad =
-    state.placeholder && lazy
+    state.placeholder && lazy 
       ? `
         <style>
           * { padding:0; margin:0; overflow:hidden }
@@ -244,8 +239,7 @@ const Video = ({
       `
       : null;
 
-  if (!state.provider || !video) return null;
-
+  if (!video) return null;
   return (
     <StyledVideo
       verticalAlign={verticalAlign}
@@ -261,6 +255,7 @@ const Video = ({
         <iframe
           id="id"
           src={videoLink}
+          srcDoc={lazyLoad}
           ref={ref}
           loading="lazy"
           frameBorder="0"
@@ -277,3 +272,15 @@ const Video = ({
 };
 
 export default Video;
+
+
+// var onPlay = function(data) {
+//   console.log("play")
+// };
+
+// var onPause = function(data) {
+//   console.log("pause")
+// };
+
+// player.addEvent('play', onPlay);
+// player.addEvent('pause', onPause);

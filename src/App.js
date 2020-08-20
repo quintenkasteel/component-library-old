@@ -71,7 +71,7 @@ const App = () => (
 				</Row>
         <Row>
 					<Col width={12}>
-          <Video id={371234010} onEnded={()=> console.log("ended")} video="https://vimeo.com/88991219" />
+          <Video lazy onEnded={()=> console.log("ended")} video="https://vimeo.com/88991219" />
 					</Col>
 				</Row>
         
