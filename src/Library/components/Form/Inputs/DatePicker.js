@@ -1,13 +1,22 @@
-import React, {
-  useState,
-  useEffect,
-  useRef,
-  createRef,
-  useReducer,
-} from 'react';
+import React, { useState, useEffect, useRef, createRef } from 'react';
 import './css.css';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+
+import {
+  DayContainer,
+  DayHeader,
+  DayHeaderContainer,
+  CalendarBody,
+  CalendarContainer,
+  DatePickerContainer,
+  DatePickerInput,
+  DateSelectorContainer,
+  DateSelectorHeader,
+  DateArrow,
+  CurrentDateContainer,
+  CurrentYear,
+  CurrentMonth,
+} from '../../../styles/DatePicker.js';
 
 const getDateStringFromTimestamp = timestamp => {
   let dateObject = new Date(timestamp);
@@ -52,19 +61,17 @@ const getNumberOfDays = (year, month) => {
 };
 
 const getDayDetails = args => {
-  let date = args.index - args.firstDay;
-  let day = args.index % 7;
-  let prevMonth = args.month - 1;
-  let prevYear = args.year;
-  if (prevMonth < 0) {
-    prevMonth = 11;
-    prevYear--;
-  }
-  let prevMonthNumberOfDays = getNumberOfDays(prevYear, prevMonth);
-  let _date =
+  const date = args.index - args.firstDay;
+  const day = args.index % 7;
+  const prevMonth = args.month < 0 ? 11 : args.month - 1;
+  const prevYear = args.month < 0 ? args.year - 1 : args.year;
+
+  const prevMonthNumberOfDays = getNumberOfDays(prevYear, prevMonth);
+  const _date =
     (date < 0 ? prevMonthNumberOfDays + date : date % args.numberOfDays) + 1;
-  let month = date < 0 ? -1 : date >= args.numberOfDays ? 1 : 0;
-  let timestamp = new Date(args.year, args.month, _date).getTime();
+  const month = date < 0 ? -1 : date >= args.numberOfDays ? 1 : 0;
+  const timestamp = new Date(args.year, args.month, _date).getTime();
+
   return {
     date: _date,
     day,
@@ -99,7 +106,6 @@ const getMonthDetails = (year, month) => {
   return monthArray;
 };
 
-/** We'll use useReducer to manage our state **/
 const date = new Date();
 const oneDay = 60 * 60 * 24 * 1000;
 const todayTimestamp =
@@ -107,24 +113,23 @@ const todayTimestamp =
   (date.getTime() % oneDay) +
   date.getTimezoneOffset() * 1000 * 60;
 
-const initialState = {
-  todayTimestamp: todayTimestamp, // or todayTimestamp, for short
-  year: date.getFullYear(),
-  month: date.getMonth(),
-  selectedDay: todayTimestamp,
-  monthDetails: getMonthDetails(date.getFullYear(), date.getMonth()),
-};
-
-const DatePicker = (props) => {
+const DatePicker = props => {
   const el = useRef(null);
   const inputRef = createRef();
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, setState] = useState({
+    todayTimestamp: todayTimestamp,
+    year: date.getFullYear(),
+    month: date.getMonth(),
+    selectedDay: todayTimestamp,
+    monthDetails: getMonthDetails(date.getFullYear(), date.getMonth()),
+    open: false,
+  });
   /** Maybe you could add this to initialState 🤷🏽‍♂️ */
   const [showDatePicker, setShowDatePicker] = useState(false);
 
   const addBackDrop = e => {
-    if (showDatePicker && el && !el.current.contains(e.target)) {
-      setShowDatePicker(false);
+    if (state.open && el && !el.current.contains(e.target)) {
+      setState({ ...state, open: false });
     }
   };
 
@@ -147,7 +152,7 @@ const DatePicker = (props) => {
     return () => {
       window.removeEventListener('click', addBackDrop);
     };
-  }, [showDatePicker]);
+  }, [state.open]);
 
   const isCurrentDay = day => day.timestamp === todayTimestamp;
   const isSelectedDay = day => day.timestamp === state.selectedDay;
@@ -155,7 +160,7 @@ const DatePicker = (props) => {
     monthMap[Math.max(Math.min(11, month), 0)] || 'Month';
 
   const onDateClick = day => {
-    dispatch({ type: 'selectedDay', value: day.timestamp });
+    setState({ ...state, selectedDay: day.timestamp });
     setDateToInput(day.timestamp);
 
     /** Pass data to parent */
@@ -164,27 +169,31 @@ const DatePicker = (props) => {
 
   const setYear = offset => {
     const year = state.year + offset;
-    dispatch({ type: 'year', value: year });
-    dispatch({
-      type: 'monthDetails',
-      value: getMonthDetails(year, state.month),
+    setState({
+      ...state,
+      year: year,
+      monthDetails: getMonthDetails(year, state.month),
     });
   };
 
   const setMonth = offset => {
-    let year = state.year;
-    let month = state.month + offset;
-    if (month === -1) {
-      month = 11;
-      year--;
-    } else if (month === 12) {
-      month = 0;
-      year++;
-    }
+    const monthState = state.month + offset;
+    const newmonthState =
+      monthState === -1 ? 11 : monthState === 12 ? 0 : monthState;
 
-    dispatch({ type: 'year', value: year });
-    dispatch({ type: 'month', value: month });
-    dispatch({ type: 'monthDetails', value: getMonthDetails(year, month) });
+    const newYearState =
+      monthState === -1
+        ? state.year - 1
+        : monthState === 12
+        ? state.year + 1
+        : state.year;
+
+    setState({
+      ...state,
+      year: newYearState,
+      month: newmonthState,
+      monthDetails: getMonthDetails(newYearState, newmonthState),
+    });
   };
 
   const setDate = dateData => {
@@ -193,7 +202,7 @@ const DatePicker = (props) => {
       dateData.month - 1,
       dateData.date
     ).getTime();
-    dispatch({ type: 'selectedDay', value: selectedDay });
+    setState({ ...state, selectedDay: selectedDay });
 
     /** Pass data to parent */
     props.onChange(selectedDay);
@@ -218,112 +227,83 @@ const DatePicker = (props) => {
 
     if (dateData !== null) {
       setDate(dateData);
-      dispatch({ type: 'year', value: dateData.year });
-      dispatch({ type: 'month', value: dateData.month - 1 });
-      dispatch({
-        type: 'monthDetails',
-        value: getMonthDetails(dateData.year, dateData.month - 1),
+      setState({
+        ...state,
+        year: dateData.year,
+        month: dateData.month - 1,
+        monthDetails: getMonthDetails(dateData.year, dateData.month - 1),
       });
     }
   };
 
   const daysMarkup = state.monthDetails.map((day, index) => (
-    <div
+    <DayContainer
       className={
         'c-day-container ' +
         (day.month !== 0 ? ' disabled' : '') +
         (isCurrentDay(day) ? ' highlight' : '') +
         (isSelectedDay(day) ? ' highlight-green' : '')
       }
-      key={index}>
-      <div className="cdc-day">
-        <span onClick={() => onDateClick(day)}>{day.date}</span>
-      </div>
-    </div>
+      isCurrentDay={isCurrentDay(day)}
+      isSelectedDay={isSelectedDay(day)}
+      key={index}
+      onClick={() => onDateClick(day)}>
+      {day.date}
+    </DayContainer>
   ));
 
   const calendarMarkup = (
-    <div className="c-container">
-      <div className="cc-head">
-        {['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'].map((d, i) => (
-          <div key={i} className="cch-name">
-            {d}
-          </div>
+    <CalendarContainer className="c-container">
+      <DayHeaderContainer className="cc-head">
+        {['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'].map((day, i) => (
+          <DayHeader key={i} className="cch-name">
+            {day}
+          </DayHeader>
         ))}
-      </div>
-      <div className="cc-body">{daysMarkup}</div>
-    </div>
+      </DayHeaderContainer>
+      <CalendarBody className="cc-body">{daysMarkup}</CalendarBody>
+    </CalendarContainer>
   );
 
   return (
-    <div ref={el} className="MyDatePicker">
-      <div className="mdp-input" onClick={() => setShowDatePicker(true)}>
-        <input type="date" ref={inputRef} onChange={updateDateFromInput} />
-      </div>
-      {showDatePicker ? (
-        <div className="mdp-container">
-          <div className="mdpc-head">
-            <div className="mdpch-button">
-              <div className="mdpchb-inner" onClick={() => setYear(-1)}>
-                <span className="mdpchbi-left-arrows"></span>
-              </div>
-            </div>
-            <div className="mdpch-button">
-              <div className="mdpchb-inner" onClick={() => setMonth(-1)}>
-                <span className="mdpchbi-left-arrow"></span>
-              </div>
-            </div>
-            <div className="mdpch-container">
-              <div className="mdpchc-year">{state.year}</div>
-              <div className="mdpchc-month">{getMonthStr(state.month)}</div>
-            </div>
-            <div className="mdpch-button">
-              <div className="mdpchb-inner" onClick={() => setMonth(1)}>
-                <span className="mdpchbi-right-arrow"></span>
-              </div>
-            </div>
-            <div className="mdpch-button" onClick={() => setYear(1)}>
-              <div className="mdpchb-inner">
-                <span className="mdpchbi-right-arrows"></span>
-              </div>
-            </div>
-          </div>
-          <div className="mdpc-body">{calendarMarkup}</div>
-        </div>
-      ) : (
-        ''
-      )}
-    </div>
+    <DatePickerContainer ref={el}>
+      <DatePickerInput
+        onClick={() => setState({ ...state, open: true })}
+        type="date"
+        ref={inputRef}
+        onChange={updateDateFromInput}
+      />
+
+      {state.open ? (
+        <DateSelectorContainer className="mdp-container">
+          <DateSelectorHeader className="mdpc-head">
+            <DateArrow className="mdpchbi-left-arrows" onClick={() => setYear(-1)}>
+              arrows left
+            </DateArrow>
+            <DateArrow className="mdpchbi-left-arrow" onClick={() => setMonth(-1)}>
+              arrow left
+            </DateArrow>
+            <CurrentDateContainer className="mdpch-container">
+              <CurrentYear className="mdpchc-year">{state.year}</CurrentYear>
+              <CurrentMonth className="mdpchc-month">
+                {getMonthStr(state.month)}
+              </CurrentMonth>
+            </CurrentDateContainer>
+            <DateArrow onClick={() => setMonth(1)}>arrow right</DateArrow>
+            <DateArrow className="mdpchbi-right-arrows" onClick={() => setYear(1)}>
+              arrows right
+            </DateArrow>
+          </DateSelectorHeader>
+          {calendarMarkup}
+        </DateSelectorContainer>
+      ) : null}
+    </DatePickerContainer>
   );
-}
-
-/** Fancy using switch statement? Go ahead */
-function reducer(state, action) {
-  if (state.hasOwnProperty(action.type)) {
-    return {
-      ...state,
-      [`${action.type}`]: action.value,
-    };
-  }
-
-  console.log(`Unknown key in state: ${action.type}`);
-}
+};
 
 DatePicker.propTypes = {
   onChange: PropTypes.func.isRequired,
 };
 
-const DatePickerContainer = styled.div``;
 
-const DatePickerInput = styled.input`
-  position: relative;
-  border: 1px solid #cacaca;
-  border-radius: 5px;
-  line-height: 25px;
-  padding: 0.5rem;
-  width: 100%;
-  outline: none;
-`;
-
-
-export default DatePicker
+export default DatePicker;

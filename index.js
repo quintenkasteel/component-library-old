@@ -205,7 +205,7 @@ const App = () => {
             <VideoPage />
           </Route>
           <Route path="/">
-            <DatePickerPage />
+            <Dashboard />
           </Route>
         </Switch>
       </BodyContainer>

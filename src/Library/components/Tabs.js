@@ -40,21 +40,21 @@ const Tabs = ({selected, children}) => {
 		});
 	
 
-	const handleChange = (index) => {
-		setState({ selected: index });
+	const handleChange = (i) => {
+		setState({selected: i });
 	}
 
 		return children ? (
 			<TabsContainer className="tabs">
 				<TabsHeader className="tabs-header">
-					{children.map((content, index) => {
-						let selected = index == state.selected ? "selected" : "";
+					{children.map((content, i) => {
+						let selected = i == state.selected ? "selected" : "";
 						return (
 							<Tab
 								className={`tab ${selected}`}
-								key={index}
-                selected={state.selected}
-								onClick={() => handleChange(index)}>
+								key={i}
+                selected={state.selected === i ? true : false}
+								onClick={() => handleChange(i)}>
 								{content.props.title}
 							</Tab>
 						);
