@@ -31,7 +31,7 @@ const Button = ({
       className={`btn ${activeClassName || 'active'}`}
       href={to}
       {...props}>
-      <a href={to}>{children}</a>
+      {to ? <a href={to}>{children}</a> : { children }}
     </Btn>
   );
 };

@@ -1,9 +1,10 @@
 import React from 'react';
+import FileUpload from '../Library/components/Form/Inputs/FileUpload';
 
 const FileUploadPage = () => {
   return (
     <div>
-      <h2>FileUploadPage</h2>
+      <FileUpload onChange={(e) => console.log(e)}/>
     </div>
   );
 };

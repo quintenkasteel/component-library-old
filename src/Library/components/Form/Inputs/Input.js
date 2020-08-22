@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 
 import {
-  StyledErrorMessage,
   StyledInputContainer,
   StyledInputField,
   StyledInputLabel,
 } from '../../../styles/Input.js';
+import StyledError from "../../../styles/Error.js"
 
 const Input = (
   {initialValue,
@@ -56,7 +56,7 @@ const Input = (
       />
 
       {state.error ? (
-        <StyledErrorMessage className={`error-message`}>{state.error}</StyledErrorMessage>
+        <StyledError className={`error-message`}>{state.error}</StyledError>
       ) : null}
     </StyledInputContainer>
   );

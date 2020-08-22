@@ -30,8 +30,5 @@ const StyledInputField = styled.input`
   
 `;
 
-const StyledErrorMessage = styled.span`
-  color: red;
-`;
 
-export {StyledErrorMessage, StyledInputContainer, StyledInputField, StyledInputLabel}
+export { StyledInputContainer, StyledInputField, StyledInputLabel}
