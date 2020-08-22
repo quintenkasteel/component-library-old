@@ -70,6 +70,7 @@ const StyledInnerVideo = styled.div`
       margin: 0;
       overflow: hidden;
     }
+    
     html,
     body {
       height: 100%;

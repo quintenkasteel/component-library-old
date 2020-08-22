@@ -1,172 +1,92 @@
-import React from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-class Checkbox extends React.Component {
-  constructor(props) {
-    super(props)
+const CheckboxContainer = styled.label`
+  display: flex;
+  position: relative;
+  align-items: center;
+  margin-bottom: 0.625rem;
 
-    this.state = {
-      checked: false,
-    }
-
-    this.icon = this.icon.bind(this)
-    this.handleChange = this.handleChange.bind(this)
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: pointer;
   }
 
-  handleChange() {
-    this.setState({ checked: !this.state.checked })
+  input {
+    display: none;
+  }
+`;
+
+const StyledCheckBox = styled.div`
+  margin-right: 0.625rem;
+
+  &:before {
+    background: ${props => (props.checked ? 'blue' : 'rgba(0, 0, 0, 0.05)')};
+    display: block;
+    position: relative;
+    content: '';
+    z-index: 1;
+    -webkit-transform: none;
+    transform: none;
+    border: none;
+    top: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: ${props => props.toggle ? '3.5rem' : '1.5rem'};
+    height: ${props => props.toggle ? '1.75rem' : '1.5rem'};
+    border-radius: ${props => props.toggle ? '50rem' : '5px'};
   }
 
-  icon() {
-    return this.state.checked ? <div className="checkmark"></div> : null
+  &:after {
+    position: absolute;
+    content: ${props => props.checked || props.toggle ? `""` : null};
+    z-index: 2;
+    border: none;
+    width: ${props => props.toggle ? '1.75rem' : '0.8rem'};
+    height: ${props => props.toggle ? '1.75rem' : '0.8rem'};
+    top: ${props => props.toggle ? '0' :'50%'};
+    left: ${props => props.toggle ? '0' : '50%'};
+    left: ${props => props.toggle && props.checked ? '1.76rem' : null};
+    transform: ${props => !props.toggle ? 'translate(-50%, -50%)' : null};
+    border-radius: 500rem;
+    transition: background 0.3s ease, left 0.3s ease;  
+    box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15), 0 0 0 1px rgba(34, 36, 38, 0.15) inset;
+    background: white;
   }
+`
 
-  render() {
-    const { label, size, disabled, toggle } = this.props
-    const { checked } = this.state
+const Checkbox = ({ label, size, disabled, toggle }) => {
+  const [state, setState] = useState({
+    checked: false,
+  });
 
-    const CheckboxContainer = styled.label`
-      display: flex;
-      position: relative;
-      align-items: center;
-      margin-bottom: 0.625rem;
+  const handleChange = () => {
+    setState({ ...state, checked: !state.checked });
+  };
 
-      &:hover,
-      &:focus,
-      &:active {
-        cursor: pointer;
-      }
+  const icon = state.checked ? <div className="checkmark"></div> : null;
 
-      input {
-        display: none;
-      }
-      
-    `
+  const { checked } = state;
 
-    const Checkbox = styled.div`
-    margin-right: 0.625rem;
+  return (
+    <CheckboxContainer
+      className={`checkbox-container ${disabled ? 'disabled' : ''}
+        ${checked ? 'checked' : ''}`}>
+      <StyledCheckBox checked={checked} toggle={toggle} className={`checkbox`}>
+        {icon}
+      </StyledCheckBox>
+      <input
+        type="checkbox"
+        onChange={handleChange}
+        checked={checked}
+        // onFocus={() => !disabled && setState({ active: true })}
+        // onBlur={() => !disabled && setState({ active: false })}
+      />
+      {label ? label : ''}
+    </CheckboxContainer>
+  );
+};
 
-      .checked &{
-        &:before {
-          background: blue;
-        }
-      }
-
-      ${!toggle &&
-        `
-        &:before {
-            display: block;
-            position: relative;
-            content: "";
-            z-index: 1;
-            -webkit-transform: none;
-            transform: none;
-            border: none;
-            top: 0;
-            background: rgba(0, 0, 0, 0.05);
-            -webkit-box-shadow: none;
-            box-shadow: none;
-            width: 1.5rem;
-            height: 1.5rem;
-            border-radius: 5px;
-          }
-
-          &:after {
-            background: #fff -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));
-            background: #fff -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
-            background: #fff linear-gradient(transparent, rgba(0, 0, 0, 0.05));
-            position: absolute;
-            content: "";
-            opacity: 0;
-            z-index: 2;
-            border: none;
-            -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15),
-              0 0 0 1px rgba(34, 36, 38, 0.15) inset;
-            box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15),
-              0 0 0 1px rgba(34, 36, 38, 0.15) inset;
-            width: 0.8rem;
-            height: 0.8rem;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 500rem;
-            -webkit-transition: background 0.3s ease, left 0.3s ease;
-            transition: background 0.3s ease, left 0.3s ease;
-          }
-
-          .checked & {
-            &:after {
-              opacity: 1;
-            }
-          }
-          `}
-
-      ${toggle &&
-        `
-        &:before {
-            display: block;
-            position: relative;
-            content: "";
-            z-index: 1;
-            -webkit-transform: none;
-            transform: none;
-            border: none;
-            top: 0;
-            background: rgba(0, 0, 0, 0.05);
-            -webkit-box-shadow: none;
-            box-shadow: none;
-            width: 3.5rem;
-            height: 1.5rem;
-            border-radius: 500rem;
-          }
-
-          &:after {
-            background: #fff -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));
-            background: #fff -webkit-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
-            background: #fff linear-gradient(transparent, rgba(0, 0, 0, 0.05));
-            position: absolute;
-            content: "";
-            opacity: 1;
-            z-index: 2;
-            border: none;
-            -webkit-box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15),
-              0 0 0 1px rgba(34, 36, 38, 0.15) inset;
-            box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15),
-              0 0 0 1px rgba(34, 36, 38, 0.15) inset;
-            width: 1.5rem;
-            height: 1.5rem;
-            top: 0;
-            left: 0;
-            border-radius: 500rem;
-            -webkit-transition: background 0.3s ease, left 0.3s ease;
-            transition: background 0.3s ease, left 0.3s ease;
-          }
-          .checked & {
-            &:after {
-              left: 2.15rem;
-            }
-          }
-          `}
-    `
-
-    return (
-      <CheckboxContainer
-        className={`checkbox-container ${disabled ? "disabled" : ""}
-        ${checked ? "checked" : ""}`}>
-        <Checkbox className={`checkbox`}>
-          {this.icon()}
-        </Checkbox>
-        <input
-          type="checkbox"
-          onChange={this.handleChange.bind(this)}
-          onFocus={() => !disabled && this.setState({ active: true })}
-          onBlur={() => !disabled && this.setState({ active: false })}
-        />
-        {label ? label : ""}
-      </CheckboxContainer>
-    )
-  }
-}
-
-export default Checkbox
+export default Checkbox;

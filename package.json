@@ -38,8 +38,10 @@
     "react-hot-loader": "^4.12.21",
     "react-icons": "^3.8.0",
     "react-phone-input-2": "^2.12.1",
+    "react-player": "^2.6.0",
     "react-router-dom": "^5.2.0",
     "recompose": "^0.30.0",
+    "screenfull": "^5.0.2",
     "sharp": "^0.25.2",
     "styled-components": "^5.0.0"
   },

@@ -40,7 +40,10 @@ import TimePage from './src/docs/Time.js';
 import VideoPage from './src/docs/Video.js';
 import styled from 'styled-components';
 
-
+const BodyContainer = styled.div`
+  margin-left: 120px;
+  padding: 20px;
+`
 const MenuContainer = styled.div`
   position: fixed;
   width: 100px;
@@ -96,9 +99,8 @@ const menu = () => {
 const App = () => {
   return (
     <Router>
-      <div>
+      <BodyContainer>
         {menu()}
-
         <Switch>
           <Route path="/accordion">
             <AccordionPage />
@@ -203,10 +205,10 @@ const App = () => {
             <VideoPage />
           </Route>
           <Route path="/">
-            <Dashboard />
+            <CheckBoxPage />
           </Route>
         </Switch>
-      </div>
+      </BodyContainer>
     </Router>
   );
 };

@@ -12,11 +12,11 @@ import Container from "./Library/Layout/Container";
 
 import Link from "./Library/components/Link";
 import Divider from "./Library/components/Divider";
-import Button from "./Library/components/Button/Button.js";
+import Button from "./Library/components/Button.js";
 import Image from "./Library/components/Image";
 import Heading from "./Library/components/Heading";
 import Text from "./Library/components/Text";
-import Video from "./Library/components/Video"
+import Video from "./Library/components/Video/Video"
 
 import Input from "./Library/components/Form/Inputs/Input";
 import Checkbox from "./Library/components/Form/Inputs/Checkbox";

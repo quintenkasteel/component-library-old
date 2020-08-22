@@ -14,6 +14,7 @@ const TabsHeader = styled.div`
 const Tab = styled.div`
 	position: relative;
 	border: 1px solid #cacaca;
+  border-bottom: ${props => props.selected ? '2px solid blue' : null};
 	text-align: center;
 	line-height: 25px;
 	padding: 0.5rem;
@@ -29,10 +30,6 @@ const Tab = styled.div`
 	&:last-child {
 		border-top-right-radius: 5px;
 		border-bottom-right-radius: 5px;
-	}
-
-	&.selected {
-		border-bottom: 2px solid blue;
 	}
 `;
 
@@ -56,6 +53,7 @@ const Tabs = ({selected, children}) => {
 							<Tab
 								className={`tab ${selected}`}
 								key={index}
+                selected={state.selected}
 								onClick={() => handleChange(index)}>
 								{content.props.title}
 							</Tab>
