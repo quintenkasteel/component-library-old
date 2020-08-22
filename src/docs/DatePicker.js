@@ -1,9 +1,10 @@
 import React from 'react';
+import DatePicker from '../Library/components/Form/Inputs/DatePicker';
 
 const DatePickerPage = () => {
   return (
     <div>
-      <h2>DatePickerPage</h2>
+      <DatePicker onChange={(e) => console.log("changed", e)}/>
     </div>
   );
 };

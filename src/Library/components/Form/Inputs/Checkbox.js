@@ -81,8 +81,6 @@ const Checkbox = ({ label, size, disabled, toggle }) => {
         type="checkbox"
         onChange={handleChange}
         checked={checked}
-        // onFocus={() => !disabled && setState({ active: true })}
-        // onBlur={() => !disabled && setState({ active: false })}
       />
       {label ? label : ''}
     </CheckboxContainer>
