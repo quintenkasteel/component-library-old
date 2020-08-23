@@ -205,7 +205,7 @@ const App = () => (
             <Checkbox toggle label="Checkbox Toggle" />
             <Checkbox toggle disabled label="Checkbox Toggle Disabled" />
             <RadioGroup label="Radio Field">
-              <RadioButton  label="Radio Field" />
+              <RadioButton label="Radio Field" />
               <RadioButton disabled label="Radio Field disabled" />
               <RadioButton disabled label="Radio Field disabled" />
               <RadioButton toggle label="Radio Field Switch" />

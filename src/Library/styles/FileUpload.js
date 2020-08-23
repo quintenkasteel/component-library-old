@@ -2,11 +2,14 @@ import styled from 'styled-components';
 
 const StyledFileUploadContainer = styled.div`
   width: auto;
+  display: flex;
+  flex-flow: column nowrap;
 `;
 const StyledFileUploadInput = styled.input`
 color: transparent;
 user-select: none;
 overflow: hidden;
+margin-bottom: 10px;
 
 &:focus,
 &:active,

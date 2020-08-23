@@ -205,7 +205,7 @@ const App = () => {
             <VideoPage />
           </Route>
           <Route path="/">
-            <FileUploadPage />
+            <VideoPage />
           </Route>
         </Switch>
       </BodyContainer>

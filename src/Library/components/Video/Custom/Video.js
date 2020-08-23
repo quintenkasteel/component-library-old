@@ -22,18 +22,42 @@ const format = seconds => {
 
 let count = 0;
 
-const CustomVideo = ({url, lazy}) => {
-  console.log(url)
+const CustomVideo = ({
+  url,
+  lazy,
+  progressInterval = 1000,
+  playIcon,
+  playsInline,
+  playbackRate,
+  posterImage,
+  config,
+  onReady = () => {},
+  onStart = () => {},
+  onPlay = () => {},
+  onPause = () => {},
+  onProgress = () => {},
+  onDuration = () => {},
+  onBuffer = () => {},
+  onBufferEnd = () => {},
+  onSeek = () => {},
+  onEnded = () => {},
+  onError = () => {},
+  onEnablePIP = () => {},
+  onDisablePIP = () => {},
+  getCurrentTime = () => {},
+  getSecondsLoaded = () => {},
+  getDuration = () => {},
+  getPosterImage = () => {},
+}) => {
   const [state, setState] = useState({
     pip: false,
     playing: false,
     controls: false,
-    light: false,
     autoplay: false,
     muted: false,
     played: 0,
     duration: 0,
-    playbackRate: 1.0,
+    playbackRateState: playbackRate,
     timeDisplayFormat: 'normal',
     volume: 1,
     loop: false,
@@ -48,18 +72,20 @@ const CustomVideo = ({url, lazy}) => {
     playing,
     muted,
     loop,
-    playbackRate,
+    playbackRateState,
     timeDisplayFormat,
+    duration,
     played,
+    currentTime,
     seeking,
     volume,
     autoplay,
   } = state;
 
   const handlePlayPause = () => {
-    setState({ ...state, playing: !playing });
-
     playing ? playerRef.current.pause() : playerRef.current.play();
+
+    setState({ ...state, playing: !playing });
   };
 
   const handleRewind = () => {
@@ -77,42 +103,37 @@ const CustomVideo = ({url, lazy}) => {
           ...state,
           volume: volume,
           muted: muted,
+          currentTime: playerRef.current.currentTime,
           played: parseFloat(
             playerRef.current.currentTime / playerRef.current.duration
           ),
         });
       }
-    }, 1000);
+    }, progressInterval);
     return () => clearInterval(interval);
   }, [state]);
 
-  // useEffect(() => {
-  //   if (playerRef.current.duration) {
-  //     setState({
-  //       ...state,
-  //       duration: playerRef.current.duration,
-  //     });
-  //   }
-  // });
+  useEffect(() => {
+    const videoDuration = () => {
+      setState({ ...state, duration: playerRef.current.duration });
+    };
+    playerRef.current.addEventListener('loadedmetadata', videoDuration);
 
-  // const handleProgress = changeState => {
-  //   if (count > 3) {
-  //     controlsRef.current.style.visibility = 'hidden';
-  //     count = 0;
-  //   }
-  //   if (controlsRef.current.style.visibility == 'visible') {
-  //     count += 1;
-  //   }
-  //   if (!state.seeking) {
-  //     setState({ ...state, ...changeState });
-  //   }
-  // };
+    return () => {
+      playerRef.current.removeEventListener('loadedmetadata', videoDuration);
+    };
+  }, [duration]);
 
   const handleSeekChange = e => {
-    setState({ ...state, played: parseFloat(e.target.value / 100) });
-    playerRef.current.currentTime = parseFloat(
+    const current = parseFloat(
       (playerRef.current.duration / 100) * e.target.value
     );
+    setState({
+      ...state,
+      currentTime: current,
+      played: parseFloat(e.target.value / 100),
+    });
+    playerRef.current.currentTime = current;
   };
 
   const handleSeekMouseDown = e => {
@@ -169,7 +190,7 @@ const CustomVideo = ({url, lazy}) => {
   };
 
   const handlePlaybackRate = rate => {
-    setState({ ...state, playbackRate: rate });
+    setState({ ...state, playbackRateState: rate });
     playerRef.current.playbackRate = rate;
   };
 
@@ -181,43 +202,13 @@ const CustomVideo = ({url, lazy}) => {
     });
   };
 
-  // const addBookmark = () => {
-  //   const canvas = canvasRef.current;
-  //   canvas.width = 160;
-  //   canvas.height = 90;
-  //   const ctx = canvas.getContext('2d');
-
-  //   ctx.drawImage(
-  //     playerRef.current.getInternalPlayer(),
-  //     0,
-  //     0,
-  //     canvas.width,
-  //     canvas.height
-  //   );
-  //   const dataUri = canvas.toDataURL();
-  //   canvas.width = 0;
-  //   canvas.height = 0;
-  //   const bookmarksCopy = [...bookmarks];
-  //   bookmarksCopy.push({
-  //     time: playerRef.current.currentTime(),
-  //     display: format(playerRef.current.currentTime()),
-  //     image: dataUri,
-  //   });
-  //   setBookmarks(bookmarksCopy);
-  // };
-
-  const currentTime =
-    playerRef && playerRef.current ? playerRef.current.currentTime : '00:00';
-
-  const duration =
-    playerRef && playerRef.current ? playerRef.current.duration : '00:00';
   const elapsedTime =
     timeDisplayFormat == 'normal'
       ? format(currentTime)
       : `-${format(duration - currentTime)}`;
 
   const totalDuration = format(duration);
-  console.log(url)
+
   return (
     <>
       <div
@@ -225,6 +216,7 @@ const CustomVideo = ({url, lazy}) => {
         onMouseLeave={handleMouseLeave}
         ref={playerContainerRef}>
         <video
+          preload={'auto'}
           ref={playerRef}
           width="100%"
           height="100%"
@@ -235,29 +227,6 @@ const CustomVideo = ({url, lazy}) => {
           volume={volume}>
           <source src={url} type="video/mp4"></source>
         </video>
-
-        {/* <ReactPlayer
-            ref={playerRef}
-            width="100%"
-            height="100%"
-            url="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
-            pip={pip}
-            playing={playing}
-            controls={false}
-            light={light}
-            loop={loop}
-            playbackRate={playbackRate}
-            volume={volume}
-            muted={muted}
-            onProgress={handleProgress}
-            config={{
-              file: {
-                attributes: {
-                  crossOrigin: 'anonymous',
-                },
-              },
-            }}
-          /> */}
 
         <Controls
           ref={controlsRef}
@@ -277,36 +246,14 @@ const CustomVideo = ({url, lazy}) => {
           onVolumeChange={handleVolumeChange}
           onVolumeSeekDown={handleVolumeSeekDown}
           onChangeDispayFormat={handleDisplayFormat}
-          playbackRate={playbackRate}
+          playbackRate={playbackRateState}
           onPlaybackRateChange={handlePlaybackRate}
           onToggleFullScreen={toggleFullScreen}
           volume={volume}
-          // onBookmark={addBookmark}
         />
       </div>
-
-      {/* <div>
-          {bookmarks.map((bookmark, index) => (
-            <div key={index}>
-              <div
-                onClick={() => {
-                  playerRef.current.seekTo(bookmark.time);
-                  controlsRef.current.style.visibility = 'visible';
-
-                  setTimeout(() => {
-                    controlsRef.current.style.visibility = 'hidden';
-                  }, 1000);
-                }}>
-                <img crossOrigin="anonymous" src={bookmark.image} />
-                <div>bookmark at {bookmark.display}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <canvas ref={canvasRef} />
-      </div> */}
     </>
   );
-}
+};
 
 export default CustomVideo;
