@@ -4,11 +4,12 @@
   - improve styling
 */
 
-import React, { useLayoutEffect } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import {
   StyledRange,
   StyledRangeProgress,
   StyledThumb,
+  RangeHeader,
 } from '../../../styles/RangeSlider.js';
 
 const getPercentage = (current, min, max) =>
@@ -25,8 +26,12 @@ const RangeSlider = ({
   initial,
   min = 0,
   max,
+  background,
+  showMin = false,
+  showCount = false,
+  backgroundProgress,
   formatFn = number => number.toFixed(0),
-  onChange,
+  onChange = () => {},
 }) => {
   const initialPercentage = getPercentage(initial, min, max);
 
@@ -37,13 +42,18 @@ const RangeSlider = ({
 
   const diff = React.useRef();
 
+  const [state, setState] = useState({
+    percentage: 100,
+  });
+
   const handleUpdate = React.useCallback(
     (value, percentage) => {
-      thumbRef.current.style.left = getLeft(percentage);
+      // thumbRef.current.style.left = getLeft(percentage);
       rangeProgressRef.current.style.width = getWidth(percentage);
-      currentRef.current.textContent = formatFn(value);
+      showCount ? currentRef.current.textContent = formatFn(value) / 100 : null;
+      setState({ ...state, percentage: percentage });
     },
-    [formatFn]
+    [formatFn, onChange]
   );
 
   const handleMouseMove = event => {
@@ -87,24 +97,33 @@ const RangeSlider = ({
 
   useLayoutEffect(() => {
     handleUpdate(initial, initialPercentage);
-  }, [initial, initialPercentage, handleUpdate]);
+  }, [initial, initialPercentage]);
 
   return (
     <>
-      <RangeHeader>
-        <div>{formatFn(min)}</div>
-        <div>
-          <strong ref={currentRef} />
-          &nbsp;/&nbsp;
-          {formatFn(max)}
-        </div>
-      </RangeHeader>
-      <StyledRange ref={rangeRef}>
-        <StyledRangeProgress ref={rangeProgressRef} />
-        <StyledThumb ref={thumbRef} onMouseDown={handleMouseDown} />
+      {showCount ? (
+        <RangeHeader>
+          {showCount && showMin ? <div>{formatFn(min) / 100}</div> : null}
+          <div>
+            <strong ref={currentRef} />
+            &nbsp;/&nbsp;
+            {formatFn(max) / 100}
+          </div>
+        </RangeHeader>
+      ) : null}
+      <StyledRange background={background} ref={rangeRef}>
+        <StyledRangeProgress
+          backgroundProgress={backgroundProgress}
+          ref={rangeProgressRef}
+        />
+        <StyledThumb
+          ref={thumbRef}
+          percentage={state.percentage}
+          onMouseDown={handleMouseDown}
+        />
       </StyledRange>
     </>
   );
 };
 
-export default RangeSlider
+export default RangeSlider;

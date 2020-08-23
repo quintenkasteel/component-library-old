@@ -1,9 +1,10 @@
 import React from 'react';
+import ColorPicker from '../library/components/form/inputs/ColorPicker.js';
 
 const ColorPickerPage = () => {
   return (
     <div>
-      <h2>ColorPickerPage</h2>
+      <ColorPicker />
     </div>
   );
 };

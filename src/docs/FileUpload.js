@@ -1,5 +1,5 @@
 import React from 'react';
-import FileUpload from '../Library/components/Form/Inputs/FileUpload';
+import FileUpload from '../library/components/form/inputs/FileUpload';
 
 const FileUploadPage = () => {
   return (

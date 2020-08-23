@@ -4,7 +4,7 @@ import { ElementsConsumer, useStripe, useElements, CardElement } from "@stripe/r
 
 
 // import Strapi from "strapi-sdk-javascript/build/main";
-import Input from "../../../../components/Form/Inputs/Input"
+import Input from "../../../../components/form/inputs/Input"
 
 const apiUrl = process.env.API_URL || "http://localhost:1337";
 // const strapi = new Strapi(apiUrl);

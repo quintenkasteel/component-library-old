@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomVideo from '../Library/components/Video/Custom/Video';
+import CustomVideo from '../library/components/video/custom/Video';
 const VideoPage = () => {
   return (
     <CustomVideo

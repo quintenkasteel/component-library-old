@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-import InjectedCheckoutForm from "../Cart/Stripe/CheckoutForm"
+import InjectedCheckoutForm from "./Stripe/CheckoutForm"
 import { Elements } from "@stripe/react-stripe-js"
 import { withContext } from "../Context/StoreProvider"
 import { compose } from "recompose"

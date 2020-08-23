@@ -1,43 +1,43 @@
 import { hot } from 'react-hot-loader/root';
 import React from 'react';
 import styled from 'styled-components';
-import './Library/styles.scss';
-import SEO from './Library/Page-settings/seo';
+import './library/styles.scss';
+// import SEO from './Library/Page-settings/seo';
 
-import Row from './Library/Layout/Row';
-import Layout from './Library/Layout/layout';
-import Col from './Library/Layout/Column';
-import Grid from './Library/Layout/Grid';
-import Container from './Library/Layout/Container';
+import Row from './library/layout/Row';
+import Layout from './library/layout/layout';
+import Col from './library/layout/Column';
+import Grid from './library/layout/Grid';
+import Container from './library/layout/Container';
 
-import Link from './Library/components/Link';
-import Divider from './Library/components/Divider';
-import Button from './Library/components/Button.js';
-import Image from './Library/components/Image';
-import Heading from './Library/components/Heading';
-import Text from './Library/components/Text';
-import Video from './Library/components/Video/Video';
+import Link from './library/components/Link';
+import Divider from './library/components/Divider';
+import Button from './library/components/Button.js';
+import Image from './library/components/Image';
+import Heading from './library/components/Heading';
+import Text from './library/components/Text';
+import Video from './library/components/video/Video';
 
-import Input from './Library/components/Form/Inputs/Input';
-import Checkbox from './Library/components/Form/Inputs/Checkbox';
-import {RadioGroup, RadioButton} from './Library/components/Form/Inputs/RadioButton';
+import Input from './library/components/form/inputs/Input';
+import Checkbox from './library/components/form/inputs/Checkbox';
+import {RadioGroup, RadioButton} from './library/components/form/inputs/RadioButton';
 
-import ColorPicker from './Library/components/Form/Inputs/ColorPicker';
-import DateSelect from './Library/components/Form/Inputs/DatePicker';
-import Tel from './Library/components/Form/Inputs/Tel';
-import Select from './Library/components/Form/Inputs/Select';
-import Accordion from './Library/components/Accordion';
-import Tabs from './Library/components/Tabs';
-import Progress from './Library/components/Progress';
-import Modal from './Library/components/Modal';
-import Sticky from './Library/components/Sticky';
-import PageProgress from './Library/components/PageProgress';
-import MasonryGrid from './Library/Layout/MasonryGrid';
-import Slider from './LIbrary/components/Slider';
-import Cart from './Library/Layout/Store/Cart/Cart';
-import Products from './Library/Layout/Store/Products';
-import StoreProvider from './Library/Layout/Store/Context/StoreProvider';
-import Checkout from './Library/Layout/Store/Cart/Checkout';
+import ColorPicker from './library/components/form/inputs/ColorPicker.js';
+import DateSelect from './library/components/form/inputs/DatePicker';
+import Tel from './library/components/form/inputs/Tel';
+import Select from './library/components/form/inputs/Select';
+import Accordion from './library/components/Accordion';
+import Tabs from './library/components/Tabs';
+import Progress from './library/components/Progress';
+import Modal from './library/components/Modal';
+import Sticky from './library/components/Sticky';
+import PageProgress from './library/components/PageProgress';
+import MasonryGrid from './library/layout/MasonryGrid';
+import Slider from './library/components/Slider';
+import Cart from './library/layout/Store/Cart/Cart';
+import Products from './library/layout/Store/Products';
+import StoreProvider from './library/layout/Store/Context/StoreProvider';
+import Checkout from './library/layout/Store/Cart/Checkout';
 
 let StyledBackground = styled.div`
   background: linear-gradient(to bottom, #f9fbfd 0, #fff 100%);

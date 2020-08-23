@@ -1,5 +1,5 @@
 import React from 'react';
-import Checkbox from '../Library/components/Form/Inputs/Checkbox';
+import Checkbox from '../library/components/form/inputs/Checkbox';
 
 const CheckboxPage = () => {
   return (

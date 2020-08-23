@@ -1,5 +1,5 @@
 import React from 'react';
-import DatePicker from '../Library/components/Form/Inputs/DatePicker';
+import DatePicker from '../library/components/form/inputs/DatePicker';
 
 const DatePickerPage = () => {
   return (
