@@ -1,5 +1,27 @@
 import React, { forwardRef, useState } from 'react';
 import PropTypes from 'prop-types';
+import Icon from '../../Icon.js';
+
+import {
+  StyledVideoControlsOverlay,
+  StyledFullScreen,
+  StyledPlayBackRateOption,
+  StyledPlayBackRateOptionsContainer,
+  StyledPlayBackRate,
+  StyledPlayBackRateContainer,
+  StyledElapsedTime,
+  StyledSeek,
+  StyledVolume,
+  StyledVolumeOpen,
+  StyledVolumeContainer,
+  StyledPlayMain,
+  StyledBottomBar,
+  StyledMute,
+  StyledFastForward,
+  StyledRewind,
+  StyledPlayFloat,
+  StyledVideoControlsContainer,
+} from '../../../styles/Video.js';
 
 function ValueLabelComponent(props) {
   const { children, open, value } = props;
@@ -34,145 +56,121 @@ const Controls = forwardRef(
       onToggleFullScreen,
       volume,
       onVolumeChange,
+      hovering,
       // onBookmark,
     },
     ref
   ) => {
-    const [anchorEl, setAnchorEl] = React.useState(null);
-    const handleClick = event => {
-      setAnchorEl(event.currentTarget);
+    const [state, setState] = useState({
+      openPlayBackRate: false,
+      openVolume: false,
+    });
+
+    const handleOpenPlayBackRate = () => {
+      setState({
+        ...state,
+        openPlayBackRate: !state.openPlayBackRate,
+        openVolume: false,
+      });
+    };
+
+    const handleOpenVolume = () => {
+      setState({ ...state, openPlayBackRate: false, openVolume: !openVolume });
     };
 
     const handleClose = () => {
-      setAnchorEl(null);
+      setState({ ...state, openPlayBackRate: false, openVolume: false });
     };
 
-    const open = Boolean(anchorEl);
     const id = open ? 'simple-popover' : undefined;
 
     return (
-      <div ref={ref}>
-        <div>
-          <div>
-            <div>
-              <div>Video Title</div>
+      <StyledVideoControlsContainer showControls={hovering} ref={ref}>
+        <StyledVideoControlsOverlay>
+          <StyledRewind onClick={onRewind} aria-label="rewind">
+            <Icon name={'Rewind'} size={'40px'} />
+          </StyledRewind>
+          <StyledPlayFloat onClick={onPlayPause}>
+            {playing ? (
+              <Icon name={'Pause'} size={'100px'} />
+            ) : (
+              <Icon name={'Play'} size={'100px'} />
+            )}
+          </StyledPlayFloat>
+          <StyledFastForward onClick={onFastForward} aria-label="forward">
+            <Icon name={'FastForward'} size={'40px'} />
+          </StyledFastForward>
+        </StyledVideoControlsOverlay>
+
+        <StyledBottomBar>
+          <StyledPlayMain onClick={onPlayPause}>
+            {playing ? <Icon name={'Pause'} /> : <Icon name={'Play'} />}
+          </StyledPlayMain>
+          <StyledMute>
+            <div onClick={onMute} >
+              {muted || volume === 0 ? (
+                <Icon name={'Mute'} />
+              ) : volume < 0.5 ? (
+                <Icon name={'VolumeLow'}/>
+              ) : (
+                <Icon name={'VolumeHigh'} />
+              )}
             </div>
-            <div>
-              {/* <button
-                onClick={onBookmark}
-                // variant="contained"
-                // color="primary"
-                // startIcon={<BookmarkIcon />}
-              >
-                Bookmark
-              </button> */}
-            </div>
-          </div>
-          <div>
-            <button onClick={onRewind} aria-label="rewind">
-              <div>Rewind 10 sec</div>
-            </button>
-            <button onClick={onPlayPause} aria-label="play">
-              {playing ? <div>pause</div> : <div>play</div>}
-            </button>
-            <button onClick={onFastForward} aria-label="forward">
-              <div>Fast forward 10 sec</div>
-            </button>
-          </div>
-          {/* bottom controls */}
-          <div>
-            <div>
-              <input
+
+            <StyledVolumeContainer>
+              <StyledVolume
+                OpenVolume={state.openVolume}
+                className={'volume-range'}
                 type="range"
                 min={0}
                 max={100}
-                step={1}
-                aria-label="custom thumb label"
-                value={played * 100}
-                onChange={onSeek}
+                value={volume * 100}
+                onChange={onVolumeChange}
+                aria-labelledby="input-slider"
                 onMouseDown={onSeekMouseDown}
-                onMouseUp={onSeekMouseUp}
-                // onDuration={onDuration}
+                onMouseUp={onVolumeSeekDown}
               />
-            </div>
+            </StyledVolumeContainer>
+          </StyledMute>
 
-            <div>
-              <div>
-                <button onClick={onPlayPause}>
-                  {playing ? <div>pause</div> : <div>play</div>}
-                </button>
+          <StyledSeek
+            type="range"
+            min={0}
+            max={100}
+            step={1}
+            aria-label="custom thumb label"
+            value={played * 100}
+            onChange={onSeek}
+            onMouseDown={onSeekMouseDown}
+            onMouseUp={onSeekMouseUp}
+            // onDuration={onDuration}
+          />
+          <StyledElapsedTime onClick={onChangeDispayFormat}>
+            {elapsedTime}/{totalDuration}
+          </StyledElapsedTime>
+          <StyledPlayBackRateContainer onClick={handleOpenPlayBackRate}>
+            <StyledPlayBackRate>{playbackRate}X</StyledPlayBackRate>
 
-                <button
-                  // onClick={() => setState({ ...state, muted: !state.muted })}
-                  onClick={onMute}>
-                  {muted ? <div>muted</div> : <div>turn volume up</div>}
-                </button>
-                <input
-                  type="range"
-                  min={0}
-                  max={100}
-                  value={volume * 100}
-                  onChange={onVolumeChange}
-                  aria-labelledby="input-slider"
-                  onMouseDown={onSeekMouseDown}
-                  onMouseUp={onVolumeSeekDown}
-                />
-                <button
-                  onClick={
-                    onChangeDispayFormat
-                    //     () =>
-                    //   setTimeDisplayFormat(
-                    //     timeDisplayFormat == "normal" ? "remaining" : "normal"
-                    //   )
-                  }>
-                  <div>
-                    {elapsedTime}/{totalDuration}
-                  </div>
-                </button>
-              </div>
-            </div>
+            <StyledPlayBackRateOptionsContainer
+              container={ref.current}
+              isOpen={state.openPlayBackRate}
+              id={id}
+              onClose={handleClose}>
+              {[0.5, 1, 1.5, 2].map((rate, i) => (
+                <StyledPlayBackRateOption
+                  key={rate}
+                  onClick={() => onPlaybackRateChange(rate)}>
+                  {rate}X
+                </StyledPlayBackRateOption>
+              ))}
+            </StyledPlayBackRateOptionsContainer>
+          </StyledPlayBackRateContainer>
 
-            <div>
-              <button onClick={handleClick} aria-describedby={id}>
-                <div>{playbackRate}X</div>
-              </button>
-
-              <div
-                container={ref.current}
-                open={open}
-                id={id}
-                onClose={handleClose}
-                // anchorOrigin={{
-                //   vertical: "top",
-                //   horizontal: "left",
-                // }}
-                // transformOrigin={{
-                //   vertical: "bottom",
-                //   horizontal: "left",
-                // }}
-              >
-                <div>
-                  {[0.5, 1, 1.5, 2].map(rate => (
-                    <button
-                      key={rate}
-                      //   onClick={() => setState({ ...state, playbackRate: rate })}
-                      onClick={() => onPlaybackRateChange(rate)}
-                      variant="text">
-                      <div
-                        color={rate === playbackRate ? 'secondary' : 'inherit'}>
-                        {rate}X
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-              <button onClick={onToggleFullScreen}>
-                <div>full screen</div>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+          <StyledFullScreen onClick={onToggleFullScreen}>
+            <Icon name={'FullScreen'} />
+          </StyledFullScreen>
+        </StyledBottomBar>
+      </StyledVideoControlsContainer>
     );
   }
 );

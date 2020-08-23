@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import ReactPlayer from 'react-player';
 import screenful from 'screenfull';
 import Controls from './Controls';
+import {StyledVideo, StyledVideoContainer} from "../../../styles/Video.js"
 
 const format = seconds => {
   if (isNaN(seconds)) {
@@ -28,9 +29,11 @@ const CustomVideo = ({
   progressInterval = 1000,
   playIcon,
   playsInline,
-  playbackRate,
+  controls=true,
+  playbackRate=1,
   posterImage,
   config,
+  startFrom = 0,
   onReady = () => {},
   onStart = () => {},
   onPlay = () => {},
@@ -52,16 +55,17 @@ const CustomVideo = ({
   const [state, setState] = useState({
     pip: false,
     playing: false,
-    controls: false,
     autoplay: false,
     muted: false,
     played: 0,
     duration: 0,
+    currentTime: startFrom,
     playbackRateState: playbackRate,
     timeDisplayFormat: 'normal',
     volume: 1,
     loop: false,
     seeking: false,
+    hovering: false
   });
 
   const playerRef = useRef(null);
@@ -80,33 +84,55 @@ const CustomVideo = ({
     seeking,
     volume,
     autoplay,
+    hovering
   } = state;
 
   const handlePlayPause = () => {
     playing ? playerRef.current.pause() : playerRef.current.play();
+    playing ? onPause() : currentTime === 0 ? onStart() : onPlay();
 
     setState({ ...state, playing: !playing });
   };
 
   const handleRewind = () => {
     playerRef.current.currentTime = playerRef.current.currentTime - 10;
+    setState({
+      ...state,
+      played: parseFloat(
+        playerRef.current.currentTime / playerRef.current.duration
+      ),
+      currentTime: playerRef.current.currentTime,
+    });
   };
 
   const handleFastForward = () => {
     playerRef.current.currentTime = playerRef.current.currentTime + 10;
+    setState({
+      ...state,
+      played: parseFloat(
+        playerRef.current.currentTime / playerRef.current.duration
+      ),
+      currentTime: playerRef.current.currentTime,
+    });
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
       if (playerRef.current && playing && !seeking) {
+        const p = parseFloat(
+          playerRef.current.currentTime / playerRef.current.duration
+        );
+
         setState({
           ...state,
           volume: volume,
           muted: muted,
           currentTime: playerRef.current.currentTime,
-          played: parseFloat(
-            playerRef.current.currentTime / playerRef.current.duration
-          ),
+          played: p,
+        });
+        onProgress({
+          playedSeconds: playerRef.current.currentTime,
+          playedPercentage: p,
         });
       }
     }, progressInterval);
@@ -118,6 +144,7 @@ const CustomVideo = ({
       setState({ ...state, duration: playerRef.current.duration });
     };
     playerRef.current.addEventListener('loadedmetadata', videoDuration);
+    playerRef.current.duration ? onDuration(playerRef.current.duration) : null;
 
     return () => {
       playerRef.current.removeEventListener('loadedmetadata', videoDuration);
@@ -172,12 +199,12 @@ const CustomVideo = ({
   };
 
   const handleMouseMove = () => {
-    // controlsRef.current.style.visibility = 'visible';
+    setState({...state, hovering: true})
     count = 0;
   };
 
   const handleMouseLeave = () => {
-    // controlsRef.current.style.visibility = 'hidden';
+    setState({...state, hovering: false})
     count = 0;
   };
 
@@ -198,7 +225,7 @@ const CustomVideo = ({
     setState({
       ...state,
       muted: !state.muted,
-      volume: !state.muted === true ? 0 : volume,
+      volume: !state.muted === true ? 0 : 1,
     });
   };
 
@@ -208,14 +235,14 @@ const CustomVideo = ({
       : `-${format(duration - currentTime)}`;
 
   const totalDuration = format(duration);
-
+  console.log(hovering)
   return (
     <>
-      <div
+      <StyledVideoContainer
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         ref={playerContainerRef}>
-        <video
+        <StyledVideo
           preload={'auto'}
           ref={playerRef}
           width="100%"
@@ -226,8 +253,8 @@ const CustomVideo = ({
           loop={loop}
           volume={volume}>
           <source src={url} type="video/mp4"></source>
-        </video>
-
+        </StyledVideo>
+      {controls ? 
         <Controls
           ref={controlsRef}
           onSeek={handleSeekChange}
@@ -250,8 +277,9 @@ const CustomVideo = ({
           onPlaybackRateChange={handlePlaybackRate}
           onToggleFullScreen={toggleFullScreen}
           volume={volume}
-        />
-      </div>
+          hovering={hovering}
+        /> : null }
+      </StyledVideoContainer>
     </>
   );
 };
