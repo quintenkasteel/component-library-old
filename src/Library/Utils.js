@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 export const convertRGBtoHSL = rgb => {
   const r = rgb[0] / 255
   const g = rgb[1] / 255
@@ -70,3 +71,20 @@ export function throttle(func, wait, options) {
 };
 
 
+
+
+export const onClickOutSide = (ref, callback) => {
+  const handleClick = e => {
+    if (ref.current && !ref.current.contains(e.target)) {
+      callback();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleClick);
+
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  });
+};

@@ -20,6 +20,7 @@ module.exports = {
   },
   module: {
     rules: [
+     
       {
         test: /\.(js)$/,
         use: {
@@ -48,7 +49,7 @@ module.exports = {
         test: /\.(png|svg|jpg|gif)$/,
         use: ['file-loader'],
       },
-      { test: /\.json$/, loader: 'json-loader' },
+      
     ],
   },
   optimization: {
