@@ -104,7 +104,7 @@ const Controls = forwardRef(
 
         <StyledBottomBar>
           <StyledPlayMain onClick={onPlayPause}>
-            {playing ? <Icon name={'vzxcvzcxvz'} /> : <Icon name={'vzxcvzcxvz'} />}
+            {playing ? <Icon name={'pause'} /> : <Icon name={'play'} />}
           </StyledPlayMain>
           <StyledMute>
             <div onClick={onMute} >
