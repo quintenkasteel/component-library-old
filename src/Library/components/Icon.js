@@ -1,42 +1,37 @@
 import React from 'react';
-import VolumeLow from '../../../Icons/volume-low.png';
-import VolumeHigh from '../../../Icons/volume-high.png';
-import Stop from '../../../Icons/stop.png';
-import Rewind from '../../../Icons/rewind.png';
-import Play from '../../../Icons/play.png';
-import Resume from '../../../Icons/resume.png';
-import Pause from '../../../Icons/pause.png';
-import Mute from '../../../Icons/mute.png';
-import FastForward from '../../../Icons/fast-forward.png';
-import FullScreen from '../../../Icons/full-screen.png';
-
 import StyledIcon from '../styles/Icon.js';
+import finger from '../../../Icons/outline/fuckYou.svg';
 
-const Icon = ({ name, size }) => {
-  switch (name) {
-    case 'VolumeLow':
-      return <StyledIcon src={VolumeLow} size={size} />;
-    case 'VolumeHigh':
-      return <StyledIcon src={VolumeHigh} size={size} />;
-    case 'Stop':
-      return <StyledIcon src={Stop} size={size} />;
-    case 'Rewind':
-      return <StyledIcon src={Rewind} size={size} />;
-    case 'Play':
-      return <StyledIcon src={Play} size={size} />;
-    case 'Resume':
-      return <StyledIcon src={Resume} size={size} />;
-    case 'Pause':
-      return <StyledIcon src={Pause} size={size} />;
-    case 'Mute':
-      return <StyledIcon src={Mute} size={size} />;
-    case 'FastForward':
-      return <StyledIcon src={FastForward} size={size} />;
-    case 'FullScreen':
-      return <StyledIcon src={FullScreen} size={size} />;
-    default:
-      return null;
-  }
+const camelize = str => {
+  const newString = str.replace('-', ' ');
+
+  return newString.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function(match, index) {
+    if (+match === 0) return ''; // or if (/\s+/.test(match)) for white spaces
+    return index === 0 ? match.toLowerCase() : match.toUpperCase();
+  });
+};
+
+const Icon = ({ name, size, fill = 'white', type = 'outline' }) => {
+  const string = name ? camelize(name) : null;
+
+  const acceptedType = ['outline', 'FontAwesome'].indexOf(type) > -1;
+
+  const importUrl = (() => {
+    try {
+      return acceptedType
+        ? require(`../../../Icons/${type}/${string}.png`).default
+        : console.warn(`Icon type ${type} doesn't exist in package AWESOME`);
+    } catch (err) {
+      return console.warn(`Icon name ${name} doesn't exist in package AWESOME`);
+    }
+  })();
+
+  if (!string || !importUrl)
+    return <StyledIcon ImageSrc={finger} size={size} fill={fill} type={type} />;
+
+  return (
+    <StyledIcon ImageSrc={importUrl} size={size} fill={fill} type={type} />
+  );
 };
 
 export default Icon;

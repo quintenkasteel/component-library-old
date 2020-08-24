@@ -278,10 +278,10 @@ const DatePicker = props => {
         <DateSelectorContainer className="mdp-container">
           <DateSelectorHeader className="mdpc-head">
             <DateArrow className="mdpchbi-left-arrows" onClick={() => setYear(-1)}>
-              arrows left
+            {"<"}
             </DateArrow>
             <DateArrow className="mdpchbi-left-arrow" onClick={() => setMonth(-1)}>
-              arrow left
+             {"<<"}
             </DateArrow>
             <CurrentDateContainer className="mdpch-container">
               <CurrentYear className="mdpchc-year">{state.year}</CurrentYear>
@@ -289,9 +289,9 @@ const DatePicker = props => {
                 {getMonthStr(state.month)}
               </CurrentMonth>
             </CurrentDateContainer>
-            <DateArrow onClick={() => setMonth(1)}>arrow right</DateArrow>
+            <DateArrow onClick={() => setMonth(1)}>{"<"}</DateArrow>
             <DateArrow className="mdpchbi-right-arrows" onClick={() => setYear(1)}>
-              arrows right
+              {">>"}
             </DateArrow>
           </DateSelectorHeader>
           {calendarMarkup}

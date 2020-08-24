@@ -27,6 +27,7 @@ const Picker = ({
   inputSize = 40,
   delay = 0,
   type = 'hsl',
+  styling = 'photoshop',
   hslValue = () => {},
   hexValue = () => {},
   rgbValue = () => {},

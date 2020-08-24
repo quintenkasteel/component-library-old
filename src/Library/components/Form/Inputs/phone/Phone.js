@@ -9,40 +9,15 @@ const Phone = ({
   showCurrency = false,
   showIso2 = false,
   showIso3 = false,
-  sort = ['dialCode', 'countryName', 'icon'],
+  sort = ['countryName', 'dialCode', 'icon'],
 }) => {
   const DropDown = (data, sort) => {
     return data.map((country, i) => {
       return sort.map((item, i) => {
-        switch (item) {
-          case 'icon':
-            return <div key={i}>{country.icon}</div>;
-
-          case 'dialCode':
-            return <div key={i}>{country.dialCode}</div>;
-
-          case 'countryName':
-            return <div key={i}>{country.countryName}</div>;
-
-          case 'currency':
-            return <div key={i}>{country.currency}</div>;
-
-          case 'iso2':
-            return <div key={i}>{country.iso2}</div>;
-
-          case 'iso3':
-            return <div key={i}>{country.iso3}</div>;
-
-          case 'continent':
-            return <div key={i}>{country.continent}</div>;
-
-          case 'continent':
-            return <div key={i}>{country.capital}</div>;
-
-          default:
-            null;
+          console.log(country[`${item}`])
+        return country[`${item}`] ? <div key={i}>{country[`${item}`]}</div> : null;
         }
-      });
+      );
     });
   };
   return (

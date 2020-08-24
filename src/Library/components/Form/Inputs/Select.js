@@ -58,14 +58,14 @@ const DropdownButton = styled.div`
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 
-    /* + .dropdown-list {
+    + .dropdown-list {
       display: block;
-    } */
+    }
   }
 `;
 
 const DropdownListContainer = styled.div`
-  /* display: none; */
+  display: ${props => (props.isOpen ? 'block' : 'none')};
   position: absolute;
   top: 100%;
 
@@ -102,12 +102,13 @@ const DropdownSearch = styled.input`
 `;
 
 const Select = ({
-  multiselect,
+  multiselect = false,
   data = dummyData,
-  searchable,
+  searchable = true,
   labelSort = ['optionLabel', 'icon'],
   select = 'optionLabel',
-  title,
+  title = 'title',
+  placeholderSearch = 'Fabrizo',
   onSelect = () => {},
 }) => {
   const [state, setState] = useState({
@@ -116,7 +117,6 @@ const Select = ({
     filter: '',
   });
   const ref = useRef();
-
 
   const showDropdownMenu = event => {
     event.preventDefault();
@@ -150,14 +150,14 @@ const Select = ({
         displayMenu: false,
       });
 
-    // onSelect(data);
+    onSelect(data);
   };
 
   const handleSearch = event => {
     setState({ ...state, filter: event.target.value });
   };
 
-  const lowercasedFilter = state.filter ? state.filter.toLowerCase() : "";
+  const lowercasedFilter = state.filter ? state.filter.toLowerCase() : '';
 
   const filteredData = data.filter(item => {
     return Object.keys(item).some(key =>
@@ -168,6 +168,7 @@ const Select = ({
   return (
     <DropdownContainer
       ref={ref}
+      isOpen={state.displayMenu}
       className={`dropdown ${state.displayMenu ? `open` : ``}`}>
       <DropdownButton onClick={showDropdownMenu}>
         {state.selected.length === 0 ? title : state.selected}
@@ -177,6 +178,7 @@ const Select = ({
         {searchable ? (
           <DropdownSearch
             type="text"
+            placeholder={placeholderSearch}
             value={state.filter}
             onChange={handleSearch}
           />
