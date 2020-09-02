@@ -1,7 +1,7 @@
 [
   {
     "icon": "🇧🇩",
-    "dialCode": "880",
+    "dialCode": "+880",
     "continent": "AS",
     "countryName": "Bangladesh",
     "iso2": "BD",
@@ -11,7 +11,7 @@
   },
   {
     "icon": "🇧🇪",
-    "dialCode": "32",
+    "dialCode": "+32",
     "iso2": "BE",
     "iso3": "BEL",
     "countryName": "Belgium",
@@ -21,7 +21,7 @@
   },
   {
     "icon": "🇧🇫",
-    "dialCode": "226",
+    "dialCode": "+226",
     "continent": "AF",
     "iso2": "BF",
     "iso3": "BFA",
@@ -31,7 +31,7 @@
   },
   {
     "icon": "🇧🇬",
-    "dialCode": "359",
+    "dialCode": "+359",
     "iso2": "BG",
     "currency": "BGN",
     "iso3": "BGR",
@@ -41,7 +41,7 @@
   },
   {
     "icon": "🇧🇦",
-    "dialCode": "387",
+    "dialCode": "+387",
     "iso2": "BA",
     "currency": "BAM",
     "iso3": "BIH",
@@ -51,7 +51,7 @@
   },
   {
     "icon": "🇧🇧",
-    "dialCode": "1-246",
+    "dialCode": "+1-246",
     "countryName": "Barbados",
     "iso2": "BB",
     "currency": "BBD",
@@ -61,7 +61,7 @@
   },
   {
     "icon": "🇼🇫",
-    "dialCode": "681",
+    "dialCode": "+681",
     "capital": "Mata Utu",
     "continent": "OC",
     "countryName": "Wallis and Futuna",
@@ -71,7 +71,7 @@
   },
   {
     "icon": "🇧🇱",
-    "dialCode": "590",
+    "dialCode": "+590",
     "iso2": "BL",
     "iso3": "BLM",
     "currency": "EUR",
@@ -81,7 +81,7 @@
   },
   {
     "icon": "🇧🇲",
-    "dialCode": "1-441",
+    "dialCode": "+1-441",
     "countryName": "Bermuda",
     "iso2": "BM",
     "currency": "BMD",
@@ -91,7 +91,7 @@
   },
   {
     "icon": "🇧🇳",
-    "dialCode": "673",
+    "dialCode": "+673",
     "continent": "AS",
     "capital": "Bandar Seri Begawan",
     "iso2": "BN",
@@ -101,7 +101,7 @@
   },
   {
     "icon": "🇧🇴",
-    "dialCode": "591",
+    "dialCode": "+591",
     "iso2": "BO",
     "currency": "BOB",
     "iso3": "BOL",
@@ -111,7 +111,7 @@
   },
   {
     "icon": "🇧🇭",
-    "dialCode": "973",
+    "dialCode": "+973",
     "continent": "AS",
     "countryName": "Bahrain",
     "iso2": "BH",
@@ -121,7 +121,7 @@
   },
   {
     "icon": "🇧🇮",
-    "dialCode": "257",
+    "dialCode": "+257",
     "continent": "AF",
     "iso3": "BDI",
     "iso2": "BI",
@@ -131,7 +131,7 @@
   },
   {
     "icon": "🇧🇯",
-    "dialCode": "229",
+    "dialCode": "+229",
     "continent": "AF",
     "iso3": "BEN",
     "countryName": "Benin",
@@ -141,7 +141,7 @@
   },
   {
     "icon": "🇧🇹",
-    "dialCode": "975",
+    "dialCode": "+975",
     "continent": "AS",
     "countryName": "Bhutan",
     "iso2": "BT",
@@ -151,7 +151,7 @@
   },
   {
     "icon": "🇯🇲",
-    "dialCode": "1-876",
+    "dialCode": "+1-876",
     "iso3": "JAM",
     "countryName": "Jamaica",
     "iso2": "JM",
@@ -162,7 +162,7 @@
   {
     "capital": "",
     "icon": "🇧🇻",
-    "dialCode": "55",
+    "dialCode": "+55",
     "continent": "AN",
     "countryName": "Bouvet Island",
     "iso2": "BV",
@@ -171,7 +171,7 @@
   },
   {
     "icon": "🇧🇼",
-    "dialCode": "267",
+    "dialCode": "+267",
     "continent": "AF",
     "countryName": "Botswana",
     "iso2": "BW",
@@ -181,7 +181,7 @@
   },
   {
     "icon": "🇼🇸",
-    "dialCode": "685",
+    "dialCode": "+685",
     "capital": "Apia",
     "continent": "OC",
     "countryName": "Samoa",
@@ -192,7 +192,7 @@
   {
     "capital": "",
     "icon": "🇧🇶",
-    "dialCode": "599",
+    "dialCode": "+599",
     "iso3": "BES",
     "countryName": "Bonaire, Saint Eustatius and Saba ",
     "iso2": "BQ",
@@ -201,7 +201,7 @@
   },
   {
     "icon": "🇧🇷",
-    "dialCode": "55",
+    "dialCode": "+55",
     "iso2": "BR",
     "iso3": "BRA",
     "capital": "Brasilia",
@@ -211,7 +211,7 @@
   },
   {
     "icon": "🇧🇸",
-    "dialCode": "1-242",
+    "dialCode": "+1-242",
     "countryName": "Bahamas",
     "iso3": "BHS",
     "iso2": "BS",
@@ -221,7 +221,7 @@
   },
   {
     "icon": "🇯🇪",
-    "dialCode": "44-1534",
+    "dialCode": "+44-1534",
     "continent": "EU",
     "currency": "GBP",
     "iso2": "JE",
@@ -231,7 +231,7 @@
   },
   {
     "icon": "🇧🇾",
-    "dialCode": "375",
+    "dialCode": "+375",
     "countryName": "Belarus",
     "iso3": "BLR",
     "iso2": "BY",
@@ -241,7 +241,7 @@
   },
   {
     "icon": "🇧🇿",
-    "dialCode": "501",
+    "dialCode": "+501",
     "countryName": "Belize",
     "capital": "Belmopan",
     "iso3": "BLZ",
@@ -251,7 +251,7 @@
   },
   {
     "icon": "🇷🇺",
-    "dialCode": "7",
+    "dialCode": "+7",
     "continent": "EU",
     "capital": "Moscow",
     "iso2": "RU",
@@ -261,7 +261,7 @@
   },
   {
     "icon": "🇷🇼",
-    "dialCode": "250",
+    "dialCode": "+250",
     "continent": "AF",
     "capital": "Kigali",
     "iso2": "RW",
@@ -271,7 +271,7 @@
   },
   {
     "icon": "🇷🇸",
-    "dialCode": "381",
+    "dialCode": "+381",
     "capital": "Belgrade",
     "continent": "EU",
     "iso2": "RS",
@@ -281,7 +281,7 @@
   },
   {
     "icon": "🇹🇱",
-    "dialCode": "670",
+    "dialCode": "+670",
     "capital": "Dili",
     "countryName": "East Timor",
     "continent": "OC",
@@ -291,7 +291,7 @@
   },
   {
     "icon": "🇷🇪",
-    "dialCode": "262",
+    "dialCode": "+262",
     "continent": "AF",
     "currency": "EUR",
     "iso2": "RE",
@@ -301,7 +301,7 @@
   },
   {
     "icon": "🇹🇲",
-    "dialCode": "993",
+    "dialCode": "+993",
     "continent": "AS",
     "capital": "Ashgabat",
     "iso3": "TKM",
@@ -311,7 +311,7 @@
   },
   {
     "icon": "🇹🇯",
-    "dialCode": "992",
+    "dialCode": "+992",
     "continent": "AS",
     "capital": "Dushanbe",
     "countryName": "Tajikistan",
@@ -321,7 +321,7 @@
   },
   {
     "icon": "🇷🇴",
-    "dialCode": "40",
+    "dialCode": "+40",
     "capital": "Bucharest",
     "continent": "EU",
     "iso2": "RO",
@@ -332,7 +332,7 @@
   {
     "capital": "",
     "icon": "🇹🇰",
-    "dialCode": "690",
+    "dialCode": "+690",
     "currency": "NZD",
     "continent": "OC",
     "iso2": "TK",
@@ -341,7 +341,7 @@
   },
   {
     "icon": "🇬🇼",
-    "dialCode": "245",
+    "dialCode": "+245",
     "continent": "AF",
     "capital": "Bissau",
     "iso3": "GNB",
@@ -351,7 +351,7 @@
   },
   {
     "icon": "🇬🇺",
-    "dialCode": "1-671",
+    "dialCode": "+1-671",
     "iso2": "GU",
     "countryName": "Guam",
     "iso3": "GUM",
@@ -361,7 +361,7 @@
   },
   {
     "icon": "🇬🇹",
-    "dialCode": "502",
+    "dialCode": "+502",
     "iso2": "GT",
     "iso3": "GTM",
     "currency": "GTQ",
@@ -371,7 +371,7 @@
   },
   {
     "icon": "🇬🇸",
-    "dialCode": "500",
+    "dialCode": "+500",
     "continent": "AN",
     "currency": "GBP",
     "capital": "Grytviken",
@@ -381,7 +381,7 @@
   },
   {
     "icon": "🇬🇷",
-    "dialCode": "30",
+    "dialCode": "+30",
     "capital": "Athens",
     "continent": "EU",
     "currency": "EUR",
@@ -391,7 +391,7 @@
   },
   {
     "icon": "🇬🇶",
-    "dialCode": "240",
+    "dialCode": "+240",
     "continent": "AF",
     "countryName": "Equatorial Guinea",
     "iso3": "GNQ",
@@ -401,7 +401,7 @@
   },
   {
     "icon": "🇬🇵",
-    "dialCode": "590",
+    "dialCode": "+590",
     "capital": "Basse-Terre",
     "currency": "EUR",
     "iso3": "GLP",
@@ -411,7 +411,7 @@
   },
   {
     "icon": "🇯🇵",
-    "dialCode": "81",
+    "dialCode": "+81",
     "continent": "AS",
     "countryName": "Japan",
     "iso2": "JP",
@@ -421,7 +421,7 @@
   },
   {
     "icon": "🇬🇾",
-    "dialCode": "592",
+    "dialCode": "+592",
     "capital": "Georgetown",
     "iso3": "GUY",
     "countryName": "Guyana",
@@ -431,7 +431,7 @@
   },
   {
     "icon": "🇬🇬",
-    "dialCode": "44-1481",
+    "dialCode": "+44-1481",
     "continent": "EU",
     "currency": "GBP",
     "iso2": "GG",
@@ -441,7 +441,7 @@
   },
   {
     "icon": "🇬🇫",
-    "dialCode": "594",
+    "dialCode": "+594",
     "capital": "Cayenne",
     "currency": "EUR",
     "countryName": "French Guiana",
@@ -451,7 +451,7 @@
   },
   {
     "icon": "🇬🇪",
-    "dialCode": "995",
+    "dialCode": "+995",
     "continent": "AS",
     "iso2": "GE",
     "currency": "GEL",
@@ -461,7 +461,7 @@
   },
   {
     "icon": "🇬🇩",
-    "dialCode": "1-473",
+    "dialCode": "+1-473",
     "iso2": "GD",
     "iso3": "GRD",
     "countryName": "Grenada",
@@ -471,7 +471,7 @@
   },
   {
     "icon": "🇬🇧",
-    "dialCode": "44",
+    "dialCode": "+44",
     "continent": "EU",
     "iso2": "GB",
     "currency": "GBP",
@@ -481,7 +481,7 @@
   },
   {
     "icon": "🇬🇦",
-    "dialCode": "241",
+    "dialCode": "+241",
     "continent": "AF",
     "iso2": "GA",
     "iso3": "GAB",
@@ -491,7 +491,7 @@
   },
   {
     "icon": "🇸🇻",
-    "dialCode": "503",
+    "dialCode": "+503",
     "countryName": "El Salvador",
     "continent": "NA",
     "capital": "San Salvador",
@@ -501,7 +501,7 @@
   },
   {
     "icon": "🇬🇳",
-    "dialCode": "224",
+    "dialCode": "+224",
     "continent": "AF",
     "capital": "Conakry",
     "iso3": "GIN",
@@ -511,7 +511,7 @@
   },
   {
     "icon": "🇬🇲",
-    "dialCode": "220",
+    "dialCode": "+220",
     "continent": "AF",
     "capital": "Banjul",
     "countryName": "Gambia",
@@ -521,7 +521,7 @@
   },
   {
     "icon": "🇬🇱",
-    "dialCode": "299",
+    "dialCode": "+299",
     "currency": "DKK",
     "iso2": "GL",
     "countryName": "Greenland",
@@ -531,7 +531,7 @@
   },
   {
     "icon": "🇬🇮",
-    "dialCode": "350",
+    "dialCode": "+350",
     "continent": "EU",
     "iso2": "GI",
     "iso3": "GIB",
@@ -541,7 +541,7 @@
   },
   {
     "icon": "🇬🇭",
-    "dialCode": "233",
+    "dialCode": "+233",
     "capital": "Accra",
     "continent": "AF",
     "iso2": "GH",
@@ -551,7 +551,7 @@
   },
   {
     "icon": "🇴🇲",
-    "dialCode": "968",
+    "dialCode": "+968",
     "continent": "AS",
     "capital": "Muscat",
     "iso2": "OM",
@@ -561,7 +561,7 @@
   },
   {
     "icon": "🇹🇳",
-    "dialCode": "216",
+    "dialCode": "+216",
     "continent": "AF",
     "iso2": "TN",
     "currency": "TND",
@@ -571,7 +571,7 @@
   },
   {
     "icon": "🇯🇴",
-    "dialCode": "962",
+    "dialCode": "+962",
     "capital": "Amman",
     "continent": "AS",
     "iso2": "JO",
@@ -581,7 +581,7 @@
   },
   {
     "icon": "🇭🇷",
-    "dialCode": "385",
+    "dialCode": "+385",
     "countryName": "Croatia",
     "continent": "EU",
     "iso2": "HR",
@@ -591,7 +591,7 @@
   },
   {
     "icon": "🇭🇹",
-    "dialCode": "509",
+    "dialCode": "+509",
     "countryName": "Haiti",
     "iso2": "HT",
     "currency": "HTG",
@@ -601,7 +601,7 @@
   },
   {
     "icon": "🇭🇺",
-    "dialCode": "36",
+    "dialCode": "+36",
     "capital": "Budapest",
     "continent": "EU",
     "iso2": "HU",
@@ -611,7 +611,7 @@
   },
   {
     "icon": "🇭🇰",
-    "dialCode": "852",
+    "dialCode": "+852",
     "continent": "AS",
     "iso2": "HK",
     "currency": "HKD",
@@ -621,7 +621,7 @@
   },
   {
     "icon": "🇭🇳",
-    "dialCode": "504",
+    "dialCode": "+504",
     "iso2": "HN",
     "iso3": "HND",
     "currency": "HNL",
@@ -631,7 +631,7 @@
   },
   {
     "capital": "",
-    "dialCode": " ",
+    "dialCode": "+ ",
     "icon": "🇭🇲",
     "continent": "AN",
     "currency": "AUD",
@@ -641,7 +641,7 @@
   },
   {
     "icon": "🇻🇪",
-    "dialCode": "58",
+    "dialCode": "+58",
     "capital": "Caracas",
     "continent": "SA",
     "iso2": "VE",
@@ -651,7 +651,7 @@
   },
   {
     "icon": "🇵🇷",
-    "dialCode": "1-787",
+    "dialCode": "+1-787",
     "continent": "NA",
     "iso2": "PR",
     "iso3": "PRI",
@@ -661,7 +661,7 @@
   },
   {
     "icon": "🇵🇸",
-    "dialCode": "970",
+    "dialCode": "+970",
     "continent": "AS",
     "capital": "East Jerusalem",
     "currency": "ILS",
@@ -671,7 +671,7 @@
   },
   {
     "icon": "🇵🇼",
-    "dialCode": "680",
+    "dialCode": "+680",
     "capital": "Melekeok",
     "continent": "OC",
     "countryName": "Palau",
@@ -681,7 +681,7 @@
   },
   {
     "icon": "🇵🇹",
-    "dialCode": "351",
+    "dialCode": "+351",
     "continent": "EU",
     "currency": "EUR",
     "capital": "Lisbon",
@@ -691,7 +691,7 @@
   },
   {
     "icon": "🇸🇯",
-    "dialCode": "47",
+    "dialCode": "+47",
     "continent": "EU",
     "capital": "Longyearbyen",
     "currency": "NOK",
@@ -701,7 +701,7 @@
   },
   {
     "icon": "🇵🇾",
-    "dialCode": "595",
+    "dialCode": "+595",
     "capital": "Asuncion",
     "countryName": "Paraguay",
     "iso3": "PRY",
@@ -711,7 +711,7 @@
   },
   {
     "icon": "🇮🇶",
-    "dialCode": "964",
+    "dialCode": "+964",
     "continent": "AS",
     "capital": "Baghdad",
     "iso2": "IQ",
@@ -721,7 +721,7 @@
   },
   {
     "icon": "🇵🇦",
-    "dialCode": "507",
+    "dialCode": "+507",
     "continent": "NA",
     "iso2": "PA",
     "currency": "PAB",
@@ -731,7 +731,7 @@
   },
   {
     "icon": "🇵🇫",
-    "dialCode": "689",
+    "dialCode": "+689",
     "countryName": "French Polynesia",
     "continent": "OC",
     "capital": "Papeete",
@@ -741,7 +741,7 @@
   },
   {
     "icon": "🇵🇬",
-    "dialCode": "675",
+    "dialCode": "+675",
     "continent": "OC",
     "countryName": "Papua New Guinea",
     "iso2": "PG",
@@ -751,7 +751,7 @@
   },
   {
     "icon": "🇵🇪",
-    "dialCode": "51",
+    "dialCode": "+51",
     "capital": "Lima",
     "iso2": "PE",
     "currency": "PEN",
@@ -761,7 +761,7 @@
   },
   {
     "icon": "🇵🇰",
-    "dialCode": "92",
+    "dialCode": "+92",
     "continent": "AS",
     "capital": "Islamabad",
     "iso3": "PAK",
@@ -771,7 +771,7 @@
   },
   {
     "icon": "🇵🇭",
-    "dialCode": "63",
+    "dialCode": "+63",
     "continent": "AS",
     "capital": "Manila",
     "iso2": "PH",
@@ -781,7 +781,7 @@
   },
   {
     "icon": "🇵🇳",
-    "dialCode": "870",
+    "dialCode": "+870",
     "capital": "Adamstown",
     "currency": "NZD",
     "continent": "OC",
@@ -791,7 +791,7 @@
   },
   {
     "icon": "🇵🇱",
-    "dialCode": "48",
+    "dialCode": "+48",
     "continent": "EU",
     "iso2": "PL",
     "currency": "PLN",
@@ -801,7 +801,7 @@
   },
   {
     "icon": "🇵🇲",
-    "dialCode": "508",
+    "dialCode": "+508",
     "currency": "EUR",
     "continent": "NA",
     "iso2": "PM",
@@ -811,7 +811,7 @@
   },
   {
     "icon": "🇿🇲",
-    "dialCode": "260",
+    "dialCode": "+260",
     "continent": "AF",
     "capital": "Lusaka",
     "countryName": "Zambia",
@@ -821,7 +821,7 @@
   },
   {
     "icon": "🇪🇭",
-    "dialCode": "212",
+    "dialCode": "+212",
     "continent": "AF",
     "iso2": "EH",
     "capital": "El-Aaiun",
@@ -831,7 +831,7 @@
   },
   {
     "icon": "🇪🇪",
-    "dialCode": "372",
+    "dialCode": "+372",
     "iso2": "EE",
     "iso3": "EST",
     "countryName": "Estonia",
@@ -841,7 +841,7 @@
   },
   {
     "icon": "🇪🇬",
-    "dialCode": "20",
+    "dialCode": "+20",
     "continent": "AF",
     "capital": "Cairo",
     "iso2": "EG",
@@ -851,7 +851,7 @@
   },
   {
     "icon": "🇿🇦",
-    "dialCode": "27",
+    "dialCode": "+27",
     "continent": "AF",
     "capital": "Pretoria",
     "countryName": "South Africa",
@@ -861,7 +861,7 @@
   },
   {
     "icon": "🇪🇨",
-    "dialCode": "593",
+    "dialCode": "+593",
     "iso2": "EC",
     "iso3": "ECU",
     "countryName": "Ecuador",
@@ -871,7 +871,7 @@
   },
   {
     "icon": "🇮🇹",
-    "dialCode": "39",
+    "dialCode": "+39",
     "continent": "EU",
     "currency": "EUR",
     "iso2": "IT",
@@ -881,7 +881,7 @@
   },
   {
     "icon": "🇻🇳",
-    "dialCode": "84",
+    "dialCode": "+84",
     "continent": "AS",
     "capital": "Hanoi",
     "countryName": "Vietnam",
@@ -891,7 +891,7 @@
   },
   {
     "icon": "🇸🇧",
-    "dialCode": "677",
+    "dialCode": "+677",
     "capital": "Honiara",
     "continent": "OC",
     "iso2": "SB",
@@ -901,7 +901,7 @@
   },
   {
     "icon": "🇪🇹",
-    "dialCode": "251",
+    "dialCode": "+251",
     "capital": "Addis Ababa",
     "continent": "AF",
     "iso2": "ET",
@@ -911,7 +911,7 @@
   },
   {
     "icon": "🇸🇴",
-    "dialCode": "252",
+    "dialCode": "+252",
     "continent": "AF",
     "capital": "Mogadishu",
     "iso2": "SO",
@@ -921,7 +921,7 @@
   },
   {
     "icon": "🇿🇼",
-    "dialCode": "263",
+    "dialCode": "+263",
     "continent": "AF",
     "capital": "Harare",
     "countryName": "Zimbabwe",
@@ -931,7 +931,7 @@
   },
   {
     "icon": "🇸🇦",
-    "dialCode": "966",
+    "dialCode": "+966",
     "continent": "AS",
     "capital": "Riyadh",
     "iso2": "SA",
@@ -941,7 +941,7 @@
   },
   {
     "icon": "🇪🇸",
-    "dialCode": "34",
+    "dialCode": "+34",
     "iso2": "ES",
     "iso3": "ESP",
     "continent": "EU",
@@ -951,7 +951,7 @@
   },
   {
     "icon": "🇪🇷",
-    "dialCode": "291",
+    "dialCode": "+291",
     "continent": "AF",
     "capital": "Asmara",
     "iso2": "ER",
@@ -961,7 +961,7 @@
   },
   {
     "icon": "🇲🇪",
-    "dialCode": "382",
+    "dialCode": "+382",
     "continent": "EU",
     "currency": "EUR",
     "iso2": "ME",
@@ -971,7 +971,7 @@
   },
   {
     "icon": "🇲🇩",
-    "dialCode": "373",
+    "dialCode": "+373",
     "capital": "Chisinau",
     "continent": "EU",
     "iso2": "MD",
@@ -981,7 +981,7 @@
   },
   {
     "icon": "🇲🇬",
-    "dialCode": "261",
+    "dialCode": "+261",
     "continent": "AF",
     "capital": "Antananarivo",
     "countryName": "Madagascar",
@@ -991,7 +991,7 @@
   },
   {
     "icon": "🇲🇫",
-    "dialCode": "590",
+    "dialCode": "+590",
     "currency": "EUR",
     "iso3": "MAF",
     "capital": "Marigot",
@@ -1001,7 +1001,7 @@
   },
   {
     "icon": "🇲🇦",
-    "dialCode": "212",
+    "dialCode": "+212",
     "continent": "AF",
     "iso2": "MA",
     "currency": "MAD",
@@ -1011,7 +1011,7 @@
   },
   {
     "icon": "🇲🇨",
-    "dialCode": "377",
+    "dialCode": "+377",
     "continent": "EU",
     "currency": "EUR",
     "iso2": "MC",
@@ -1021,7 +1021,7 @@
   },
   {
     "icon": "🇺🇿",
-    "dialCode": "998",
+    "dialCode": "+998",
     "continent": "AS",
     "capital": "Tashkent",
     "iso2": "UZ",
@@ -1031,7 +1031,7 @@
   },
   {
     "icon": "🇲🇲",
-    "dialCode": "95",
+    "dialCode": "+95",
     "continent": "AS",
     "iso2": "MM",
     "currency": "MMK",
@@ -1041,7 +1041,7 @@
   },
   {
     "icon": "🇲🇱",
-    "dialCode": "223",
+    "dialCode": "+223",
     "continent": "AF",
     "capital": "Bamako",
     "countryName": "Mali",
@@ -1051,7 +1051,7 @@
   },
   {
     "icon": "🇲🇴",
-    "dialCode": "853",
+    "dialCode": "+853",
     "continent": "AS",
     "iso3": "MAC",
     "countryName": "Macao",
@@ -1061,7 +1061,7 @@
   },
   {
     "icon": "🇲🇳",
-    "dialCode": "976",
+    "dialCode": "+976",
     "continent": "AS",
     "iso2": "MN",
     "iso3": "MNG",
@@ -1071,7 +1071,7 @@
   },
   {
     "icon": "🇲🇭",
-    "dialCode": "692",
+    "dialCode": "+692",
     "capital": "Majuro",
     "countryName": "Marshall Islands",
     "iso2": "MH",
@@ -1081,7 +1081,7 @@
   },
   {
     "icon": "🇲🇰",
-    "dialCode": "389",
+    "dialCode": "+389",
     "continent": "EU",
     "countryName": "Macedonia",
     "iso2": "MK",
@@ -1091,7 +1091,7 @@
   },
   {
     "icon": "🇲🇺",
-    "dialCode": "230",
+    "dialCode": "+230",
     "continent": "AF",
     "countryName": "Mauritius",
     "iso2": "MU",
@@ -1101,7 +1101,7 @@
   },
   {
     "icon": "🇲🇹",
-    "dialCode": "356",
+    "dialCode": "+356",
     "continent": "EU",
     "currency": "EUR",
     "countryName": "Malta",
@@ -1111,7 +1111,7 @@
   },
   {
     "icon": "🇲🇼",
-    "dialCode": "265",
+    "dialCode": "+265",
     "continent": "AF",
     "capital": "Lilongwe",
     "countryName": "Malawi",
@@ -1121,7 +1121,7 @@
   },
   {
     "icon": "🇲🇻",
-    "dialCode": "960",
+    "dialCode": "+960",
     "continent": "AS",
     "countryName": "Maldives",
     "capital": "Male",
@@ -1131,7 +1131,7 @@
   },
   {
     "icon": "🇲🇶",
-    "dialCode": "596",
+    "dialCode": "+596",
     "currency": "EUR",
     "capital": "Fort-de-France",
     "countryName": "Martinique",
@@ -1141,7 +1141,7 @@
   },
   {
     "icon": "🇲🇵",
-    "dialCode": "1-670",
+    "dialCode": "+1-670",
     "iso3": "MNP",
     "iso2": "MP",
     "countryName": "Northern Mariana Islands",
@@ -1151,7 +1151,7 @@
   },
   {
     "icon": "🇲🇸",
-    "dialCode": "1-664",
+    "dialCode": "+1-664",
     "countryName": "Montserrat",
     "iso2": "MS",
     "iso3": "MSR",
@@ -1161,7 +1161,7 @@
   },
   {
     "icon": "🇲🇷",
-    "dialCode": "222",
+    "dialCode": "+222",
     "continent": "AF",
     "countryName": "Mauritania",
     "iso2": "MR",
@@ -1171,7 +1171,7 @@
   },
   {
     "icon": "🇮🇲",
-    "dialCode": "44-1624",
+    "dialCode": "+44-1624",
     "capital": "Douglas, Isle of Man",
     "continent": "EU",
     "currency": "GBP",
@@ -1181,7 +1181,7 @@
   },
   {
     "icon": "🇺🇬",
-    "dialCode": "256",
+    "dialCode": "+256",
     "continent": "AF",
     "capital": "Kampala",
     "iso2": "UG",
@@ -1191,7 +1191,7 @@
   },
   {
     "icon": "🇹🇿",
-    "dialCode": "255",
+    "dialCode": "+255",
     "continent": "AF",
     "capital": "Dodoma",
     "countryName": "Tanzania",
@@ -1201,7 +1201,7 @@
   },
   {
     "icon": "🇲🇾",
-    "dialCode": "60",
+    "dialCode": "+60",
     "continent": "AS",
     "capital": "Kuala Lumpur",
     "countryName": "Malaysia",
@@ -1211,7 +1211,7 @@
   },
   {
     "icon": "🇲🇽",
-    "dialCode": "52",
+    "dialCode": "+52",
     "iso3": "MEX",
     "countryName": "Mexico",
     "capital": "Mexico City",
@@ -1221,7 +1221,7 @@
   },
   {
     "icon": "🇮🇱",
-    "dialCode": "972",
+    "dialCode": "+972",
     "continent": "AS",
     "iso2": "IL",
     "currency": "ILS",
@@ -1231,7 +1231,7 @@
   },
   {
     "icon": "🇫🇷",
-    "dialCode": "33",
+    "dialCode": "+33",
     "continent": "EU",
     "currency": "EUR",
     "iso2": "FR",
@@ -1241,7 +1241,7 @@
   },
   {
     "icon": "🇮🇴",
-    "dialCode": "246",
+    "dialCode": "+246",
     "continent": "AS",
     "countryName": "British Indian Ocean Territory",
     "capital": "Diego Garcia",
@@ -1251,7 +1251,7 @@
   },
   {
     "icon": "🇸🇭",
-    "dialCode": "290",
+    "dialCode": "+290",
     "continent": "AF",
     "capital": "Jamestown",
     "countryName": "Saint Helena",
@@ -1261,7 +1261,7 @@
   },
   {
     "icon": "🇫🇮",
-    "dialCode": "358",
+    "dialCode": "+358",
     "continent": "EU",
     "currency": "EUR",
     "iso2": "FI",
@@ -1271,7 +1271,7 @@
   },
   {
     "icon": "🇫🇯",
-    "dialCode": "679",
+    "dialCode": "+679",
     "countryName": "Fiji",
     "iso2": "FJ",
     "currency": "FJD",
@@ -1281,7 +1281,7 @@
   },
   {
     "icon": "🇫🇰",
-    "dialCode": "500",
+    "dialCode": "+500",
     "countryName": "Falkland Islands",
     "iso2": "FK",
     "currency": "FKP",
@@ -1291,7 +1291,7 @@
   },
   {
     "icon": "🇫🇲",
-    "dialCode": "691",
+    "dialCode": "+691",
     "iso2": "FM",
     "iso3": "FSM",
     "countryName": "Micronesia",
@@ -1301,7 +1301,7 @@
   },
   {
     "icon": "🇫🇴",
-    "dialCode": "298",
+    "dialCode": "+298",
     "currency": "DKK",
     "continent": "EU",
     "countryName": "Faroe Islands",
@@ -1311,7 +1311,7 @@
   },
   {
     "icon": "🇳🇮",
-    "dialCode": "505",
+    "dialCode": "+505",
     "capital": "Managua",
     "continent": "NA",
     "iso2": "NI",
@@ -1321,7 +1321,7 @@
   },
   {
     "icon": "🇳🇱",
-    "dialCode": "31",
+    "dialCode": "+31",
     "capital": "Amsterdam",
     "continent": "EU",
     "currency": "EUR",
@@ -1331,7 +1331,7 @@
   },
   {
     "icon": "🇳🇴",
-    "dialCode": "47",
+    "dialCode": "+47",
     "continent": "EU",
     "iso2": "NO",
     "currency": "NOK",
@@ -1341,7 +1341,7 @@
   },
   {
     "icon": "🇳🇦",
-    "dialCode": "264",
+    "dialCode": "+264",
     "continent": "AF",
     "iso2": "NA",
     "currency": "NAD",
@@ -1351,7 +1351,7 @@
   },
   {
     "icon": "🇻🇺",
-    "dialCode": "678",
+    "dialCode": "+678",
     "continent": "OC",
     "capital": "Port Vila",
     "countryName": "Vanuatu",
@@ -1361,7 +1361,7 @@
   },
   {
     "icon": "🇳🇨",
-    "dialCode": "687",
+    "dialCode": "+687",
     "iso2": "NC",
     "iso3": "NCL",
     "countryName": "New Caledonia",
@@ -1371,7 +1371,7 @@
   },
   {
     "icon": "🇳🇪",
-    "dialCode": "227",
+    "dialCode": "+227",
     "continent": "AF",
     "iso2": "NE",
     "iso3": "NER",
@@ -1381,7 +1381,7 @@
   },
   {
     "icon": "🇳🇫",
-    "dialCode": "672",
+    "dialCode": "+672",
     "currency": "AUD",
     "capital": "Kingston",
     "iso2": "NF",
@@ -1391,7 +1391,7 @@
   },
   {
     "icon": "🇳🇬",
-    "dialCode": "234",
+    "dialCode": "+234",
     "capital": "Abuja",
     "continent": "AF",
     "iso2": "NG",
@@ -1401,7 +1401,7 @@
   },
   {
     "icon": "🇳🇿",
-    "dialCode": "64",
+    "dialCode": "+64",
     "countryName": "New Zealand",
     "iso2": "NZ",
     "currency": "NZD",
@@ -1411,7 +1411,7 @@
   },
   {
     "icon": "🇳🇵",
-    "dialCode": "977",
+    "dialCode": "+977",
     "continent": "AS",
     "capital": "Kathmandu",
     "countryName": "Nepal",
@@ -1421,7 +1421,7 @@
   },
   {
     "icon": "🇳🇷",
-    "dialCode": "674",
+    "dialCode": "+674",
     "currency": "AUD",
     "countryName": "Nauru",
     "iso2": "NR",
@@ -1431,7 +1431,7 @@
   },
   {
     "icon": "🇳🇺",
-    "dialCode": "683",
+    "dialCode": "+683",
     "capital": "Alofi",
     "iso3": "NIU",
     "countryName": "Niue",
@@ -1441,7 +1441,7 @@
   },
   {
     "icon": "🇨🇰",
-    "dialCode": "682",
+    "dialCode": "+682",
     "capital": "Avarua",
     "iso2": "CK",
     "iso3": "COK",
@@ -1451,7 +1451,7 @@
   },
   {
     "icon": "🇽🇰",
-    "dialCode": "383",
+    "dialCode": "+383",
     "continent": "EU",
     "currency": "EUR",
     "countryName": "Kosovo",
@@ -1461,7 +1461,7 @@
   },
   {
     "icon": "🇨🇮",
-    "dialCode": "225",
+    "dialCode": "+225",
     "continent": "AF",
     "iso2": "CI",
     "iso3": "CIV",
@@ -1471,7 +1471,7 @@
   },
   {
     "icon": "🇨🇭",
-    "dialCode": "41",
+    "dialCode": "+41",
     "capital": "Berne",
     "iso2": "CH",
     "iso3": "CHE",
@@ -1481,7 +1481,7 @@
   },
   {
     "icon": "🇨🇴",
-    "dialCode": "57",
+    "dialCode": "+57",
     "capital": "Bogota",
     "iso2": "CO",
     "iso3": "COL",
@@ -1491,7 +1491,7 @@
   },
   {
     "icon": "🇨🇳",
-    "dialCode": "86",
+    "dialCode": "+86",
     "continent": "AS",
     "capital": "Beijing",
     "countryName": "China",
@@ -1501,7 +1501,7 @@
   },
   {
     "icon": "🇨🇲",
-    "dialCode": "237",
+    "dialCode": "+237",
     "continent": "AF",
     "countryName": "Cameroon",
     "iso2": "CM",
@@ -1511,7 +1511,7 @@
   },
   {
     "icon": "🇨🇱",
-    "dialCode": "56",
+    "dialCode": "+56",
     "countryName": "Chile",
     "iso3": "CHL",
     "iso2": "CL",
@@ -1521,7 +1521,7 @@
   },
   {
     "icon": "🇨🇨",
-    "dialCode": "61",
+    "dialCode": "+61",
     "continent": "AS",
     "currency": "AUD",
     "iso2": "CC",
@@ -1531,7 +1531,7 @@
   },
   {
     "icon": "🇨🇦",
-    "dialCode": "1",
+    "dialCode": "+1",
     "iso2": "CA",
     "currency": "CAD",
     "iso3": "CAN",
@@ -1541,7 +1541,7 @@
   },
   {
     "icon": "🇨🇬",
-    "dialCode": "242",
+    "dialCode": "+242",
     "continent": "AF",
     "capital": "Brazzaville",
     "iso2": "CG",
@@ -1551,7 +1551,7 @@
   },
   {
     "icon": "🇨🇫",
-    "dialCode": "236",
+    "dialCode": "+236",
     "continent": "AF",
     "capital": "Bangui",
     "iso3": "CAF",
@@ -1561,7 +1561,7 @@
   },
   {
     "icon": "🇨🇩",
-    "dialCode": "243",
+    "dialCode": "+243",
     "continent": "AF",
     "iso2": "CD",
     "currency": "CDF",
@@ -1571,7 +1571,7 @@
   },
   {
     "icon": "🇨🇿",
-    "dialCode": "420",
+    "dialCode": "+420",
     "iso2": "CZ",
     "iso3": "CZE",
     "countryName": "Czech Republic",
@@ -1581,7 +1581,7 @@
   },
   {
     "icon": "🇨🇾",
-    "dialCode": "357",
+    "dialCode": "+357",
     "iso2": "CY",
     "iso3": "CYP",
     "countryName": "Cyprus",
@@ -1591,7 +1591,7 @@
   },
   {
     "icon": "🇨🇽",
-    "dialCode": "61",
+    "dialCode": "+61",
     "continent": "AS",
     "currency": "AUD",
     "countryName": "Christmas Island",
@@ -1601,7 +1601,7 @@
   },
   {
     "icon": "🇨🇷",
-    "dialCode": "506",
+    "dialCode": "+506",
     "countryName": "Costa Rica",
     "iso2": "CR",
     "currency": "CRC",
@@ -1612,7 +1612,7 @@
   {
     "capital": " Willemstad",
     "icon": "🇨🇼",
-    "dialCode": "599",
+    "dialCode": "+599",
     "currency": "ANG",
     "countryName": "Curacao",
     "iso3": "CUW",
@@ -1621,7 +1621,7 @@
   },
   {
     "icon": "🇨🇻",
-    "dialCode": "238",
+    "dialCode": "+238",
     "continent": "AF",
     "countryName": "Cape Verde",
     "iso3": "CPV",
@@ -1631,7 +1631,7 @@
   },
   {
     "icon": "🇨🇺",
-    "dialCode": "53",
+    "dialCode": "+53",
     "iso2": "CU",
     "iso3": "CUB",
     "countryName": "Cuba",
@@ -1641,7 +1641,7 @@
   },
   {
     "icon": "🇸🇿",
-    "dialCode": "268",
+    "dialCode": "+268",
     "continent": "AF",
     "capital": "Mbabane",
     "countryName": "Swaziland",
@@ -1651,7 +1651,7 @@
   },
   {
     "icon": "🇸🇾",
-    "dialCode": "963",
+    "dialCode": "+963",
     "continent": "AS",
     "capital": "Damascus",
     "iso2": "SY",
@@ -1661,7 +1661,7 @@
   },
   {
     "icon": "🇸🇽",
-    "dialCode": "599",
+    "dialCode": "+599",
     "currency": "ANG",
     "continent": "NA",
     "capital": "Philipsburg",
@@ -1671,7 +1671,7 @@
   },
   {
     "icon": "🇰🇬",
-    "dialCode": "996",
+    "dialCode": "+996",
     "continent": "AS",
     "capital": "Bishkek",
     "iso2": "KG",
@@ -1681,7 +1681,7 @@
   },
   {
     "icon": "🇰🇪",
-    "dialCode": "254",
+    "dialCode": "+254",
     "continent": "AF",
     "iso2": "KE",
     "iso3": "KEN",
@@ -1691,7 +1691,7 @@
   },
   {
     "icon": "🇸🇸",
-    "dialCode": "211",
+    "dialCode": "+211",
     "continent": "AF",
     "capital": "Juba",
     "countryName": "South Sudan",
@@ -1701,7 +1701,7 @@
   },
   {
     "icon": "🇸🇷",
-    "dialCode": "597",
+    "dialCode": "+597",
     "capital": "Paramaribo",
     "continent": "SA",
     "iso2": "SR",
@@ -1711,7 +1711,7 @@
   },
   {
     "icon": "🇰🇮",
-    "dialCode": "686",
+    "dialCode": "+686",
     "currency": "AUD",
     "iso2": "KI",
     "iso3": "KIR",
@@ -1721,7 +1721,7 @@
   },
   {
     "icon": "🇰🇭",
-    "dialCode": "855",
+    "dialCode": "+855",
     "continent": "AS",
     "countryName": "Cambodia",
     "iso2": "KH",
@@ -1731,7 +1731,7 @@
   },
   {
     "icon": "🇰🇳",
-    "dialCode": "1-869",
+    "dialCode": "+1-869",
     "capital": "Basseterre",
     "iso2": "KN",
     "iso3": "KNA",
@@ -1741,7 +1741,7 @@
   },
   {
     "icon": "🇰🇲",
-    "dialCode": "269",
+    "dialCode": "+269",
     "continent": "AF",
     "iso3": "COM",
     "countryName": "Comoros",
@@ -1751,7 +1751,7 @@
   },
   {
     "icon": "🇸🇹",
-    "dialCode": "239",
+    "dialCode": "+239",
     "continent": "AF",
     "capital": "Sao Tome",
     "countryName": "Sao Tome and Principe",
@@ -1761,7 +1761,7 @@
   },
   {
     "icon": "🇸🇰",
-    "dialCode": "421",
+    "dialCode": "+421",
     "capital": "Bratislava",
     "continent": "EU",
     "currency": "EUR",
@@ -1771,7 +1771,7 @@
   },
   {
     "icon": "🇰🇷",
-    "dialCode": "82",
+    "dialCode": "+82",
     "continent": "AS",
     "iso3": "KOR",
     "iso2": "KR",
@@ -1781,7 +1781,7 @@
   },
   {
     "icon": "🇸🇮",
-    "dialCode": "386",
+    "dialCode": "+386",
     "continent": "EU",
     "currency": "EUR",
     "capital": "Ljubljana",
@@ -1791,7 +1791,7 @@
   },
   {
     "icon": "🇰🇵",
-    "dialCode": "850",
+    "dialCode": "+850",
     "continent": "AS",
     "iso2": "KP",
     "currency": "KPW",
@@ -1801,7 +1801,7 @@
   },
   {
     "icon": "🇰🇼",
-    "dialCode": "965",
+    "dialCode": "+965",
     "continent": "AS",
     "countryName": "Kuwait",
     "capital": "Kuwait City",
@@ -1811,7 +1811,7 @@
   },
   {
     "icon": "🇸🇳",
-    "dialCode": "221",
+    "dialCode": "+221",
     "continent": "AF",
     "capital": "Dakar",
     "iso3": "SEN",
@@ -1821,7 +1821,7 @@
   },
   {
     "icon": "🇸🇲",
-    "dialCode": "378",
+    "dialCode": "+378",
     "continent": "EU",
     "currency": "EUR",
     "countryName": "San Marino",
@@ -1831,7 +1831,7 @@
   },
   {
     "icon": "🇸🇱",
-    "dialCode": "232",
+    "dialCode": "+232",
     "continent": "AF",
     "capital": "Freetown",
     "countryName": "Sierra Leone",
@@ -1841,7 +1841,7 @@
   },
   {
     "icon": "🇸🇨",
-    "dialCode": "248",
+    "dialCode": "+248",
     "continent": "AF",
     "iso2": "SC",
     "currency": "SCR",
@@ -1851,7 +1851,7 @@
   },
   {
     "icon": "🇰🇿",
-    "dialCode": "7",
+    "dialCode": "+7",
     "continent": "AS",
     "capital": "Astana",
     "iso3": "KAZ",
@@ -1861,7 +1861,7 @@
   },
   {
     "icon": "🇰🇾",
-    "dialCode": "1-345",
+    "dialCode": "+1-345",
     "countryName": "Cayman Islands",
     "iso3": "CYM",
     "capital": "George Town",
@@ -1871,7 +1871,7 @@
   },
   {
     "icon": "🇸🇬",
-    "dialCode": "65",
+    "dialCode": "+65",
     "continent": "AS",
     "iso2": "SG",
     "currency": "SGD",
@@ -1881,7 +1881,7 @@
   },
   {
     "icon": "🇸🇪",
-    "dialCode": "46",
+    "dialCode": "+46",
     "continent": "EU",
     "iso2": "SE",
     "currency": "SEK",
@@ -1891,7 +1891,7 @@
   },
   {
     "icon": "🇸🇩",
-    "dialCode": "249",
+    "dialCode": "+249",
     "continent": "AF",
     "capital": "Khartoum",
     "iso2": "SD",
@@ -1901,7 +1901,7 @@
   },
   {
     "icon": "🇩🇴",
-    "dialCode": "1-809",
+    "dialCode": "+1-809",
     "iso2": "DO",
     "iso3": "DOM",
     "countryName": "Dominican Republic",
@@ -1911,7 +1911,7 @@
   },
   {
     "icon": "🇩🇲",
-    "dialCode": "1-767",
+    "dialCode": "+1-767",
     "iso2": "DM",
     "iso3": "DMA",
     "countryName": "Dominica",
@@ -1921,7 +1921,7 @@
   },
   {
     "icon": "🇩🇯",
-    "dialCode": "253",
+    "dialCode": "+253",
     "continent": "AF",
     "iso2": "DJ",
     "currency": "DJF",
@@ -1931,7 +1931,7 @@
   },
   {
     "icon": "🇩🇰",
-    "dialCode": "45",
+    "dialCode": "+45",
     "capital": "Copenhagen",
     "countryName": "Denmark",
     "iso2": "DK",
@@ -1941,7 +1941,7 @@
   },
   {
     "icon": "🇻🇬",
-    "dialCode": "1-284",
+    "dialCode": "+1-284",
     "countryName": "British Virgin Islands",
     "continent": "NA",
     "capital": "Road Town",
@@ -1951,7 +1951,7 @@
   },
   {
     "icon": "🇩🇪",
-    "dialCode": "49",
+    "dialCode": "+49",
     "capital": "Berlin",
     "iso2": "DE",
     "iso3": "DEU",
@@ -1961,7 +1961,7 @@
   },
   {
     "icon": "🇾🇪",
-    "dialCode": "967",
+    "dialCode": "+967",
     "continent": "AS",
     "capital": "Sanaa",
     "iso2": "YE",
@@ -1971,7 +1971,7 @@
   },
   {
     "icon": "🇩🇿",
-    "dialCode": "213",
+    "dialCode": "+213",
     "continent": "AF",
     "countryName": "Algeria",
     "capital": "Algiers",
@@ -1981,7 +1981,7 @@
   },
   {
     "icon": "🇺🇸",
-    "dialCode": "1",
+    "dialCode": "+1",
     "continent": "NA",
     "countryName": "United States",
     "iso2": "US",
@@ -1991,7 +1991,7 @@
   },
   {
     "icon": "🇺🇾",
-    "dialCode": "598",
+    "dialCode": "+598",
     "capital": "Montevideo",
     "continent": "SA",
     "countryName": "Uruguay",
@@ -2001,7 +2001,7 @@
   },
   {
     "icon": "🇾🇹",
-    "dialCode": "262",
+    "dialCode": "+262",
     "continent": "AF",
     "currency": "EUR",
     "capital": "Mamoudzou",
@@ -2012,7 +2012,7 @@
   {
     "capital": "",
     "icon": "🇺🇲",
-    "dialCode": "1",
+    "dialCode": "+1",
     "continent": "OC",
     "iso2": "UM",
     "iso3": "UMI",
@@ -2021,7 +2021,7 @@
   },
   {
     "icon": "🇱🇧",
-    "dialCode": "961",
+    "dialCode": "+961",
     "continent": "AS",
     "capital": "Beirut",
     "iso2": "LB",
@@ -2031,7 +2031,7 @@
   },
   {
     "icon": "🇱🇨",
-    "dialCode": "1-758",
+    "dialCode": "+1-758",
     "capital": "Castries",
     "iso2": "LC",
     "iso3": "LCA",
@@ -2041,7 +2041,7 @@
   },
   {
     "icon": "🇱🇦",
-    "dialCode": "856",
+    "dialCode": "+856",
     "continent": "AS",
     "iso2": "LA",
     "currency": "LAK",
@@ -2051,7 +2051,7 @@
   },
   {
     "icon": "🇹🇻",
-    "dialCode": "688",
+    "dialCode": "+688",
     "currency": "AUD",
     "capital": "Funafuti",
     "continent": "OC",
@@ -2061,7 +2061,7 @@
   },
   {
     "icon": "🇹🇼",
-    "dialCode": "886",
+    "dialCode": "+886",
     "continent": "AS",
     "capital": "Taipei",
     "countryName": "Taiwan",
@@ -2071,7 +2071,7 @@
   },
   {
     "icon": "🇹🇹",
-    "dialCode": "1-868",
+    "dialCode": "+1-868",
     "continent": "NA",
     "capital": "Port of Spain",
     "countryName": "Trinidad and Tobago",
@@ -2081,7 +2081,7 @@
   },
   {
     "icon": "🇹🇷",
-    "dialCode": "90",
+    "dialCode": "+90",
     "capital": "Ankara",
     "continent": "AS",
     "iso2": "TR",
@@ -2091,7 +2091,7 @@
   },
   {
     "icon": "🇱🇰",
-    "dialCode": "94",
+    "dialCode": "+94",
     "continent": "AS",
     "capital": "Colombo",
     "iso2": "LK",
@@ -2101,7 +2101,7 @@
   },
   {
     "icon": "🇱🇮",
-    "dialCode": "423",
+    "dialCode": "+423",
     "currency": "CHF",
     "continent": "EU",
     "iso2": "LI",
@@ -2111,7 +2111,7 @@
   },
   {
     "icon": "🇱🇻",
-    "dialCode": "371",
+    "dialCode": "+371",
     "continent": "EU",
     "currency": "EUR",
     "countryName": "Latvia",
@@ -2121,7 +2121,7 @@
   },
   {
     "icon": "🇹🇴",
-    "dialCode": "676",
+    "dialCode": "+676",
     "capital": "Nuku'alofa",
     "continent": "OC",
     "iso2": "TO",
@@ -2131,7 +2131,7 @@
   },
   {
     "icon": "🇱🇹",
-    "dialCode": "370",
+    "dialCode": "+370",
     "continent": "EU",
     "countryName": "Lithuania",
     "iso2": "LT",
@@ -2141,7 +2141,7 @@
   },
   {
     "icon": "🇱🇺",
-    "dialCode": "352",
+    "dialCode": "+352",
     "continent": "EU",
     "currency": "EUR",
     "iso2": "LU",
@@ -2151,7 +2151,7 @@
   },
   {
     "icon": "🇱🇷",
-    "dialCode": "231",
+    "dialCode": "+231",
     "continent": "AF",
     "iso3": "LBR",
     "countryName": "Liberia",
@@ -2161,7 +2161,7 @@
   },
   {
     "icon": "🇱🇸",
-    "dialCode": "266",
+    "dialCode": "+266",
     "continent": "AF",
     "countryName": "Lesotho",
     "iso2": "LS",
@@ -2171,7 +2171,7 @@
   },
   {
     "icon": "🇹🇭",
-    "dialCode": "66",
+    "dialCode": "+66",
     "continent": "AS",
     "capital": "Bangkok",
     "iso2": "TH",
@@ -2181,7 +2181,7 @@
   },
   {
     "icon": "🇹🇫",
-    "dialCode": "262",
+    "dialCode": "+262",
     "continent": "AN",
     "iso3": "ATF",
     "currency": "EUR",
@@ -2191,7 +2191,7 @@
   },
   {
     "icon": "🇹🇬",
-    "dialCode": "228",
+    "dialCode": "+228",
     "continent": "AF",
     "capital": "Lome",
     "iso2": "TG",
@@ -2201,7 +2201,7 @@
   },
   {
     "icon": "🇹🇩",
-    "dialCode": "235",
+    "dialCode": "+235",
     "continent": "AF",
     "countryName": "Chad",
     "capital": "N'Djamena",
@@ -2211,7 +2211,7 @@
   },
   {
     "icon": "🇹🇨",
-    "dialCode": "1-649",
+    "dialCode": "+1-649",
     "capital": "Cockburn Town",
     "continent": "NA",
     "iso2": "TC",
@@ -2221,7 +2221,7 @@
   },
   {
     "icon": "🇱🇾",
-    "dialCode": "218",
+    "dialCode": "+218",
     "continent": "AF",
     "iso3": "LBY",
     "countryName": "Libya",
@@ -2231,7 +2231,7 @@
   },
   {
     "icon": "🇻🇦",
-    "dialCode": "379",
+    "dialCode": "+379",
     "continent": "EU",
     "currency": "EUR",
     "iso2": "VA",
@@ -2241,7 +2241,7 @@
   },
   {
     "icon": "🇻🇨",
-    "dialCode": "1-784",
+    "dialCode": "+1-784",
     "capital": "Kingstown",
     "continent": "NA",
     "countryName": "Saint Vincent and the Grenadines",
@@ -2251,7 +2251,7 @@
   },
   {
     "icon": "🇦🇪",
-    "dialCode": "971",
+    "dialCode": "+971",
     "capital": "Abu Dhabi",
     "iso2": "AE",
     "currency": "AED",
@@ -2261,7 +2261,7 @@
   },
   {
     "icon": "🇦🇩",
-    "dialCode": "376",
+    "dialCode": "+376",
     "iso2": "AD",
     "iso3": "AND",
     "countryName": "Andorra",
@@ -2271,7 +2271,7 @@
   },
   {
     "icon": "🇦🇬",
-    "dialCode": "1-268",
+    "dialCode": "+1-268",
     "iso2": "AG",
     "countryName": "Antigua and Barbuda",
     "iso3": "ATG",
@@ -2281,7 +2281,7 @@
   },
   {
     "icon": "🇦🇫",
-    "dialCode": "93",
+    "dialCode": "+93",
     "iso2": "AF",
     "iso3": "AFG",
     "countryName": "Afghanistan",
@@ -2291,7 +2291,7 @@
   },
   {
     "icon": "🇦🇮",
-    "dialCode": "1-264",
+    "dialCode": "+1-264",
     "iso2": "AI",
     "iso3": "AIA",
     "countryName": "Anguilla",
@@ -2301,7 +2301,7 @@
   },
   {
     "icon": "🇻🇮",
-    "dialCode": "1-340",
+    "dialCode": "+1-340",
     "capital": "Charlotte Amalie",
     "continent": "NA",
     "countryName": "U.S. Virgin Islands",
@@ -2311,7 +2311,7 @@
   },
   {
     "icon": "🇮🇸",
-    "dialCode": "354",
+    "dialCode": "+354",
     "continent": "EU",
     "countryName": "Iceland",
     "iso2": "IS",
@@ -2321,7 +2321,7 @@
   },
   {
     "icon": "🇮🇷",
-    "dialCode": "98",
+    "dialCode": "+98",
     "continent": "AS",
     "iso2": "IR",
     "countryName": "Iran",
@@ -2331,7 +2331,7 @@
   },
   {
     "icon": "🇦🇲",
-    "dialCode": "374",
+    "dialCode": "+374",
     "iso2": "AM",
     "currency": "AMD",
     "iso3": "ARM",
@@ -2341,7 +2341,7 @@
   },
   {
     "icon": "🇦🇱",
-    "dialCode": "355",
+    "dialCode": "+355",
     "iso2": "AL",
     "iso3": "ALB",
     "countryName": "Albania",
@@ -2351,7 +2351,7 @@
   },
   {
     "icon": "🇦🇴",
-    "dialCode": "244",
+    "dialCode": "+244",
     "continent": "AF",
     "iso3": "AGO",
     "countryName": "Angola",
@@ -2363,7 +2363,7 @@
     "currency": "",
     "capital": "",
     "icon": "🇦🇶",
-    "dialCode": "672",
+    "dialCode": "+672",
     "continent": "AN",
     "countryName": "Antarctica",
     "iso2": "AQ",
@@ -2371,7 +2371,7 @@
   },
   {
     "icon": "🇦🇸",
-    "dialCode": "1-684",
+    "dialCode": "+1-684",
     "countryName": "American Samoa",
     "iso2": "AS",
     "iso3": "ASM",
@@ -2381,7 +2381,7 @@
   },
   {
     "icon": "🇦🇷",
-    "dialCode": "54",
+    "dialCode": "+54",
     "iso2": "AR",
     "iso3": "ARG",
     "countryName": "Argentina",
@@ -2391,7 +2391,7 @@
   },
   {
     "icon": "🇦🇺",
-    "dialCode": "61",
+    "dialCode": "+61",
     "iso2": "AU",
     "currency": "AUD",
     "iso3": "AUS",
@@ -2401,7 +2401,7 @@
   },
   {
     "icon": "🇦🇹",
-    "dialCode": "43",
+    "dialCode": "+43",
     "iso2": "AT",
     "countryName": "Austria",
     "iso3": "AUT",
@@ -2411,7 +2411,7 @@
   },
   {
     "icon": "🇦🇼",
-    "dialCode": "297",
+    "dialCode": "+297",
     "iso3": "ABW",
     "countryName": "Aruba",
     "iso2": "AW",
@@ -2421,7 +2421,7 @@
   },
   {
     "icon": "🇮🇳",
-    "dialCode": "91",
+    "dialCode": "+91",
     "continent": "AS",
     "iso2": "IN",
     "iso3": "IND",
@@ -2431,7 +2431,7 @@
   },
   {
     "icon": "🇦🇽",
-    "dialCode": "358-18",
+    "dialCode": "+358-18",
     "iso3": "ALA",
     "countryName": "Aland Islands",
     "iso2": "AX",
@@ -2441,7 +2441,7 @@
   },
   {
     "icon": "🇦🇿",
-    "dialCode": "994",
+    "dialCode": "+994",
     "continent": "AS",
     "iso2": "AZ",
     "iso3": "AZE",
@@ -2451,7 +2451,7 @@
   },
   {
     "icon": "🇮🇪",
-    "dialCode": "353",
+    "dialCode": "+353",
     "capital": "Dublin",
     "continent": "EU",
     "currency": "EUR",
@@ -2461,7 +2461,7 @@
   },
   {
     "icon": "🇮🇩",
-    "dialCode": "62",
+    "dialCode": "+62",
     "continent": "AS",
     "iso2": "ID",
     "iso3": "IDN",
@@ -2471,7 +2471,7 @@
   },
   {
     "icon": "🇺🇦",
-    "dialCode": "380",
+    "dialCode": "+380",
     "continent": "EU",
     "capital": "Kiev",
     "iso2": "UA",
@@ -2481,7 +2481,7 @@
   },
   {
     "icon": "🇶🇦",
-    "dialCode": "974",
+    "dialCode": "+974",
     "continent": "AS",
     "capital": "Doha",
     "iso2": "QA",
@@ -2491,7 +2491,7 @@
   },
   {
     "icon": "🇲🇿",
-    "dialCode": "258",
+    "dialCode": "+258",
     "continent": "AF",
     "capital": "Maputo",
     "iso3": "MOZ",

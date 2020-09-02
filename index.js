@@ -39,6 +39,7 @@ import TextAreaPage from './src/docs/TextArea.js';
 import TimePage from './src/docs/Time.js';
 import VideoPage from './src/docs/Video.js';
 import styled from 'styled-components';
+import DragAndDropPage from './src/docs/DragAndDrop.js';
 
 const BodyContainer = styled.div`
   margin-left: 120px;
@@ -205,7 +206,7 @@ const App = () => {
             <VideoPage />
           </Route>
           <Route path="/">
-            <VideoPage />
+            <DragAndDropPage />
           </Route>
         </Switch>
       </BodyContainer>

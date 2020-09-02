@@ -3,6 +3,8 @@ import StyledIcon from '../styles/Icon.js';
 import finger from '../../../Icons/outline/fuckYou.svg';
 import { camelize } from './Utils.js';
 
+//css filter for color of other then outline icons 
+
 const Icon = ({ name, size, fill = 'white', type = 'outline' }) => {
   const string = name ? camelize(name) : null;
 
@@ -14,7 +16,7 @@ const Icon = ({ name, size, fill = 'white', type = 'outline' }) => {
         ? require(`../../../Icons/${type}/${string}.png`).default
         : console.warn(`Icon type ${type} doesn't exist. choose on of ${acceptedTypes}`);
     } catch (err) {
-      return console.warn(`Icon name ${name} doesn't exist in package AWESOME`);
+      return console.warn(`Icon name ${name} doesn't exist`);
     }
   })();
 
