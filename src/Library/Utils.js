@@ -89,3 +89,119 @@ export const onClickOutSide = (ref, callback) => {
 export var inRange = function(num, start, end) {
   return num >= start && num <= end;
 };
+
+export const camelCaseToDashed = string =>
+  string.replace(/[A-Z]/g, m => '-' + m.toLowerCase());
+
+var radius = 12;
+
+const convertPoints = points => {
+  const pointSplit = points.replace(/[,]/g, ' ').split(' ');
+  const newArray = pointSplit.map(p => parseInt(p));
+  return newArray;
+};
+
+const Middle = points => {
+  const lineToVector = (p1, p2) => {
+    var vector = {
+      x: p2.x - p1.x,
+      y: p2.y - p1.y,
+    };
+    return vector;
+  };
+
+  const vectorToUnitVector = v => {
+    const magnitude = v.x * v.x + v.y * v.y;
+    const newMag = Math.sqrt(magnitude);
+    const unitVector = {
+      x: v.x / newMag,
+      y: v.y / newMag,
+    };
+    return unitVector;
+  };
+
+  const roundOneCorner = (p1, corner, p2) => {
+    const corner_to_p1 = lineToVector(corner, p1);
+    const corner_to_p2 = lineToVector(corner, p2);
+    const corner_to_p1_unit = vectorToUnitVector(corner_to_p1);
+    const corner_to_p2_unit = vectorToUnitVector(corner_to_p2);
+
+    const curve_p1 = {
+      x: corner.x + corner_to_p1_unit.x * radius,
+      y: corner.y + corner_to_p1_unit.y * radius,
+    };
+    const curve_p2 = {
+      x: corner.x + corner_to_p2_unit.x * radius,
+      y: corner.y + corner_to_p2_unit.y * radius,
+    };
+    const path = {
+      line_end: curve_p1,
+      curve_control: corner,
+      curve_end: curve_p2,
+    };
+    return path;
+  };
+
+  var printPath = function(path) {
+    const L =
+      'L' + path.line_end.x.toFixed(1) + ',' + path.line_end.y.toFixed(1);
+
+    const Q =
+      'Q' +
+      path.curve_control.x.toFixed(1) +
+      ',' +
+      path.curve_control.y.toFixed(1) +
+      ' ' +
+      path.curve_end.x.toFixed(1) +
+      ',' +
+      path.curve_end.y.toFixed(1);
+
+    return L + ' ' + Q;
+  };
+
+  for (var i = 2; i + 5 < points.length; i += 2) {
+    console.log(points.length);
+    var p1 = {
+      x: parseInt(points[i]),
+      y: parseInt(points[i + 1]),
+    };
+    var p2 = {
+      x: parseInt(points[i + 2]),
+      y: parseInt(points[i + 3]),
+    };
+    var p3 = {
+      x: parseInt(points[i + 4]),
+      y: parseInt(points[i + 5]),
+    };
+    var path = roundOneCorner(p1, p2, p3);
+    return printPath(path);
+  }
+};
+
+export const polyLineRounded = points => {
+  const newPoints = convertPoints(points);
+
+  console.log(newPoints);
+
+  //check input
+  if (newPoints.length <= 2) {
+    console.log('enter at least one point');
+  }
+  if (newPoints.length % 2 !== 0) {
+    console.log(
+      'you entered ' +
+        (newPoints.length - 2) +
+        ' numbers, but each point should have two numbers'
+    );
+  }
+  if (newPoints.length < 8) {
+    console.log('need at least 3 newPoints');
+  }
+
+  const M = 'M' + newPoints[2] + ',' + newPoints[3];
+  const forLoop = Middle(newPoints);
+  var lastArg = newPoints.length - 1;
+  const Last = 'L' + newPoints[lastArg - 1] + ',' + newPoints[lastArg];
+  console.log(forLoop)
+  return M + ' ' + forLoop + ' ' + Last;
+};

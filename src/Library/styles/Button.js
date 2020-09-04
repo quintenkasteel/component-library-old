@@ -34,10 +34,10 @@ const StyledButton = styled.div`
     ''};
 
   a {
-    height: 100%;
-    width: 100%;
     display: flex;
+    height: 100%;
     text-decoration: none;
+    width: 100%;
     user-select: ${props => (props.disabled ? 'none' : '')};
     cursor: ${props => (props.disabled ? 'no-drop' : 'pointer')};
     color: ${props =>

@@ -40,6 +40,7 @@ import TimePage from './src/docs/Time.js';
 import VideoPage from './src/docs/Video.js';
 import styled from 'styled-components';
 import DragAndDropPage from './src/docs/DragAndDrop.js';
+import ChartPage from './src/docs/Chart.js'
 
 const BodyContainer = styled.div`
   margin-left: 120px;
@@ -94,6 +95,7 @@ const menu = () => {
       <Link to="/text-area">Text Area</Link>
       <Link to="/time">Time</Link>
       <Link to="/video">Video</Link>
+      <Link to="/drag-and-drop">Drag and Drop</Link>
     </MenuContainer>
   );
 };
@@ -205,8 +207,11 @@ const App = () => {
           <Route path="/video">
             <VideoPage />
           </Route>
-          <Route path="/">
+          <Route path="/drag-and-drop">
             <DragAndDropPage />
+          </Route>
+          <Route path="/">
+            <ChartPage />
           </Route>
         </Switch>
       </BodyContainer>
