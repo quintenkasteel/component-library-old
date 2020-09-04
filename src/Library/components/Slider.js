@@ -6,29 +6,39 @@ import leftArrow from '../../../images/arrow-left.svg';
 import rightArrow from '../../../images/arrow-right.svg';
 
 const SliderContainer = styled.div`
-  height: 100%;
+  height: 100vh;
   width: 100%;
   display: flex;
   position: relative;
   overflow: hidden;
+  border: 1px solid #ccc;
+  margin: 40px 0;
+  position: relative;
+  min-height: 500px;
+  margin: 40px auto;
+  perspective: 1000px;
 `;
 
 const SliderRow = styled.div`
-  transform: ${props => `translateX(-${props.translate}%)`};
-  transition: ${props => `transform ease-in-out ${props.transition}s`};
+  /* transform: ${props => `translateX(-${props.translate}%)`};
+  transition: ${props => `transform ease-in-out ${props.transition}s`}; */
   display: flex;
   flex-flow: row nowrap;
   position: relative;
   width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  transform: translateZ(-${props => props.sliderTranslation}px);
+  transform-style: preserve-3d;
+  transition: transform 1s;
 `;
 
 const Slide = styled.div`
-  min-height: 300px;
-  min-width: ${props => props.slideWidth}%;
-  max-width: ${props => props.slideWidth}%;
-  box-shadow: 0 0 10px #000;
-  position: relative;
+  /* min-width: ${props => props.slideWidth}%;
+  max-width: ${props => props.slideWidth}%; */
 
+  border: 1px solid black;
   div {
     height: 100%;
   }
@@ -40,6 +50,40 @@ const Slide = styled.div`
     height: 100%;
     z-index: 1;
   }
+
+  ${props =>
+    props.styled === 'normal' &&
+    `
+  box-shadow: 0 0 10px #000;
+  position: relative;
+  min-height: 300px;
+
+  div {
+    height: 100%;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }`}
+
+  ${props =>
+    props.styled === 'caroussel' &&
+    `
+    position: absolute;
+    width: 300px;
+    height: 120px;
+
+    transform: rotateY(${props.index * props.carouselDegrees -
+      props.activeIndex * props.carouselDegrees}deg)  translateZ(${
+      props.carouselTranslation
+    }px); 
+    transition: transform ease-in 0.1s;
+  
+  `}
 `;
 
 const ArrowLeft = styled.div`
@@ -54,7 +98,6 @@ const ArrowLeft = styled.div`
   border-radius: 50%;
   cursor: pointer;
   align-items: center;
-  transition: transform ease-in 0.1s;
 
   img {
     position: absolute;
@@ -67,7 +110,13 @@ const ArrowRight = styled(ArrowLeft)`
   right: 25px;
 `;
 
-const Slider = ({ showCount, slideCount, children }) => {
+const Slider = ({
+  showCount,
+  slideCount,
+  children,
+  styled = 'normal',
+  loop = false,
+}) => {
   const [state, setState] = useState({
     activeIndex: 0,
     translate: 0,
@@ -86,32 +135,29 @@ const Slider = ({ showCount, slideCount, children }) => {
         windowWidth: window.innerWidth,
       });
     }
-    
+
     // Add event listener
-    window.addEventListener("resize", handleResize);
-    
+    window.addEventListener('resize', handleResize);
+
     // Call handler right away so state gets updated with initial window size
     handleResize();
-    
+
     // Remove event listener on cleanup
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []); // Empty array ensures that effect is only run on mount
 
   const getShowCount = showCount ? showCount : 3;
   const getSlideCount = slideCount ? slideCount : 1;
-  const mobileWidth = 768
+  const mobileWidth = 768;
   const slidesToShow = windowWidth >= mobileWidth ? getShowCount : 1;
-  const slideWidth = () => (100 / slidesToShow);
+  const slideWidth = () => 100 / slidesToShow;
   const itemCount = children.length;
+  const cellSize = 300;
+  const carouselDegrees = 360 / itemCount;
+  const translateCarousel =
+    Math.round(cellSize / 2 / Math.tan(Math.PI / itemCount)) + 20;
 
   const prevSlide = () => {
-    if (activeIndex === 0) {
-      return setState({
-        ...state,
-        translate: (itemCount - getSlideCount) * slideWidth(),
-        activeIndex: itemCount - getSlideCount,
-      });
-    }
     return setState({
       ...state,
       translate: (activeIndex - getSlideCount) * slideWidth(),
@@ -121,8 +167,8 @@ const Slider = ({ showCount, slideCount, children }) => {
 
   const nextSlide = () => {
     if (
-      activeIndex === itemCount - getShowCount ||
-      activeIndex + getSlideCount > itemCount - getSlideCount
+      (loop && activeIndex === itemCount - getShowCount) ||
+      (loop && activeIndex + getSlideCount > itemCount - getSlideCount)
     ) {
       return setState({
         ...state,
@@ -143,10 +189,21 @@ const Slider = ({ showCount, slideCount, children }) => {
         <SliderRow
           translate={translate}
           transition={transition}
-          className="slider-wrapper"
-        >
-          {React.Children.map(children, child => (
-            <Slide slideWidth={slideWidth()}>{child}</Slide>
+          sliderTranslation={translateCarousel}
+          styled={styled}
+          className="slider-wrapper">
+          {children.map((child, i) => (
+            <Slide
+              key={i}
+              itemCount={itemCount}
+              index={i}
+              styled={styled}
+              slideWidth={slideWidth()}
+              carouselTranslation={translateCarousel}
+              carouselDegrees={carouselDegrees}
+              activeIndex={activeIndex}>
+              {child}
+            </Slide>
           ))}
         </SliderRow>
         <ArrowLeft onClick={() => prevSlide()}>

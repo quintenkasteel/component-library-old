@@ -1,7 +1,7 @@
 import ReactDOM from '@hot-loader/react-dom';
 import React from 'react';
-require("babel-core/register");
-require("babel-polyfill");
+require('babel-core/register');
+require('babel-polyfill');
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Dashboard from './src/App.js';
 import AccordionPage from './src/docs/Accordion.js';
@@ -40,12 +40,12 @@ import TimePage from './src/docs/Time.js';
 import VideoPage from './src/docs/Video.js';
 import styled from 'styled-components';
 import DragAndDropPage from './src/docs/DragAndDrop.js';
-import ChartPage from './src/docs/Chart.js'
+import ChartPage from './src/docs/Chart.js';
 
 const BodyContainer = styled.div`
   margin-left: 120px;
   padding: 20px;
-`
+`;
 const MenuContainer = styled.div`
   position: fixed;
   width: 100px;
@@ -56,7 +56,7 @@ const MenuContainer = styled.div`
   display: flex;
   flex-flow: column nowrap;
   z-index: 100;
-`
+`;
 const menu = () => {
   return (
     <MenuContainer>
@@ -211,7 +211,7 @@ const App = () => {
             <DragAndDropPage />
           </Route>
           <Route path="/">
-            <ChartPage />
+            <SliderPage />
           </Route>
         </Switch>
       </BodyContainer>
